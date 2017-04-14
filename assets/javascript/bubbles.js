@@ -1,23 +1,23 @@
 particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 19,
+      "value": 80,
       "density": {
         "enable": true,
         "value_area": 800
       }
     },
     "color": {
-      "value": "#aee0e7"
+      "value": "#ffffff"
     },
     "shape": {
       "type": "circle",
       "stroke": {
-        "width": 5,
-        "color": "#2cd4fa"
+        "width": 0,
+        "color": "#000000"
       },
       "polygon": {
-        "nb_sides": 10
+        "nb_sides": 5
       },
       "image": {
         "src": "img/github.svg",
@@ -26,40 +26,40 @@ particlesJS("particles-js", {
       }
     },
     "opacity": {
-      "value": 0.5917632946821274,
-      "random": true,
+      "value": 0.5,
+      "random": false,
       "anim": {
-        "enable": false,
-        "speed": 1,
+        "enable": true,
+        "speed": 6.803657776013869,
         "opacity_min": 0.1,
         "sync": false
       }
     },
     "size": {
-      "value": 95.96161535385849,
+      "value": 0,
       "random": true,
       "anim": {
-        "enable": true,
-        "speed": 24.2987777714781,
+        "enable": false,
+        "speed": 40,
         "size_min": 0.1,
         "sync": false
       }
     },
     "line_linked": {
       "enable": true,
-      "distance": 150,
+      "distance": 255.89764094362266,
       "color": "#ffffff",
       "opacity": 0.4,
       "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 1,
-      "direction": "top-right",
+      "speed": 0.7,
+      "direction": "none",
       "random": false,
       "straight": false,
       "out_mode": "out",
-      "bounce": true,
+      "bounce": false,
       "attract": {
         "enable": false,
         "rotateX": 600,
@@ -68,10 +68,10 @@ particlesJS("particles-js", {
     }
   },
   "interactivity": {
-    "detect_on": "canvas",
+    "detect_on": "window",
     "events": {
       "onhover": {
-        "enable": true,
+        "enable": false,
         "mode": "repulse"
       },
       "onclick": {
@@ -109,13 +109,8 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 var count_particles, stats, update;
-
-count_particles = document.querySelector('.js-count-particles');
 update = function () {
 
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  }
   requestAnimationFrame(update);
 };
 requestAnimationFrame(update);;
