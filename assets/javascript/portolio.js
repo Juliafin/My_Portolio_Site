@@ -1,16 +1,9 @@
 var portfolioState = {
-  currentQuote:0
-};
-
-
-
-function renderQuote() {
-
-  setTimeout(function() {
-    
-    let quotes = [
+  currentQuote: 0,
+  initial: 0,
+  quotes: [
       {
-        quote: `Choose a Job you Love, and you will never have to work a day in your life`,
+        quote: `Choose a job you Love, and you will never have to work a day in your life`,
         author : `~ Confucius`
       },
       {
@@ -21,10 +14,22 @@ function renderQuote() {
         quote:`“I have no special talent. I am only passionately curious.`,
         author: `~ Albert Einstein`
       } 
-    ]; 
+    ] 
+};
 
-    let quoteHTML = `<h1 class="quote">${quotes[portfolioState.currentQuote].quote}</h1>`;
-    let authorHTML = `<h2 class="author">${quotes[portfolioState.currentQuote].author}</h2>`;
+function renderQuote() {
+
+    if (portfolioState.initial ===0) {
+
+
+    }
+  setTimeout(function() {
+    
+
+    let quoteHTML = `${portfolioState.quotes[portfolioState.currentQuote].quote}`;
+    let authorHTML = `${portfolioState.quotes[portfolioState.currentQuote].author}`;
+
+
 
 
     if (portfolioState.currentQuote === 2) {
@@ -35,11 +40,10 @@ function renderQuote() {
       $('.quote, .author').fadeIn(800);
       portfolioState.currentQuote = 0;
       
-      });
+      }); 
+    } else {
 
-      
-    }
-
+    portfolioState.currentQuote+=1;
       $('.quote, .author').fadeOut(1000, function() {
       $('.quote').html(quoteHTML);
       $('.author').html(authorHTML);
@@ -47,17 +51,19 @@ function renderQuote() {
       });
       
       
-    
-    portfolioState.currentQuote+=1;
+
+
+    }
+
     renderQuote()
-  }, 6000);
+  }, 7000);
 
 }
 
 
 ($(document).ready(function () {
 
-renderQuote();
+  renderQuote();
 
 
 }));
