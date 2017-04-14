@@ -3,6 +3,10 @@
     font-size: 16px;
 }
 
+html { 
+  font-size: calc(1em + 1vw); 
+  } 
+
 html, body {
     height: 100%;
     margin: 0 auto;
@@ -22,7 +26,7 @@ section.title_container {
 }
 
 section.title_container {
-  height: 87%;
+  min-height: 87%;
 }
 
 .quote_container {
@@ -62,14 +66,33 @@ h1.about_me {
 
 p.story_text {
     font-size: 24px;
+    font-weight: 600;
     padding-bottom: 2%;
-    color: #f9ebeb;
+    color: #ffffff;
+    text-indent: 4%;
+    line-height: 32px;
 }
 
 section.main {
-    background-color: #44413e;
+    background-color: rgba(178, 125, 140, 0.92);
     border-top: #5b9f9f 1px solid;
+    z-index: 100;
+    position: relative;
 }
 article {
     margin: 0 80px;
+}
+section.projects {
+    background-color: rgba(160, 211, 228, 0.86);
+    z-index: 1;
+    height: 100%;
+    position: relative;
+}
+
+div#particles-js {
+    z-index: 0;
+    position: absolute;
+    top: 87%;
+    width: 100%;
+    height: 2000px;
 }
