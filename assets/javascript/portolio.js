@@ -3,7 +3,7 @@ var portfolioState = {
   initial: 0,
   quotes: [
       {
-        quote: `Choose a job you Love, and you will never have to work a day in your life`,
+        quote: `Choose a job you love, and you will never have to work a day in your life`,
         author : `~ Confucius`
       },
       {
