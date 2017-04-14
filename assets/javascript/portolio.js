@@ -44,10 +44,10 @@ function renderQuote() {
     } else {
 
     portfolioState.currentQuote+=1;
-      $('.quote, .author').fadeOut(1000, function() {
+      $('.quote, .author').fadeOut(1200, function() {
       $('.quote').html(quoteHTML);
       $('.author').html(authorHTML);
-      $('.quote, .author').fadeIn(800);
+      $('.quote, .author').fadeIn(1200);
       });
       
       
@@ -56,7 +56,7 @@ function renderQuote() {
     }
 
     renderQuote()
-  }, 7000);
+  }, 11000);
 
 }
 
