@@ -27,6 +27,8 @@ section.title_container {
 
 section.title_container {
   min-height: 87%;
+  z-index: 100;
+  position: relative;
 }
 
 .quote_container {
@@ -55,10 +57,11 @@ h1.quote {
     margin-bottom: 6px;
 }
 
-h1.about_me {
+h1.about_me, h2 {
     text-align: center;
     font-family: Proza Libre;
-    font-size: 2.9em;
+    font-size: 3.3em;
+    font-weight: bold;
     margin-top: 1%;
     padding-top: 11%;
 }
@@ -73,7 +76,11 @@ p.story_text {
     padding-bottom: 2%;
     color: #ffffff;
     text-indent: 4%;
-    line-height: 33px;
+    line-height: 1.5em;
+}
+
+p.bottom_story_text {
+    padding-bottom: 7%;
 }
 
 section.main {
@@ -81,6 +88,7 @@ section.main {
     border-top: #5b9f9f 1px solid;
     z-index: 100;
     position: relative;
+    margin-top: 8%;
 }
 article {
     margin: -24px 80px;
@@ -88,16 +96,16 @@ article {
 section.projects {
     background-color: rgba(160, 211, 228, 0.7);
     z-index: 1;
-    height: 100%;
+    min-height: 100%;
     position: relative;
 }
 
 div#particles-js {
     z-index: 0;
     position: absolute;
-    top: 87%;
+    top: 108%;
     width: 100%;
-    height: 2000px;
+    height: 2500px;
 }
 
 .section_two{
