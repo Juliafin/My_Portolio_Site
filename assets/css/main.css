@@ -42,19 +42,22 @@ section.title_container {
   font-family: Dancing Script;
   color: #861313;
   font-size: 1.5em;
+  margin-top: -1%;
 }
 
 
 .quote_container {
     display: inline-block;
-    width: 70%;
+    width: 89%;
     font-family: "Dancing Script";
     font-size: 1.5em;
     margin-top: 8%;
+    height: 325px;
+    position: relative;
 }
 
 h1.quote {
-    margin-bottom: 6px;
+    margin-bottom: 0px;
 }
 
 h1.about_me, h2 {
@@ -88,7 +91,7 @@ section.main {
     border-top: #5b9f9f 1px solid;
     z-index: 100;
     position: relative;
-    margin-top: 8%;
+    margin-top: 0%;
 }
 article {
     margin: -24px 80px;
