@@ -6,19 +6,34 @@
   <meta charset="UTF-8">
   <meta description="A web portfolio for Julia Finarovsky, Web Developer and Musician">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!--Google fonts-->
+
+  <!--Google fonts-->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script|Cormorant+Garamond|Proza+Libre">
-    <!--Responsive Grid-->
+  <!--Responsive Grid-->
   <link href="./assets/css/float-grid.css" rel="stylesheet">
-    <!--Main Css-->
+  <!--Main Css-->
   <link rel="stylesheet" href="./assets/css/main.css">
-    <!--Bubbles background css-->
+  <!--Bubbles background css-->
   <link rel="stylesheet" type="text/css" href="./assets/css/bubbles.css">
 </head>
 
 
 <body>
+
+  <nav>
+    <div id="nav">
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li>Julia Finarovsky, Web Developer</li>
+        <li><a href="#About_Me">About Me</a></li>
+        <li><a href="#References">References</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
   <section class="title_container">
     <header class="image_container">
       <div class="quote_container">
@@ -32,20 +47,28 @@
     <article>
 
 
-      <h1 class="about_me section_one">About Me: </h1>
+
+      <h1 class="about_me section_one">About Me</h1>
 
       <p class="story_text">
-        Hi, I'm Julia! I built this website with the quotes above in the first place because they are my personal mantra. They are
-        words I have lived by, including in my current career as a Web Developer and my former career as a Concert Pianist,
-        Arranger, Composer, and Accompanist.
+        Hi, I'm Julia! Thank you for visiting my page! I'm a Web Developer passionate about writing clean, efficient, and readable
+        code. I get excited about being faced with new challenges and learning how to overcome them. I'm also a classically
+        trained concert pianist,composer, arranger, teacher, accompanist. Also, I'm a huge nerd with interests: technology,
+        audio engineering, graphic design, photography, science, history, cooking, politics, video games, board games, and
+        computers. I'm equally comfortable wearing many hats (just not literally, I look terrible in some hats).
+      </p>
+      <p class="story_text">
+        I find it intellectually stimulating, challenging, and most importantly fun! It doesn't feel like work to me. For me, that
+        is what the title quotes represent.
       </p>
 
-      <h1 class="about_me section_one">My Motivation: </h1>
+      <h1 class="about_me section_one">My Motivation</h1>
 
       <p class="story_text">
-        My love of learning new things and being challenged comes from my childhood: When I was 10 years old, I was using my mom's
-        386 desktop when it suddenly broke. Windows 3.1 wouldn't boot from dos. So I decided (somewhat foolishly) to take
-        a screwdriver and unscrew the entire computer apart.
+        I've alsways been that person who's friends always turn to for computer help or technical support. My love of learning new
+        things and being challenged comes from my childhood: When I was 10 years old, I was using my mom's 386 desktop when
+        it suddenly broke. Windows 3.1 wouldn't boot from dos. So I decided (somewhat foolishly) to take a screwdriver and
+        unscrew the entire computer apart.
 
       </p>
       <p class="story_text bottom_story_text">
@@ -62,40 +85,48 @@
     <article class="bggapi">
       <h2>BoardgameGeek Api </h2>
       <p class="story_text">
-        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the BoardgameGeek website. I set out to make a usable ui that would list the many various statistics for board games without overwhelming the user. 
+        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games
+        on kickstarter or at the local game store that I have found through the BoardgameGeek website. I set out to make
+        a usable ui that would list the many various statistics for board games without overwhelming the user.
       </p>
       <p class="story_text">
-        I also wanted to include video walkthroughs of the games with an embedded Youtube iframe for those that are interested in how a particular game plays. Also included was the "hot list" which rendered a list of the hottest upcoming or just released board games.
-        </p>
+        I also wanted to include video walkthroughs of the games with an embedded Youtube iframe for those that are interested in
+        how a particular game plays. Also included was the "hot list" which rendered a list of the hottest upcoming or just
+        released board games.
+      </p>
 
-        <p class="story_text bottom_story_text"> 
-        As the sole developer on this project, I was responsible for developing the mvp as well as the polished version. That included the app architecture, styling, ajax calls, and code structure. After developing the mvp, I submitted the project for peer review and made changes to features as well as bug fixes.
-        </p>
-
-        <h3>Major challenges included: </h3>
-        <ul>
-          <li>Multiple concurrent AJAX requests</li>
-          <li>Conversion of XML to JSON format</li>
-          <li>Using a proxy to circumvent a CORS header error</li>
-          <li>Limiting API calls and Caching data to work around specific API limitations</li>
-          <li>Data correction on the front end</li>
-          <li>SEO and responsive</li>
-        </ul>
-
-        <h3>Technologies used:</h3>
-        <ul>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Javascript</li>
-          <li>AJAX</li>
-          <li>JQuery</li>
-          <li>Youtube Api</li>
-        </ul>
-        
         <div class="bgg_screenshot1"></div>
-        <div class="bgg_screenshot2"></div>
-        
-        
+
+      <p class="story_text bottom_story_text">
+        As the sole developer on this project, I was responsible for developing the mvp as well as the polished version. That included
+        the app architecture, styling, ajax calls, and code structure. After developing the mvp, I submitted the project
+        for peer review and made changes to features as well as bug fixes.
+      </p>
+
+      <h3>Major challenges included: </h3>
+      <ul>
+        <li>Multiple concurrent AJAX requests</li>
+        <li>Conversion of XML to JSON format</li>
+        <li>Using a proxy to circumvent a CORS header error</li>
+        <li>Limiting API calls and Caching data to work around specific API limitations</li>
+        <li>Data correction on the front end</li>
+        <li>SEO and responsive</li>
+      </ul>
+
+      <h3>Technologies used:</h3>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>Javascript</li>
+        <li>AJAX</li>
+        <li>JQuery</li>
+        <li>Youtube Api</li>
+      </ul>
+
+
+      <div class="bgg_screenshot2"></div>
+
+
 
 
     </article>
@@ -103,15 +134,24 @@
 
 
   <!-- particles.js container -->
-  <div id="particles-js"></div>
+  <div id="particles-js">
+    <canvas class="particles-js-canvas-el" width="1011" height="2500" style="width: 100%; height: 100%;"></canvas>
+  </div>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  
+
+
+
+  <script src="./assets/javascript/bubbles.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="./assets/javascript/portolio.js" charset="utf-8"></script>
+
+
+
+
 </body>
 
-<script src='./assets/javascript/bubbles.js' charset=utf-8></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-<script src="./assets/javascript/portolio.js" charset=utf-8></script>
+
 
 </html>
 
