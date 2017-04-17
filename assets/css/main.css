@@ -23,7 +23,7 @@ nav {
   z-index: 1000;
 }
 
-ul {
+#nav ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -51,11 +51,6 @@ ul {
     background: #ff9d95;
 }
 
-a {
-    height: inherit;
-    width: inherit;
-    display: inline-block;
-}
 
 section.title_container {
     background-image: url("../images/title_blurred.png");
