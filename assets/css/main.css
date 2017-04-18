@@ -39,11 +39,9 @@ nav {
     text-decoration: none;
     color: antiquewhite;
     font-size: 1.3em;
-    height: 62px;
+    height: 100%;
     width: 100%;
-    /* padding-top: 0.5%; */
     line-height: 2;
-    /* margin-top: .5%; */
 }
 
 #nav li:hover, #nav li:focus {
@@ -121,8 +119,8 @@ h1.about_me, h2 {
     text-align: center;
     font-family: Proza Libre;
     font-weight: bold;
-    margin-top: -5%;
     padding-top: 11%;
+    margin-top: -24px;
 }
 
 .section_one {
@@ -150,22 +148,23 @@ section.main {
     margin-top: 0%;
 }
 article {
-    margin: 4em;
+    margin-left: 4em;
+    margin-right: 4em;
 }
 section.projects {
     background-color: rgba(160, 211, 228, 0.7);
     z-index: 1;
     min-height: 100%;
     position: relative;
-    margin-top: -5%;
+    /* margin-top: -6%; */
 }
 
 div#particles-js {
     z-index: 0;
-    position: absolute;
-    top: 108%;
+    position: fixed;
     width: 100%;
-    height: 3500px;
+    height: 100%;
+    top: 0;
 }
 
 .section_two{
@@ -173,30 +172,30 @@ color: #861313;
 }
 
 .img_container {
-    width: 50%;
-    height: 300px;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    height: 48vw;
+    text-align: center;
 }
 
 .bgg_screenshot1 {
   background-image: url('../images/bbg1.png');
-  width: 647px;
-  height: 370px;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-right: 23px;
-  margin-left: 15px;
-  float: left;
   margin-top: 27px;
-  /* display: inline-block; */
 }
 
 .bgg_screenshot2 {
   background-image: url('../images/lightbox.jpg');
-  height: 1200px;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
-  width: 500px;
+  width: 119em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="./assets/css/main.css">
   <!--Bubbles background css-->
   <link rel="stylesheet" type="text/css" href="./assets/css/bubbles.css">
+  <link rel="stylesheet" href="./assets/css/atom-dark.css">
+  <script src="./assets/javascript/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+
 </head>
 
 
@@ -41,65 +47,149 @@
         <h2 class="author" style="">~ Confucius</h2>
       </div>
     </header>
-
   </section>
-  <section class="main">
-    <article>
 
 
 
-      <h1 class="about_me section_one" id="About_Me">About Me</h1>
-
-      <p class="story_text">
-        Hi, I'm Julia! Thank you for visiting my page! I'm a Web Developer passionate about writing clean, efficient, and readable
-        code. I get excited about being faced with new challenges and learning how to overcome them. I'm also a classically
-        trained concert pianist,composer, arranger, teacher, accompanist. Also, I'm a huge nerd with interests: technology,
-        audio engineering, graphic design, photography, science, history, cooking, politics, video games, board games, and
-        computers. I'm equally comfortable wearing many hats (just not literally, I look terrible in some hats).
-      </p>
-      <p class="story_text">
-        The quotes above are a way of life for me. I've always held to the belief that one of the most important things is to find something that you are good at, and that you find intellectually stimulating. What I enjoy most about coding is finding innovative solutions to problems. And no matter how long I spend at a problem, It never feels as though it is work. 
-      </p>
-
-      <h1 class="about_me section_one">My Motivation</h1>
-
-      <p class="story_text">
-        I've always been that person who's friends always turn to for computer help or technical support. My love of learning new
-        things and being challenged comes from my childhood: When I was 10 years old, I was using my mom's 386 desktop when
-        it suddenly broke. Windows 3.1 wouldn't boot from dos. So I decided (somewhat foolishly) to take a screwdriver and
-        unscrew the entire computer apart.
-
-      </p>
-      <p class="story_text bottom_story_text">
-        At this time, there was no instructional manual, no technical support to call, and no internet (America Online was in it's
-        infancy). And so I sat there for hours on the floor of my bedroom with all the parts spread around me. Slowly,
-        I figured out how to put it together. And when I turned the machine on, to my (and my parents') surprise, it worked! For me, that moment when you run code and it works for the first time is incredibly satisfying and rewarding!
-      </p>
-    </article>
-  </section>
   <section class="projects" id="Projects">
     <h1 class="about_me section_two">My Projects</h1>
 
     <article class="bggapi">
       <h2>BoardgameGeek Api </h2>
+
+      <div class="img_container">
+        <img class="bgg_screenshot1" alt="BoardgameGeek Screenshot 1">
+      </div>
       <p class="story_text">
         I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games
-        on kickstarter or at the local game store that I have found through the BoardgameGeek website. I set out to make
-        a usable ui that would list the many various statistics for board games without overwhelming the user.
-        <img class="bgg_screenshot1">
+        on kickstarter or at the local game store that I have found through the <i>BoardgameGeek</i> website. As
+        my first Capstone, I set out to make a usable ui that would list the many various statistics for board games without
+        overwhelming the user.
       </p>
-     
-        
-          
-
 
       <p class="story_text bottom_story_text">
-        As the sole developer on this project, I was responsible for developing the mvp as well as the polished version. That included
-        the app architecture, styling, ajax calls, and code structure. After developing the mvp, I submitted the project
-        for peer review and made changes to features as well as bug fixes.
+        Being the sole developer on this project, I was responsible for developing the mvp (minimum viable product) in both concept
+        and execution, as well as the polished version. This included the app architecture, styling, ajax calls, and code
+        structure. After developing the mvp, I submitted the project for peer review and made changes to features as well
+        as bug fixes.
       </p>
 
-      <h3>Major challenges included: </h3>
+      <h3>Major challenges</h3>
+
+      <p class="story_text">
+        The first major challenge was circumventing a CORS error due to BoardgameGeek Api not having their CORS headers enabled.
+      </p>
+
+      <pre>
+        <code class="hljs javascript">
+         (function() {
+    var cors_api_host = // proxy for CORS here: 'corsproxy.' ;
+    var cors_api_url = 'http://' + cors_api_host + '/';
+    var slice = [].slice;
+    var origin = window.location.protocol + '//' + window.location.host;
+    var open = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function() {
+        var args = slice.call(arguments);
+        var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+        if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+            targetOrigin[1] !== cors_api_host) {
+            args[1] = cors_api_url + args[1];
+        }
+        return open.apply(this, args);
+    };
+})(); 
+        </code>
+      </pre>
+
+
+      <p class="story_text">
+        The main difficulty in working with this API was that it was XML. The data needed to be converted to JSON so that it could
+        be parsed and processed appropriately.
+      </p>
+
+      <pre>
+        <code class="hljs javascript">
+          function xmlToJson(xml) {
+	var obj = {};
+
+	if (xml.nodeType == 1) {
+		if (xml.attributes.length > 0) {
+		obj["@attributes"] = {};
+			for (var j = 0; j < xml.attributes.length; j++) {
+				var attribute = xml.attributes.item(j);
+				obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+			}
+		}
+	} else if (xml.nodeType == 3) { // text
+		obj = xml.nodeValue;
+	}
+
+	// do children
+	if (xml.hasChildNodes()) {
+		for(var i = 0; i < xml.childNodes.length; i++) {
+			var item = xml.childNodes.item(i);
+			var nodeName = item.nodeName;
+			if (typeof(obj[nodeName]) == "undefined") {
+				obj[nodeName] = xmlToJson(item);
+			} else {
+				if (typeof(obj[nodeName].push) == "undefined") {
+					var old = obj[nodeName];
+					obj[nodeName] = [];
+					obj[nodeName].push(old);
+				}
+				obj[nodeName].push(xmlToJson(item));
+			}
+		}
+	}
+	return obj;
+};
+        </code>
+      </pre>
+
+      <p class="story_text">
+        The resulting conversion caused issues with inconsistent JSON values. The solution was apply manual data correction before
+        rendering the output to the DOM.
+      </p>
+
+      <pre>
+        <code class="hljs javascript">
+            // If the key 'boardgamemechanics' exists in the JSON (as an object),
+  // Apply one set of conversions.
+  // If not, treat the key as an array.
+  if ('boardgamemechanics' in BggData.singleSearch) {
+    if (Array.isArray(BggData.singleSearch.boardgamemechanics)) {
+      var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics.map(function(element) {
+        return `<li>${element}</li>`;
+      }).join().replace(/,/g, '');
+
+    } else if (!('boardgamemechanics' in BggData.singleSearch)) {
+      return;
+
+    } else {
+      var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics;
+
+    }
+  } else {
+    // convert board game mechanics to a list
+    if (Array.isArray(BggData.mainData[index].boardgamemechanics)) {
+      var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics.map(function(element) {
+        return `<li>${element}</li>`;
+      }).join().replace(/,/g, '');
+
+    } else if (!('boardgamemechanics' in BggData.mainData[index])) {
+      return;
+
+    } else {
+      var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics;
+    }
+
+  }
+
+        </code>
+      </pre>
+
+
+
       <ul>
         <li>Multiple concurrent AJAX requests</li>
         <li>Conversion of XML to JSON format</li>
@@ -124,7 +214,99 @@
 
 
 
+    </article>
+    <article class="ff-quiz">
 
+      <h2>Final Fantasy Quiz</h2>
+      <p class="story_text">
+        Growing up, I was a huge fan of rpgs, and in particular the creations of then Squaresoft (now SquareEnix). Particularly I
+        loved the stories with incredibly well developed characters, mature themes, and strategic gameplay. If your opinion
+        is that Final Fantasy VII is the best Final Fantasy, I will argue with you (it was good but the depth of Final Fantasy
+        VI was unmatched)!
+      </p>
+
+      <p class="story_text">
+        With this project, my goal was to recreate the look and feel of the classic final fantasy menu <img class="ff-quiz_screenshot_2"
+          alt="Final Fantasy quiz screenshot 2"> and test user's knowledge about classic games in the series. I wanted this
+        project to be a memorable experience, and with that in mind I wanted the user to be able to select a character.
+        <img
+          class="ff-quiz_screenshot_2" alt="Final Fantasy quiz screeenshot 2">
+      </p>
+      <p class="story_text">
+        The beginning of the project involved writing out the user experience, and some notes about the inner logic of the application.
+        The goal was to mock up the html of the landing page and main quiz page and wireframe basic styling. As my work on
+        the project progressed, I worked on editing character sprites in Adobe Photoshop and sound effects in Adobe Audition.
+      </p>
+      <p class="story_text">
+        There were many challenges in this project including asynchronous javascript, custom radio button logic, appropriate use
+        of event listeners, and implementation of styling and the interface.
+
+      </p>
+
+      <pre>
+        <code class="javascript hljs">
+          function testSelectedAnswer() {
+  //
+
+    var selectedAnswer = $("[class*='green-selected']").text().replace(/^.../, "");
+    var rightAnswer = quizState.questionsAndAnswers[quizState.currentQuestion-1].correctAnswer;
+
+        if (selectedAnswer === rightAnswer) answerIsCorrect();
+        else if (selectedAnswer !== rightAnswer) answerIsWrong();
+
+        var selectionClasses = quizState.answerClasses;
+        var answerArray = quizState.questionsAndAnswers[quizState.currentQuestion-1].answers;
+        answerArray.forEach(function(element, index){
+          if (element === rightAnswer) {
+            $(selectionClasses[index]).addClass('green-selected');
+          } else {
+            $(selectionClasses[index]).addClass('red-selected');
+
+          };
+
+        });
+  }
+        </code>
+      </pre>
+
+    </article>
+  </section>
+
+
+
+  <section class="main">
+    <article>
+      <h1 class="about_me section_one" id="About_Me">About Me</h1>
+
+      <p class="story_text">
+        Hi, I'm Julia! Thank you for visiting my page! I'm a Web Developer passionate about writing clean, efficient, and readable
+        code. I get excited about being faced with new challenges and learning how to overcome them. I'm also a classically
+        trained concert pianist,composer, arranger, teacher, accompanist. Also, I'm a huge nerd with interests: technology,
+        audio engineering, graphic design, photography, science, history, cooking, politics, video games, board games, and
+        computers. I'm equally comfortable wearing many hats (just not literally, I look terrible in some hats).
+      </p>
+      <p class="story_text">
+        The quotes above are a way of life for me. I've always held to the belief that one of the most important things is to find
+        something that you are good at, and that you find intellectually stimulating. What I enjoy most about coding is finding
+        innovative solutions to problems. And no matter how long I spend at a problem, It never feels as though it is work.
+      </p>
+
+      <h1 class="about_me section_one">My Motivation</h1>
+
+      <p class="story_text">
+        I've always been that person who's friends always turn to for computer help or technical support. My love of learning new
+        things and being challenged comes from my childhood: When I was 10 years old, I was using my mom's 386 desktop when
+        it suddenly broke. Windows 3.1 wouldn't boot from dos. So I decided (somewhat foolishly) to take a screwdriver and
+        unscrew the entire computer apart.
+
+      </p>
+      <p class="story_text bottom_story_text">
+        At this time, there was no instruction manual, no technical support to call, and no internet (America Online was in it's
+        infancy). And so I sat there for hours on the floor of my bedroom with all the computer parts spread around me. After
+        several hours, I figured out what each part did, and how to put it together. And when I turned the machine on, to
+        my (and my parents') surprise, it worked! For me, that moment when you run code and it works for the first time is
+        incredibly satisfying and rewarding!
+      </p>
     </article>
   </section>
 
@@ -145,6 +327,7 @@
 
 
 
+
 </body>
 
 
@@ -154,3 +337,16 @@
 <!--#E44242-->
 <!--#78FDBE-->
 <!--#1EC4FF-->
+
+<!-->Julie is an amazingly dedicated full-stack developer. Not one to shy from a challenge, she puts all her effort towards solving
+problems and mastering new skills. Her work ethic, technical skill, and tenacity would be an asset to any team. Julie readily
+shares her experience, and is always read to help her peers with thoughtful answers to their questions.-->
+
+<!--Ben Boyle-->
+
+
+
+<!--For over a decade in this industry and work done with hundreds of people I can tell that Julie is talent and passion wise, on the top of my list. What most amazed me about Julie wasn't the fact she was picking up some complex subjects with ease, it was the fact that she really wanted to amaze me with whatever she was doing, always gave her best and never complained about the effort or how much time she put in, she realized that success doesn't happen without hard work and she always stood up to the challenge. I would work with Julie any time and I believe her energy, character and commitment are assets which any company would crave for.-->
+
+
+<!--Alexandar Grbic-->
