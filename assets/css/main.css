@@ -79,6 +79,12 @@ section.title_container {
     background-repeat: no-repeat;
 }
 
+h1.my_name {
+    margin: 0;
+    color: brown;
+    font-weight: 100;
+}
+
 
 .image_container {
   height: 100%;
