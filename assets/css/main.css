@@ -66,7 +66,10 @@ i {
 
 i:hover{
     filter: brightness(115%);
-    font-size: 1.25em;
+    font-size: 1.25em; 
+    color: #861313;
+    transition: all ease-in-out 500ms;
+   
 }
 
 
@@ -121,21 +124,32 @@ h1 {
   font-size: 3em;
 }
 
-h2 {
-  font-size: 2em;
-}
-
 h1.quote {
     margin-bottom: 0px;
 }
 
-h1.about_me, h2 {
+h1 {
     text-align: center;
     font-family: Proza Libre;
     font-weight: bold;
     padding-top: 11%;
+    margin-bottom: 8%;
     margin-top: -24px;
+    font-size: 5.5em;
 }
+
+h2 {
+  font-size: 3.2em;
+  text-align: center;
+  font-family: Proza Libre;
+}
+
+h3 {
+    text-align: center;
+    font-family: Proza Libre;
+    font-size: 2.3em;
+}
+
 
 .section_one {
   color: rgba(160, 211, 228, 0.7); 
@@ -194,7 +208,7 @@ img {
 
 .img_container {
     width: 100%;
-    height: 48vw;
+    height: auto;
     text-align: center;
 }
 
@@ -213,7 +227,7 @@ img {
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
-  width: 119em;
+  width: 81%;
   display: block;
   margin-left: auto;
   margin-right: auto;

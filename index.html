@@ -52,7 +52,7 @@
 
 
   <section class="projects" id="Projects">
-    <h1 class="about_me section_two">My Projects</h1>
+    <h1 class="about_me section_two">Projects</h1>
 
     <article class="bggapi">
       <h2>BoardgameGeek Api </h2>
@@ -61,9 +61,7 @@
         <img class="bgg_screenshot1" src="./assets/images/bbg1.png" alt="BoardgameGeek Screenshot 1">
       </div>
       <p class="story_text">
-        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games
-        on kickstarter or at the local game store that I have found through the <a href="http://www.boardgamegeek.com"
-          <i="">BoardgameGeek</a> website. As my first Capstone, I set out to make a usable ui that would list the many various
+        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the <a href="http://www.boardgamegeek.com"><i>BoardgameGeek</i></a> website. As my first Capstone, I set out to make a usable ui that would list the many various
         statistics for board games without overwhelming the user.
       </p>
       <p class="story_text bottom_story_text">
@@ -102,8 +100,7 @@
 
 
       <p class="story_text">
-        The main difficulty in working with this API was that it was XML. The data needed to be converted to JSON so that it could
-        be parsed and processed appropriately.
+        The BoardgameGeek Api being in XML format created significant challenges. As a result, the data needed to be converted to JSON so that it could be parsed and processed appropriately.
       </p>
 
       <pre>
@@ -187,7 +184,13 @@
         </code>
       </pre>
 
+    <p class="story_text">
+      In terms of site layout, in order to display the detailed information for each board game result, the JSON data was first cached to avoid multiple API calls due to API limitations. A modal/lightbox was used to display the cached data to provide a responsive and informative user experience.
+    </p>
 
+    <div class=img_container>
+    <img class="bgg_screenshot2" alt="BoardgameGeek API modal/lightbox" src="./assets/images/lightbox.jpg">
+  </div>
 
       <ul>
         <li>Multiple concurrent AJAX requests</li>
@@ -209,8 +212,7 @@
       </ul>
 
 
-      <img class="bgg_screenshot2"></img>
-
+  
 
 
     </article>
