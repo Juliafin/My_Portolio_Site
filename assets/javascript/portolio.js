@@ -19,18 +19,11 @@ var portfolioState = {
 
 function renderQuote() {
 
-    if (portfolioState.initial ===0) {
-
-
-    }
   setTimeout(function() {
     
 
     let quoteHTML = `${portfolioState.quotes[portfolioState.currentQuote].quote}`;
     let authorHTML = `${portfolioState.quotes[portfolioState.currentQuote].author}`;
-
-
-
 
     if (portfolioState.currentQuote === 2) {
       // write quotes to state then reset quote counter
@@ -49,22 +42,12 @@ function renderQuote() {
       $('.author').html(authorHTML);
       $('.quote, .author').fadeIn(1200);
       });
-      
-      
-
-
     }
-
-    renderQuote()
+    renderQuote();
   }, 11000);
-
 }
 
-
 ($(document).ready(function () {
-
   renderQuote();
-
-
 }));
 
