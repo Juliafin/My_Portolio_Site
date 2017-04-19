@@ -62,21 +62,28 @@
         <img class="bgg_screenshot1" src="./assets/images/bbg1.png" alt="BoardgameGeek Screenshot 1">
       </div>
       <p class="story_text">
-        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the <a href="http://www.boardgamegeek.com"><i>BoardgameGeek</i></a> website. As my first Capstone, I set out to make a usable ui that would list the many various
-        statistics for board games without overwhelming the user. A fun bonus: I shot and edited the title and 404 images with my trusty nikon d90.
+        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games
+        on kickstarter or at the local game store that I have found through the <a href="http://www.boardgamegeek.com"><i>BoardgameGeek</i></a>        website. As my first Capstone, I set out to make a usable ui that would list the many various statistics for board
+        games without overwhelming the user. A fun bonus: I shot and edited the title and 404 images with my trusty nikon
+        d90.
       </p>
       <p class="story_text bottom_story_text">
         Being the sole developer on this project, I was responsible for developing the mvp (minimum viable product) in both concept
-        and execution, as well as the polished version. This included the app architecture, styling, ajax calls, and code structure. After developing the mvp, I submitted the project for peer review and made changes to features as well as bug fixes. 
+        and execution, as well as the polished version. This included the app architecture, styling, ajax calls, and code
+        structure. After developing the mvp, I submitted the project for peer review and made changes to features as well
+        as bug fixes.
       </p>
 
-      <h3>Major challenges</h3>
+      <button class="accordion">Click here for Project Story</button>
+      <div class="panel">
 
-      <p class="story_text">
-        The first major challenge was circumventing a CORS error due to BoardgameGeek Api not having CORS headers enabled.
-      </p>
+        <h3>Major challenges</h3>
 
-      <pre>
+        <p class="story_text">
+          The first major challenge was circumventing a CORS error due to BoardgameGeek Api not having CORS headers enabled.
+        </p>
+
+        <pre>
         <code class="hljs javascript">
          (function() {
     var cors_api_host = // proxy for CORS here: 'corsproxy.' ;
@@ -98,11 +105,12 @@
       </pre>
 
 
-      <p class="story_text">
-        The BoardgameGeek Api being in XML format created significant challenges. As a result, the data needed to be converted to JSON so that it could be parsed and processed appropriately.
-      </p>
+        <p class="story_text">
+          The BoardgameGeek Api being in XML format created significant challenges. As a result, the data needed to be converted to
+          JSON so that it could be parsed and processed appropriately.
+        </p>
 
-      <pre>
+        <pre>
         <code class="hljs javascript">
           function xmlToJson(xml) {
 	var obj = {};
@@ -141,12 +149,12 @@
         </code>
       </pre>
 
-      <p class="story_text">
-        The resulting conversion caused issues with inconsistent JSON values. The solution was apply manual data correction before
-        rendering the output to the DOM.
-      </p>
+        <p class="story_text">
+          The resulting conversion caused issues with inconsistent JSON values. The solution was apply manual data correction before
+          rendering the output to the DOM.
+        </p>
 
-      <pre>
+        <pre>
         <code class="hljs javascript">
             // If the key 'boardgamemechanics' exists in the JSON (as an object),
   // Apply one set of conversions.
@@ -183,53 +191,58 @@
         </code>
       </pre>
 
-    <p class="story_text">
-      In terms of site layout, in order to display the detailed information for each board game result, the JSON data was first cached to avoid multiple API calls due to API limitations. A modal/lightbox was used to display the cached data to provide a responsive and informative user experience.
-    </p>
+        <p class="story_text">
+          In terms of site layout, in order to display the detailed information for each board game result, the JSON data was first
+          cached to avoid multiple API calls due to API limitations. A modal/lightbox was used to display the cached data
+          to provide a responsive and informative user experience.
+        </p>
 
-    <div class=img_container>
-    <img class="bgg_screenshot2" alt="BoardgameGeek API modal/lightbox" src="./assets/images/lightbox.jpg">
-  </div>
+        <div class=img_container>
+          <img class="bgg_screenshot2" alt="BoardgameGeek API modal/lightbox" src="./assets/images/lightbox.jpg">
+        </div>
+
+      </div>
+
 
       <h3>Technologies used:</h3>
 
       <div class="row">
         <div class="col-4">
           <div class="img_container">
-            <img class="icon" src="./assets/images/html-5-icon.png" alt=""> 
+            <img class="icon" src="./assets/images/html-5-icon.png" alt="">
           </div>
         </div>
         <div class="col-4">
           <div class="img_container">
-            <img class="icon" src="./assets/images/css-3-icon.png" alt=""> 
+            <img class="icon" src="./assets/images/css-3-icon.png" alt="">
           </div>
         </div>
         <div class="col-4">
           <div class="img_container">
-            <img class="icon" src="./assets/images/javascript-icon.png" alt=""> 
+            <img class="icon" src="./assets/images/javascript-icon.png" alt="">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
           <div class="img_container">
-            <img class="icon" src="./assets/images/icon_jquery.jpg" alt=""> 
+            <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
           </div>
         </div>
         <div class="col-4">
           <div class="img_container">
-            <img class="icon" src="./assets/images/YouTube-logo-full_color.png" alt=""> 
+            <img class="icon" src="./assets/images/YouTube-logo-full_color.png" alt="">
           </div>
         </div>
         <div class="col-4">
           <div class="img_container">
-            <img class="icon" src="./assets/images/ajax-logo.jpg" alt=""> 
+            <img class="icon" src="./assets/images/ajax-logo.jpg" alt="">
           </div>
         </div>
       </div>
 
 
-  
+
     </article>
     <article class="ff-quiz">
 
@@ -241,15 +254,16 @@
         VI was unmatched)!
       </p>
 
-       <div class="img_container">
-          <img class="ff-quiz_screenshot_1" src="./assets/images/ff_quiz_1.jpg" alt="Final Fantasy quiz screenshot 1">
-        </div>
+      <div class="img_container">
+        <img class="ff-quiz_screenshot_1" src="./assets/images/ff_quiz_1.jpg" alt="Final Fantasy quiz screenshot 1">
+      </div>
 
       <p class="story_text">
-        With this project, my goal was to recreate the look and feel of the classic final fantasy menu and test user's knowledge about classic games in the series. I wanted this project to be a memorable experience, and with
-        that in mind I wanted the user to be able to select a character.
+        With this project, my goal was to recreate the look and feel of the classic final fantasy menu and test user's knowledge
+        about classic games in the series. I wanted this project to be a memorable experience, and with that in mind I wanted
+        the user to be able to select a character.
         <div class="img_container">
-        <img class="ff-quiz_screenshot_2" src="./assets/images/ff_quiz_2.jpg" alt="Final Fantasy quiz screeenshot 2">
+          <img class="ff-quiz_screenshot_2" src="./assets/images/ff_quiz_2.jpg" alt="Final Fantasy quiz screeenshot 2">
         </div>
       </p>
       <p class="story_text">
@@ -258,10 +272,12 @@
         the project progressed, I worked on editing character sprites in Adobe Photoshop and sound effects in Adobe Audition.
       </p>
       <p class="story_text">
-        Some of the challenges this project included were  asynchronous javascript (implemented using the JQuery library), custom radio button logic, appropriate use of event listeners, and implementation of styling and the interface. Application behavior was managed with a virtual state layer.
+        Some of the challenges this project included were asynchronous javascript (implemented using the JQuery library), custom
+        radio button logic, appropriate use of event listeners, and implementation of styling and the interface. Application
+        behavior was managed with a virtual state layer.
       </p>
 
-      
+
       <pre>
         <code class="javascript hljs">
           
@@ -327,22 +343,22 @@ var quizState = {
       <div class="row">
         <div class="col-3">
           <div class="img_container">
-            <img class="icon" src="./assets/images/html-5-icon.png" alt=""> 
+            <img class="icon" src="./assets/images/html-5-icon.png" alt="">
           </div>
         </div>
         <div class="col-3">
           <div class="img_container">
-            <img class="icon" src="./assets/images/css-3-icon.png" alt=""> 
+            <img class="icon" src="./assets/images/css-3-icon.png" alt="">
           </div>
         </div>
         <div class="col-3">
           <div class="img_container">
-            <img class="icon" src="./assets/images/javascript-icon.png" alt=""> 
+            <img class="icon" src="./assets/images/javascript-icon.png" alt="">
           </div>
         </div>
         <div class="col-3">
           <div class="img_container">
-            <img class="icon" src="./assets/images/icon_jquery.jpg" alt=""> 
+            <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
           </div>
         </div>
       </div>
@@ -351,34 +367,124 @@ var quizState = {
 
     </article>
     <article class="tropical_vscode_theme">
-      
+
       <h2>Visual Studio Code - Tropical theme </h2>
 
       <p class="story_text">
-        As the kind of person who is always interested in improving my workflow, I'm always refining my development environment, tweaking the editor I use, and learning new shortcuts. After using different IDE/text editors including IntelliJ, Notepad++, Sublime Text 3, and Atom, I settled on my new favorite editor, Visual Studio Code.  
+        As the kind of person who is always interested in improving my workflow, I'm always refining my development environment,
+        tweaking the editor I use, and learning new shortcuts. After using different IDE/text editors including IntelliJ,
+        Notepad++, Sublime Text 3, and Atom, I settled on my new favorite editor, Visual Studio Code.
       </p>
 
       <p class="story_text">
-        After spending a significant amount of time configuring the editor, I could not settle on a theme, so I decided to publish my own (available from the VS Code extension marketplace under the name "tropical"). Given the amount of time I spend coding, using a theme I enjoyed was not just aesthetically important; it improved my workflow by allowing me to parse code easier and faster.
-        </p>
+        After spending a significant amount of time configuring the editor, I could not settle on a theme, so I decided to publish
+        my own (available from the VS Code extension marketplace under the name "tropical"). Given the amount of time I spend
+        coding, using a theme I enjoyed was not just aesthetically important; it improved my workflow by allowing me to parse
+        code easier and faster.
+      </p>
 
-        <p class="story_text">
-          The theme I created was intended to have high contrast and varied colors for optimal visibilty.
-        </p>
-        
-        <div class="img_container">
-          <img src="./assets/images/Javascipt_screenshot.png" alt="VsCode Tropical Theme">
-        </div>
+      <p class="story_text">
+        The theme I created was intended to have high contrast and varied colors for optimal visibilty.
+      </p>
+
+      <div class="img_container">
+        <img src="./assets/images/Javascipt_screenshot.png" alt="VsCode Tropical Theme">
+      </div>
 
     </article>
     <article class="text_analyzer">
 
       <h2>Text Analyzer</h2>
 
-      <p class=""></p>
+      <p class="story_text">
+        The text analyzer web app was my first foray into javascript. With every project I've worked on, I've pushed myself to learn
+        new tools and libraries to be a better developer. With this app, I worked on writing clean and concise code. I also
+        included many more analytics than required and applied some newly learned RegExp in my code.
+      </p>
+
+      <pre>
+        <code class="hljs javascript">
+
+        function arraySplitToSent(text) { // textToLineArray()
+  var standardSentEx = new RegExp('/[\.!\?"] /');
+  var sentenOut = [];
+  if (standardSentEx.test(text) === true) {
+    sentenOut = text.split(standardSent);
+    return sentenOut;
+  } else {
+    sentenOut = text.split("\n");
+    return sentenOut;
+  }
+}
+
+        </code>
+      </pre>
+
+      <pre>
+        <code class="hljs javascript">
+          // return true if submitted text is a number AND has no white space
+function hasNumberNoSpc(text) {
+
+  var regNum = new RegExp('[0-9]+'); // this matches the string "a9"
+  var regNoSpace = new RegExp('^[^\s]+$');
+
+  if ((regNum.test(text)) === true && (regNoSpace.test(text) === true)) {
+    return true;
+  }
+
+  return false;
+}
+
+// "5".LowerCase = 5, "%".toUpperCase = %
+// Filters characters that have the same upper and lower case results
+// removes special characters (but leaves spaces) (not including numbers from string)
+function removeSpecial(text) { // removeSpecialChars
+  // return text.replace(/[^a-zA-Z0-9\s]/g, "");
+
+  if (text) {
+    var lower = text.toLowerCase();
+    var upper = text.toUpperCase();
+    var result = "";
+    for (var i = 0; i < lower.length; ++i) {
+      if (hasNumberNoSpc(text[i]) || (lower[i] != upper[i]) || (lower[i].trim() === '')) {
+        result += text[i];
+      }
+    }
+    console.log(result);
+    return result;
+  }
+  return '';
+}
+
+        </code>
+      </pre>
+
+      <h3>Technologies used:</h3>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/html-5-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/css-3-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/javascript-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
+          </div>
+        </div>
+      </div>
 
     </article>
-
 
   </section>
 

@@ -47,7 +47,34 @@ function renderQuote() {
   }, 11000);
 }
 
+function accordionListener () {
+  var allPanels = $('div.panel').hide();
+
+  $('.accordion').click(function (event) {
+    
+
+    if($(this).next().css('display','none')) {
+
+      $(this).next().slideDown();
+      return
+    };
+    if ($(this).next().css('display', 'block')) {
+    $(this).next().slideUp();
+    return;
+    }
+
+  });
+};
+
+
+
+
+
+
+
+
 ($(document).ready(function () {
   renderQuote();
+  accordionListener();
 }));
 
