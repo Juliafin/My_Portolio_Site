@@ -23,6 +23,11 @@ nav {
   z-index: 1000;
 }
 
+#nav li.selected {
+  background: #6cd8e7;
+
+}
+
 #nav ul {
   list-style: none;
   display: flex;
@@ -47,11 +52,12 @@ nav {
 }
 
 #nav li:hover, #nav a:hover, #nav li:focus,
-button.accordion:hover, button.accordion:focus {
+button.accordion:hover {
     filter: brightness(115%);
     background: #ff9d95;
     color: #290303;
     transition: all ease-in-out 500ms;
+    max
     
 }
 
@@ -267,4 +273,24 @@ button.accordion {
     border-bottom-right-radius: 10px;
     font-family: Proza Libre;
     font-size: 2em;
+    margin-top: 7%
 }
+
+button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    font-size: 1em;
+    color:aliceblue;
+}
+
+button.minus:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    color: #9a866f
+}
+
+.panel {
+  display: none;
+} 
