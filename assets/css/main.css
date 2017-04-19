@@ -1332,11 +1332,11 @@ blockquote:after {
   }
 
   code.hljs {
-    font-size: .7em;
+    font-size: .5em;
   }
 
   code span {
-    font-size: .7em;
+    font-size: .8em;
   }
 
   blockquote{
