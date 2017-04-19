@@ -77,10 +77,12 @@ function navbarActiveListener () {
   accordionListener();
   navbarActiveListener();
 
-  (setTimeout(function() {
-  $('div#particles-js').css('opacity', '1');
+  
+  $('div#particles-js').animate({
+    opacity: 1
+  },500);
     
-  }, 500))();
+ 
 
 }));
 
