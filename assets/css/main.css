@@ -1305,6 +1305,16 @@ blockquote:after {
 }
 
 @media only screen and (max-device-width: 412px) and (max-device-height: 732px) {
+   h1.my_name{
+     font-size:2em;
+     padding-top:16%
+   }
+
+   div.quote_container{
+     font-size: .75em;
+     line-height: 1.9em;
+   }
+
   section.title_container {
     min-height: 100px;
     max-height: 50%;
