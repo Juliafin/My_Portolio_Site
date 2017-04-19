@@ -80,7 +80,7 @@ function navbarActiveListener () {
   
   $('div#particles-js').animate({
     opacity: 1
-  },500);
+  },1000);
     
  
 
