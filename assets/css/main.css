@@ -1210,9 +1210,10 @@ blockquote:after {
 @media screen and (max-width: 330px) {
   h1.my_name {
     font-size: 1.2em;
+    padding-top: 10%;
   }
   .quote_container {
-    font-size: .4em;
+    font-size: .3em;
   }
   h1 {
     font-size: 1.2em;
@@ -1297,4 +1298,26 @@ blockquote:after {
   blockquote i {
     font-size: 1em;
   }
+}
+
+@media only screen and (max-device-width: 412px) and (max-device-height: 732px) {
+   
+   section.title_container{
+     min-height:100px;
+     max-height:30%;
+   }
+    
+  .image_container{
+    height: 50px;
+  }
+
+  .quote_container{
+    100px;
+  }
+
+  .nav {
+    height:25px;
+  }
+
+
 }
