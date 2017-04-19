@@ -1317,7 +1317,7 @@ blockquote:after {
 
   section.title_container {
     min-height: 100px;
-    max-height: 50%;
+    max-height: 60%;
   }
 
   section.projects {
@@ -1335,7 +1335,7 @@ blockquote:after {
   }
 
   .image_container {
-    height: 50px;
+    height: 100px;
   }
   .quote_container {
     100px;
