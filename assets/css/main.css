@@ -319,7 +319,7 @@ button.minus:after {
     padding: 0 6%;
 }
 
-section#References {
+section.references {
   z-index: 100;
   min-height: 100%;
   width: 100%;
