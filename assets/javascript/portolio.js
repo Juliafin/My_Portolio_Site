@@ -51,7 +51,7 @@ function accordionListener () {
   $('.accordion').click(function (event) {
     event.preventDefault();
 
-    $(this).next().slideToggle('slow');
+    $(this).next().slideToggle('1600');
     $(this).toggleClass('minus');
   });
 };
