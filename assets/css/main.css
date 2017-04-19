@@ -1315,9 +1315,33 @@ blockquote:after {
     100px;
   }
 
-  .nav {
-    height:25px;
+  h1 {
+    padding-top: 35%;
+  }
+  
+  nav {
+    height:35px;
   }
 
+  #nav ul {
+    font-size:1.3em;
+  }
+
+  p.story_text{
+    font-size: .9em;
+  }
+
+  code.hljs {
+    font-size: .7em;
+  }
+
+  code span {
+    font-size: .7em;
+  }
+
+  blockquote{
+    font-size: .7em;
+    width: 100%
+  }
 
 }
