@@ -76,7 +76,11 @@ function navbarActiveListener () {
   renderQuote();
   accordionListener();
   navbarActiveListener();
+
+  (setTimeout(function() {
   $('div#particles-js').css('opacity', '1');
+    
+  }, 300))();
 
 }));
 
