@@ -100,7 +100,7 @@ i:hover,  p.bottom_story_text a:hover {
 }
 
 section.title_container {
-  background-image: url("../images/title_blurred.png");
+  background-image: url("../images/title_blurred.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -255,7 +255,6 @@ img {
 }
 
 .bgg_screenshot1 {
-  background-image: url('../images/bbg1.png');
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
