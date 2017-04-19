@@ -1436,3 +1436,118 @@ blockquote:after {
 
 }
 
+@media screen and (max-width: 330px) {
+
+  h1.my_name {
+    font-size:1.2em;
+  }
+
+  .quote_container{
+    font-size: .4em;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  h2{
+    font-size: .9em;
+    margin-bottom: 5%;
+  }
+
+  h3{
+    font-size: .7em;
+  }
+
+  #nav li {
+    font-size: .4em;
+  }
+  
+  #nav a, #nav img {
+    margin-top: 0;
+  }
+
+  #nav img {
+    margin-top: 0%;
+    height: 6%;
+    width: 13%
+  }
+
+  article{
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  p.story_text {
+    font-size: .4em;
+    margin-bottom:0;
+    margin-top: 6px;
+    
+  }
+
+  p i{
+    font-size: .5em;
+    margin-left: 25%;
+    margin-right: 4%;
+  }
+
+  button.accordion {
+    font-size: .5em;
+    height: 20px;
+  }
+
+  img.icon {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 1%;
+    padding-bottom: 1%    
+  }
+
+  .img_container {
+    height: auto;
+  }
+  
+  img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  code {
+    font-size: 1.2vw;
+  }
+
+  code.hljs {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  code span {
+    font-size: 1.2vw;
+  }
+
+  div.reference_quote {
+    width: 100%;
+
+  }
+  blockquote {
+    font-size: .4em;
+    line-height: 1.5em;
+    width: 87%;
+    padding: 0;
+    margin-left:auto;
+    margin-right:auto;
+
+  }
+
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+
+  blockquote i {
+    font-size: 1em;
+  }
+
+}
+
+
