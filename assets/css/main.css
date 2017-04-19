@@ -89,9 +89,9 @@ i {
 
 .reference_quote i:hover {
   filter: brightness(115%);
-  font-size: 1.25em;
+  font-size: 1.15em;
   color: #861313;
-  transition: all ease-in-out 300ms;
+  transition: all ease-in-out 600ms;
 }
 
 i:hover {
@@ -346,12 +346,12 @@ blockquote {
 }
 
 blockquote:before {
-  content: "\93";
+  content: "\201c";
   font-size: 2em;
 }
 
 blockquote:after {
-  content: "\94";
+  content: "\201d";
   font-size: 2em;
 }
 
