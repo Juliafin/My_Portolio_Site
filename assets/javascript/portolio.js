@@ -76,7 +76,7 @@ function navbarActiveListener () {
   renderQuote();
   accordionListener();
   navbarActiveListener();
-  $('div#particles-js').css('display', 'block');
+  $('div#particles-js').css('opacity', '1');
 
 }));
 

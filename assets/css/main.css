@@ -6,7 +6,7 @@
 }
 
 div#particles-js {
-  /*display: none;*/
+  opacity: 0
 }
 
 html {
