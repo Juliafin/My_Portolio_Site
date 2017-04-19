@@ -87,14 +87,14 @@ i {
   font-size: 1.2em;
 }
 
-.reference_quote i:hover, p.bottom_story_text a:hover {
+.reference_quote i:hover {
   filter: brightness(115%);
   font-size: 1.15em;
   color: #861313;
   transition: all ease-in-out 600ms;
 }
 
-i:hover {
+i:hover,  p.bottom_story_text a:hover {
   color: #861313;
   transition: all ease-in-out 300ms;
 }
