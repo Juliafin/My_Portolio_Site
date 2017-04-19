@@ -90,10 +90,9 @@ i {
   transition: all ease-in-out 300ms;
 }
 
-i:hover{
+i:hover {
   color: #861313;
   transition: all ease-in-out 300ms;
-  
 }
 
 section.title_container {
@@ -1301,47 +1300,36 @@ blockquote:after {
 }
 
 @media only screen and (max-device-width: 412px) and (max-device-height: 732px) {
-   
-   section.title_container{
-     min-height:100px;
-     max-height:50%;
-   }
-    
-  .image_container{
+  section.title_container {
+    min-height: 100px;
+    max-height: 50%;
+  }
+  .image_container {
     height: 50px;
   }
-
-  .quote_container{
+  .quote_container {
     100px;
   }
-
   h1 {
     padding-top: 35%;
   }
-  
   nav {
-    height:35px;
+    height: 35px;
   }
-
   #nav ul {
-    font-size:1.3em;
+    font-size: 1.3em;
   }
-
-  p.story_text{
+  p.story_text {
     font-size: .9em;
   }
-
   code.hljs {
     font-size: .5em;
   }
-
   code span {
     font-size: .8em;
   }
-
-  blockquote{
+  blockquote {
     font-size: .7em;
     width: 100%
   }
-
 }
