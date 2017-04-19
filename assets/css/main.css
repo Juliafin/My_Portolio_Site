@@ -294,3 +294,41 @@ button.minus:after {
 .panel {
   display: none;
 } 
+
+section#References {
+    z-index: 100;
+    min-height: 100%;
+    width: 100%;
+    background-color: rgba(220, 220, 148, 0.72);
+    position: relative;
+    border-top: #40ab87 2px solid;
+    padding-bottom: 15%;
+}
+
+.reference_quote {
+    width: 74%;
+    background: rgba(160, 211, 228, 0.7);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 36px;
+    color: antiquewhite;
+    line-height: 1.8em;
+    text-indent: 5%;
+    font-style: italic;
+    margin-bottom: 10%;
+}
+
+blockquote {
+    font-size: 1.2em;
+}
+
+blockquote:before {
+    content: "\93";
+    font-size: 2em;
+}
+
+blockquote:after {
+    content: "\94";font-size: 2em;
+}
