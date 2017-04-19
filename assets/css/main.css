@@ -207,7 +207,7 @@ p.bottom_story_text {
 
 section.main {
   background-color: rgba(178, 125, 140, 0.71);
-  border-top: #5b9f9f 1px solid;
+  border-top: #5b9f9f 2px solid;
   z-index: 100;
   position: relative;
   margin-top: 0%;
@@ -223,7 +223,7 @@ section.projects {
   z-index: 1;
   min-height: 100%;
   position: relative;
-  /* margin-top: -6%; */
+  border-top: #5b9f9f 2px solid;
 }
 
 div#particles-js {

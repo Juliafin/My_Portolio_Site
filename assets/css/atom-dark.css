@@ -23,6 +23,7 @@ hue-6-2: #e6c07b
   background: #282c34;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  font-family: monospace;
 }
 
 .hljs-comment,
