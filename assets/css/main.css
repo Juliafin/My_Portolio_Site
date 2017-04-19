@@ -315,9 +315,9 @@ button.minus:after {
 }
 
 .panel {
-  display: none;
-  background: rgba(115, 170, 218, 0.28);
-}
+    display: none;
+    background: rgba(22, 67, 107, 0.3);
+    padding: 0 6%;
 
 section#References {
   z-index: 100;
