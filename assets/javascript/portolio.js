@@ -76,5 +76,7 @@ function navbarActiveListener () {
   renderQuote();
   accordionListener();
   navbarActiveListener();
+  $('div#particles-js').css('display', 'block');
+
 }));
 
