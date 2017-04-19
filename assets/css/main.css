@@ -927,6 +927,11 @@ blockquote:after {
   .quote_container {
     font-size: 1em;
   }
+  
+  section.projects {
+   background-color: rgb(110, 159, 175)
+  }
+
   h1 {
     font-size: 2.5em;
   }
