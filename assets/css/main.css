@@ -317,6 +317,7 @@ button.minus:after {
     display: none;
     background: rgba(22, 67, 107, 0.3);
     padding: 0 6%;
+}
 
 section#References {
   z-index: 100;
@@ -717,7 +718,7 @@ blockquote:after {
     font-size: 1em;
   }
   blockquote i {
-    font-size: 1em
+    font-size: 1;
   }
 }
 
