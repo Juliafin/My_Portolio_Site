@@ -927,10 +927,6 @@ blockquote:after {
   .quote_container {
     font-size: 1em;
   }
-  
-  section.projects {
-   background-color: rgb(110, 159, 175)
-  }
 
   h1 {
     font-size: 2.5em;
@@ -1313,6 +1309,17 @@ blockquote:after {
     min-height: 100px;
     max-height: 50%;
   }
+
+  section.projects {
+   background-color: rgb(110, 159, 175)
+  }
+
+  article{
+    width: 75%;
+    text-align:center;
+    margin-left:12%;
+  }
+
   .image_container {
     height: 50px;
   }
@@ -1340,5 +1347,9 @@ blockquote:after {
   blockquote {
     font-size: .7em;
     width: 100%
+  }
+  div.reference_quote {
+    width: 100%;
+    padding: 19px;
   }
 }
