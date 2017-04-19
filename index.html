@@ -258,10 +258,43 @@
         the project progressed, I worked on editing character sprites in Adobe Photoshop and sound effects in Adobe Audition.
       </p>
       <p class="story_text">
-        There were many challenges in this project including asynchronous javascript, custom radio button logic, appropriate use
-        of event listeners, and implementation of styling and the interface.
-
+        Some of the challenges this project included were  asynchronous javascript (implemented using the JQuery library), custom radio button logic, appropriate use of event listeners, and implementation of styling and the interface. Application behavior was managed with a virtual state layer.
       </p>
+
+      
+      <pre>
+        <code class="javascript hljs">
+          
+
+          //Main Quiz State
+var quizState = {
+
+  questionsAndAnswers: [
+
+    {
+      question: "How many adventurers were you able to play as in Final Fantasy I (Nes)?",
+      answers: ["One", "Two", "Three", "Four"],
+      correctAnswer: "Four"
+    }, ....
+    
+  ],
+
+  answerChoices: ['A. ', 'B. ', 'C. ', 'D. '],
+  answerClasses: [".answer-A", ".answer-B", ".answer-C", ".answer-D"],
+
+
+  currentQuestion: 0,
+  questionIsCorrect: 0,
+  questionIsWrong: 0,
+  quizFinished: 0,
+  characterClass: '',
+  quizSubmitCounter: 0,
+  submitClicked: 0,
+
+};
+
+        </code>
+      </pre>
 
       <pre>
         <code class="javascript hljs">
@@ -289,7 +322,64 @@
         </code>
       </pre>
 
+      <h3>Technologies used:</h3>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/html-5-icon.png" alt=""> 
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/css-3-icon.png" alt=""> 
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/javascript-icon.png" alt=""> 
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/icon_jquery.jpg" alt=""> 
+          </div>
+        </div>
+      </div>
+
+
+
     </article>
+    <article class="tropical_vscode_theme">
+      
+      <h2>Visual Studio Code - Tropical theme </h2>
+
+      <p class="story_text">
+        As the kind of person who is always interested in improving my workflow, I'm always refining my development environment, tweaking the editor I use, and learning new shortcuts. After using different IDE/text editors including IntelliJ, Notepad++, Sublime Text 3, and Atom, I settled on my new favorite editor, Visual Studio Code.  
+      </p>
+
+      <p class="story_text">
+        After spending a significant amount of time configuring the editor, I could not settle on a theme, so I decided to publish my own (available from the VS Code extension marketplace under the name "tropical"). Given the amount of time I spend coding, using a theme I enjoyed was not just aesthetically important; it improved my workflow by allowing me to parse code easier and faster.
+        </p>
+
+        <p class="story_text">
+          The theme I created was intended to have high contrast and varied colors for optimal visibilty.
+        </p>
+        
+        <div class="img_container">
+          <img src="./assets/images/Javascipt_screenshot.png" alt="VsCode Tropical Theme">
+        </div>
+
+    </article>
+    <article class="text_analyzer">
+
+      <h2>Text Analyzer</h2>
+
+      <p class=""></p>
+
+    </article>
+
+
   </section>
 
 
