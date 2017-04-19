@@ -120,6 +120,7 @@ section.title_container {
   z-index: 100;
   position: relative;
   height: 125%;
+  border-bottom: #b9a997 1px solid;
 }
 
 .quote_container {
