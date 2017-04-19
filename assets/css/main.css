@@ -22,6 +22,7 @@ nav {
   position: fixed;
   bottom: 0px;
   z-index: 1000;
+  border-top: #ca9d9d 2px solid;
 }
 
 #nav li.selected {
@@ -82,11 +83,17 @@ i {
   font-size: 1.2em;
 }
 
-i:hover {
+.reference_quote i:hover {
   filter: brightness(115%);
   font-size: 1.25em;
   color: #861313;
   transition: all ease-in-out 500ms;
+}
+
+i:hover{
+  color: #861313;
+  transition: all ease-in-out 500ms;
+  
 }
 
 section.title_container {
@@ -315,7 +322,7 @@ section#References {
 
 .reference_quote {
   width: 74%;
-  background: rgba(160, 211, 228, 0.7);
+  background: rgba(85, 185, 218, 0.7);
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-left: auto;
