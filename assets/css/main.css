@@ -298,7 +298,7 @@ button.accordion {
 }
 
 button.accordion:after {
-  content: '\02795';
+  content: '\2191';
   /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: #777;
@@ -309,7 +309,7 @@ button.accordion:after {
 }
 
 button.minus:after {
-  content: "\2796";
+  content: "\2193";
   /* Unicode character for "minus" sign (-) */
   color: #9a866f
 }
