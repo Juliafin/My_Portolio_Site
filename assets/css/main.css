@@ -1068,6 +1068,7 @@ blockquote:after {
   }
   h1 {
     font-size: 1.7em;
+    padding-top: 15%;
   }
   h2 {
     font-size: 1.4em;
@@ -1215,6 +1216,7 @@ blockquote:after {
   }
   h1 {
     font-size: 1.2em;
+    padding-top: 25%;
   }
   h2 {
     font-size: .9em;
