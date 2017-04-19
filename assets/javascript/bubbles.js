@@ -113,4 +113,9 @@ update = function () {
 
   requestAnimationFrame(update);
 };
-requestAnimationFrame(update);
+
+($(document).ready(function () {
+  requestAnimationFrame(update);
+  
+
+}));
