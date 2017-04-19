@@ -87,7 +87,7 @@ i {
   font-size: 1.2em;
 }
 
-.reference_quote i:hover {
+.reference_quote i:hover, p.bottom_story_text a:hover {
   filter: brightness(115%);
   font-size: 1.15em;
   color: #861313;
@@ -184,6 +184,10 @@ h3 {
   padding-bottom: 29px;
   padding-top: 5%;
   color: whitesmoke;
+}
+
+h3.contact {
+  padding-bottom: 2px;
 }
 
 .section_one {
