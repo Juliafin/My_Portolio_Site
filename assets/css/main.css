@@ -1314,6 +1314,10 @@ blockquote:after {
    background-color: rgb(110, 159, 175)
   }
 
+  section.main{
+   background-color: rgba(150, 101, 115, 0.9)
+  }
+
   article{
     width: 75%;
     text-align:center;
