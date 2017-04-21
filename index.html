@@ -67,7 +67,7 @@
         <img class="bgg_screenshot1" src="./assets/images/bbg1.jpg" alt="BoardgameGeek Screenshot 1">
       </div>
       <p class="story_text">
-        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the <a href="http://www.boardgamegeek.com"><i>BoardgameGeek</i></a> website. As my first Capstone, I set out to make a usable UI that would list the many various statistics for board games without overwhelming the user. A fun bonus: I photographed and edited the title and 404 images with my trusty Nikon D90 (I'm a semi-professional photographer as well).
+        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the <a href="http://www.boardgamegeek.com" target="_blank"><i>BoardgameGeek</i></a> website. As my first Capstone, I set out to make a usable UI that would list the many various statistics for board games without overwhelming the user. A fun bonus: I photographed and edited the title and 404 images with my trusty Nikon D90 (I'm a semi-professional photographer as well).
       </p>
       <p class="story_text bottom_story_text">
         Being the sole developer on this project, I was responsible for developing the MVP (minimum viable product) in both concept and execution, as well as the polished version. This included the app architecture, styling, AJAX calls, and code structure. After developing the MVP, I submitted the project for peer review and made changes to features as well as bug fixes.
@@ -84,7 +84,8 @@
 
         <pre>
         <code class="hljs javascript">
-         (function() {
+  (function() {
+    
     var cors_api_host = // proxy for CORS here: 'corsproxy.' ;
     var cors_api_url = 'http://' + cors_api_host + '/';
     var slice = [].slice;
@@ -100,6 +101,7 @@
         return open.apply(this, args);
     };
 })(); 
+
         </code>
       </pre>
 
@@ -110,40 +112,42 @@
 
         <pre>
         <code class="hljs javascript">
-          function xmlToJson(xml) {
-	var obj = {};
+  
+  function xmlToJson(xml) {
+    
+    var obj = {};
 
-	if (xml.nodeType == 1) {
-		if (xml.attributes.length > 0) {
-		obj["@attributes"] = {};
-			for (var j = 0; j < xml.attributes.length; j++) {
-				var attribute = xml.attributes.item(j);
-				obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
-			}
-		}
-	} else if (xml.nodeType == 3) { // text
-		obj = xml.nodeValue;
-	}
+    if (xml.nodeType == 1) {
+      if (xml.attributes.length > 0) {
+      obj["@attributes"] = {};
+        for (var j = 0; j < xml.attributes.length; j++) {
+          var attribute = xml.attributes.item(j);
+          obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+        }
+      }
+    } else if (xml.nodeType == 3) { // text
+      obj = xml.nodeValue;
+    }
 
-	// do children
-	if (xml.hasChildNodes()) {
-		for(var i = 0; i < xml.childNodes.length; i++) {
-			var item = xml.childNodes.item(i);
-			var nodeName = item.nodeName;
-			if (typeof(obj[nodeName]) == "undefined") {
-				obj[nodeName] = xmlToJson(item);
-			} else {
-				if (typeof(obj[nodeName].push) == "undefined") {
-					var old = obj[nodeName];
-					obj[nodeName] = [];
-					obj[nodeName].push(old);
-				}
-				obj[nodeName].push(xmlToJson(item));
-			}
-		}
-	}
-	return obj;
-};
+    
+    if (xml.hasChildNodes()) {
+      for(var i = 0; i < xml.childNodes.length; i++) {
+        var item = xml.childNodes.item(i);
+        var nodeName = item.nodeName;
+        if (typeof(obj[nodeName]) == "undefined") {
+          obj[nodeName] = xmlToJson(item);
+        } else {
+          if (typeof(obj[nodeName].push) == "undefined") {
+            var old = obj[nodeName];
+            obj[nodeName] = [];
+            obj[nodeName].push(old);
+          }
+          obj[nodeName].push(xmlToJson(item));
+        }
+      }
+    }
+    return obj;
+  };
         </code>
       </pre>
 
@@ -153,9 +157,12 @@
 
         <pre>
         <code class="hljs javascript">
-            // If the key 'boardgamemechanics' exists in the JSON (as an object),
+  
+  // If the key 'boardgamemechanics' exists in the JSON (as an object),
   // Apply one set of conversions.
   // If not, treat the key as an array.
+  
+  
   if ('boardgamemechanics' in BggData.singleSearch) {
     if (Array.isArray(BggData.singleSearch.boardgamemechanics)) {
       var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics.map(function(element) {
@@ -273,7 +280,8 @@
         <code class="javascript hljs">
           
 
-          //Main Quiz State
+//Main Quiz State
+
 var quizState = {
 
   questionsAndAnswers: [
@@ -305,8 +313,8 @@ var quizState = {
 
         <pre>
         <code class="javascript hljs">
-          function testSelectedAnswer() {
-  //
+  
+  function testSelectedAnswer() {
 
     var selectedAnswer = $("[class*='green-selected']").text().replace(/^.../, "");
     var rightAnswer = quizState.questionsAndAnswers[quizState.currentQuestion-1].correctAnswer;
@@ -385,7 +393,7 @@ var quizState = {
       <pre>
         <code class="hljs javascript">
 
-        function arraySplitToSent(text) { // textToLineArray()
+function arraySplitToSent(text) { // textToLineArray()
   var standardSentEx = new RegExp('/[\.!\?"] /');
   var sentenOut = [];
   if (standardSentEx.test(text) === true) {
@@ -402,7 +410,7 @@ var quizState = {
 
       <pre>
         <code class="hljs javascript">
-          // return true if submitted text is a number AND has no white space
+// return true if submitted text is a number AND has no white space
 function hasNumberNoSpc(text) {
 
   var regNum = new RegExp('[0-9]+'); // this matches the string "a9"
@@ -536,13 +544,14 @@ function removeSpecial(text) { // removeSpecialChars
 
     </article>
 
+    <footer>
+    Julia Finarovsky
+    </footer>
 
 
   </section>
 
-  <footer>
-    By: ~ Julia Finarovsky
-  </footer>
+  
 
 
   <!-- particles.js container -->
