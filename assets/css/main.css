@@ -225,7 +225,7 @@ section.projects {
   min-height: 100%;
   position: relative;
   border-top: #5b9f9f 2px solid;
-  top: 51%;
+  top: 87%;
 }
 
 div#particles-js {
@@ -1291,7 +1291,8 @@ footer:before {
     max-height: 87%;
   }
   section.projects {
-    background-color: rgb(110, 159, 175)
+    background-color: rgb(110, 159, 175);
+    top: 44%;
   }
   section.main {
     background-color: rgba(150, 101, 115, 0.9)
