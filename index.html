@@ -166,7 +166,7 @@
   if ('boardgamemechanics' in BggData.singleSearch) {
     if (Array.isArray(BggData.singleSearch.boardgamemechanics)) {
       var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics.map(function(element) {
-        return `<li>${element}</li>`;
+        return (`<li>${element}</li>`);
       }).join().replace(/,/g, '');
 
     } else if (!('boardgamemechanics' in BggData.singleSearch)) {

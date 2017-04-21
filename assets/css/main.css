@@ -54,7 +54,8 @@ nav {
   height: 100%;
   width: 100%;
   line-height: 2;
-  font-family: Proza Libre;
+  font-family: Roboto;
+  text-transform: uppercase;
 }
 
 #nav li:hover,
@@ -94,7 +95,8 @@ i {
   transition: all ease-in-out 600ms;
 }
 
-i:hover,  p.bottom_story_text a:hover {
+i:hover,
+p.bottom_story_text a:hover {
   color: #861313;
   transition: all ease-in-out 300ms;
 }
@@ -109,6 +111,7 @@ h1.my_name {
   margin: 0;
   color: brown;
   font-weight: 100;
+  padding-top: 3vw;
 }
 
 .image_container {
@@ -120,10 +123,12 @@ h1.my_name {
 
 section.title_container {
   min-height: 87%;
-  z-index: 100;
-  position: relative;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
   height: 125%;
   border-bottom: #b9a997 1px solid;
+  opacity: 1;
 }
 
 .quote_container {
@@ -146,7 +151,7 @@ section.title_container {
   display: inline-block;
   width: 89%;
   font-family: "Dancing Script";
-  font-size: 1.5em;
+  font-size: 1.5vw;
   margin-top: 8%;
   height: 325px;
   position: relative;
@@ -229,6 +234,7 @@ section.projects {
   min-height: 100%;
   position: relative;
   border-top: #5b9f9f 2px solid;
+  top: 87%;
 }
 
 div#particles-js {
@@ -294,12 +300,12 @@ button.accordion {
   border-bottom-right-radius: 10px;
   font-family: Proza Libre;
   font-size: 2em;
-  margin-top: 7%
+  margin-top: 7%;
 }
 
 button.accordion:after {
   content: '\2191';
-  /* Unicode character for "plus" sign (+) */
+  /* Unicode character for arrow up */
   font-size: 13px;
   color: #777;
   float: right;
@@ -310,14 +316,14 @@ button.accordion:after {
 
 button.minus:after {
   content: "\2193";
-  /* Unicode character for "minus" sign (-) */
+  /* Unicode character for "arrow down */
   color: #9a866f
 }
 
 .panel {
-    display: none;
-    background: rgba(22, 67, 107, 0.3);
-    padding: 0 6%;
+  display: none;
+  background: rgba(22, 67, 107, 0.3);
+  padding: 0 6%;
 }
 
 section.references {
@@ -361,39 +367,35 @@ blockquote:after {
 }
 
 div.reference_quote span {
-    font-size: .7em;
-    margin-left: 3%;
-    margin-bottom: 4%;
-    margin-top: 5%;
-    display: inline-block;
-    width: 95%;
+  font-size: .7em;
+  margin-left: 3%;
+  margin-bottom: 4%;
+  margin-top: 5%;
+  display: inline-block;
+  width: 95%;
 }
 
 footer {
-    z-index: 100;
-    position: relative;
-    display: inline-block;
-    font-family: Cormorant Garamond;
-    bottom: -1vw;
-    text-align: left;
-    width: 100%;
-    font-size: 2vw;
-    padding-left: 16.5%;
-    font-weight: 600;
+  z-index: 100;
+  position: relative;
+  display: inline-block;
+  font-family: Cormorant Garamond;
+  bottom: -1vw;
+  text-align: left;
+  width: 100%;
+  font-size: 2vw;
+  padding-left: 16.5%;
+  font-weight: 600;
 }
 
 footer:before {
-    content: "\00a9 2017";
-    margin-right:1vw;
-
+  content: "\00a9 2017";
+  margin-right: 1vw;
 }
 
 @media screen and (max-width: 2600px) {
   h1.my_name {
     font-size: 7em;
-  }
-  .quote_container {
-    font-size: 3.8em;
   }
   h1 {
     font-size: 7em;
@@ -449,9 +451,6 @@ footer:before {
   h1.my_name {
     font-size: 6.5em;
   }
-  .quote_container {
-    font-size: 3em;
-  }
   h1 {
     font-size: 6.5em;
   }
@@ -506,9 +505,6 @@ footer:before {
   h1.my_name {
     font-size: 6em;
   }
-  .quote_container {
-    font-size: 2.5em;
-  }
   h1 {
     font-size: 6em;
   }
@@ -562,9 +558,6 @@ footer:before {
 @media screen and (max-width: 1600px) {
   h1.my_name {
     font-size: 5.5em;
-  }
-  .quote_container {
-    font-size: 2em;
   }
   h1 {
     font-size: 5.5em;
@@ -627,9 +620,6 @@ footer:before {
   h1.my_name {
     font-size: 5em;
   }
-  .quote_container {
-    font-size: 1.5em;
-  }
   h1 {
     font-size: 5em;
   }
@@ -690,9 +680,6 @@ footer:before {
 @media screen and (max-width: 1300px) {
   h1.my_name {
     font-size: 4.5em;
-  }
-  .quote_container {
-    font-size: 1.5em;
   }
   h1 {
     font-size: 4.9em;
@@ -755,9 +742,6 @@ footer:before {
   h1.my_name {
     font-size: 4em;
   }
-  .quote_container {
-    font-size: 1.4em;
-  }
   h1 {
     font-size: 4em;
     font-stretch: ultra-expanded;
@@ -819,9 +803,6 @@ footer:before {
 @media screen and (max-width: 1030px) {
   h1.my_name {
     font-size: 3.5em;
-  }
-  .quote_container {
-    font-size: 1.4em;
   }
   h1 {
     font-size: 3.5em;
@@ -889,9 +870,6 @@ footer:before {
   h1.my_name {
     font-size: 3em;
   }
-  .quote_container {
-    font-size: 1.2em;
-  }
   h1 {
     font-size: 3em;
   }
@@ -958,10 +936,6 @@ footer:before {
   h1.my_name {
     font-size: 2.5em;
   }
-  .quote_container {
-    font-size: 1em;
-  }
-
   h1 {
     font-size: 2.5em;
   }
@@ -1029,9 +1003,6 @@ footer:before {
 @media screen and (max-width: 650px) {
   h1.my_name {
     font-size: 2em;
-  }
-  .quote_container {
-    font-size: .8em;
   }
   h1 {
     font-size: 2em;
@@ -1101,9 +1072,6 @@ footer:before {
   h1.my_name {
     font-size: 1.7em;
   }
-  .quote_container {
-    font-size: .6em;
-  }
   h1 {
     font-size: 1.7em;
     padding-top: 15%;
@@ -1172,9 +1140,6 @@ footer:before {
 @media screen and (max-width: 440px) {
   h1.my_name {
     font-size: 1.5em;
-  }
-  .quote_container {
-    font-size: .5em;
   }
   h1 {
     font-size: 1.5em;
@@ -1249,9 +1214,6 @@ footer:before {
   h1.my_name {
     font-size: 1.2em;
     padding-top: 10%;
-  }
-  .quote_container {
-    font-size: .3em;
   }
   h1 {
     font-size: 1.2em;
@@ -1339,39 +1301,32 @@ footer:before {
 }
 
 @media only screen and (max-device-width: 412px) and (max-device-height: 732px) {
-   h1.my_name{
-     font-size:2em;
-     padding-top:16%
-   }
-
-   div.quote_container{
-     font-size: .75em;
-     line-height: 1.9em;
-   }
-
+  h1.my_name {
+    font-size: 2em;
+    padding-top: 16%
+  }
+  div.quote_container {
+    font-size: .75em;
+    line-height: 1.9em;
+  }
   section.title_container {
     min-height: 100px;
     max-height: 60%;
   }
-
   section.projects {
-   background-color: rgb(110, 159, 175)
+    background-color: rgb(110, 159, 175)
   }
-
-  section.main{
-   background-color: rgba(150, 101, 115, 0.9)
+  section.main {
+    background-color: rgba(150, 101, 115, 0.9)
   }
-
-  article{
+  article {
     width: 75%;
-    text-align:center;
-    margin-left:12%;
+    text-align: center;
+    margin-left: 12%;
   }
-
   .image_container {
     height: 100px;
   }
-  
   h1 {
     padding-top: 35%;
   }
@@ -1384,8 +1339,7 @@ footer:before {
   p.story_text {
     font-size: .9em;
   }
-
-  p.story_text a{
+  p.story_text a {
     margin-left: 5%;
     margin-right: 5%
   }

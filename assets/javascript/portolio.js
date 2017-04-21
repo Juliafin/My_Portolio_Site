@@ -65,7 +65,22 @@ function navbarActiveListener () {
   });
 }
 
+function titleContainerOpacity () {
+  
+    $(window).scroll(function(event) {
 
+ 
+  if ($(window).scrollTop() > 500) {
+   $('.title_container').css('font-size', '10px').stop().animate({"opacity":"0"}, 50, "linear")
+  }
+  else if ($(window).scrollTop() < 500){
+            $('.title_container').css('font-size', '12px').stop().animate({"opacity":"1"}, 50, "linear")
+  }
+
+    })
+
+}
+    
 
 
 
@@ -76,6 +91,7 @@ function navbarActiveListener () {
   renderQuote();
   accordionListener();
   navbarActiveListener();
+  titleContainerOpacity();
 
   
   $('div#particles-js').animate({
