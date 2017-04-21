@@ -1,43 +1,42 @@
 var portfolioState = {
   currentQuote: 0,
   initial: 0,
-  quotes: [
-    {
+  quotes: [{
       quote: `Choose a job you Love, and you will never have to work a day in your life`,
-      author : `~ Confucius`
+      author: `~ Confucius`
     },
     {
-      quote:`The heart of human excellence often begins to beat when you discover a pursuit that absorbs you, frees you, challenges you, and gives you a sense of meaning, joy and passion.`,
+      quote: `The heart of human excellence often begins to beat when you discover a pursuit that absorbs you, frees you, challenges you, and gives you a sense of meaning, joy and passion.`,
       author: `~ Terry Orlick`
     },
     {
-      quote:`“I have no special talent. I am only passionately curious.`,
+      quote: `“I have no special talent. I am only passionately curious.`,
       author: `~ Albert Einstein`
-    } 
-  ] 
+    }
+  ]
 };
 
 function renderQuote() {
 
-  setTimeout(function() {
-    
+  setTimeout(function () {
+
 
     let quoteHTML = `${portfolioState.quotes[portfolioState.currentQuote].quote}`;
     let authorHTML = `${portfolioState.quotes[portfolioState.currentQuote].author}`;
 
     if (portfolioState.currentQuote === 2) {
       // write quotes to state then reset quote counter
-      $('.quote, .author').fadeOut(1000, function() {
+      $('.quote, .author').fadeOut(1000, function () {
         $('.quote').html(quoteHTML);
         $('.author').html(authorHTML);
         $('.quote, .author').fadeIn(800);
         portfolioState.currentQuote = 0;
-      
-      }); 
+
+      });
     } else {
 
-      portfolioState.currentQuote+=1;
-      $('.quote, .author').fadeOut(1200, function() {
+      portfolioState.currentQuote += 1;
+      $('.quote, .author').fadeOut(1200, function () {
         $('.quote').html(quoteHTML);
         $('.author').html(authorHTML);
         $('.quote, .author').fadeIn(1200);
@@ -47,7 +46,7 @@ function renderQuote() {
   }, 11000);
 }
 
-function accordionListener () {
+function accordionListener() {
   $('.accordion').click(function (event) {
     event.preventDefault();
 
@@ -56,42 +55,54 @@ function accordionListener () {
   });
 };
 
-function navbarActiveListener () {
+function navbarActiveListener() {
 
-  $('#nav li').click(function(event){
- 
+  $('#nav li').click(function (event) {
+
     $(this).toggleClass('selected');
     $('#nav li').not($(this)).removeClass('selected');
   });
 }
 
-function titleContainerOpacity () {
-  
-  $(window).scroll(function(event) {
+function titleContainerOpacity() {
 
-    if ((window.screen.height >= 732) && (window.screen.width >= 412)) {
-        if ($(window).scrollTop() > 600) {
-    $('.title_container').css('font-size', '10px').stop().animate({"opacity":"0"}, 50, "linear")
-    }
-    else if ($(window).scrollTop() < 600){
-              $('.title_container').css('font-size', '12px').stop().animate({"opacity":"1"}, 50, "linear")
-    }
+  $(window).scroll(function (event) {
 
-      })
-    }
+    if ((window.screen.availHeight <= 732) && (window.screen.availWidth <= 412)) {
 
+      if ($(window).scrollTop() > 600) {
+        $('.title_container').css('font-size', '10px').stop().animate({
+          "opacity": "0"
+        }, 50, "linear")
 
-    if ($(window).scrollTop() > 225) {
-    $('.title_container').css('font-size', '10px').stop().animate({"opacity":"0"}, 50, "linear")
-    }
-    else if ($(window).scrollTop() < 225){
-              $('.title_container').css('font-size', '12px').stop().animate({"opacity":"1"}, 50, "linear")
-    }
+      } else if ($(window).scrollTop() < 600) {
+        $('.title_container').css('font-size', '12px').stop().animate({
+          "opacity": "1"
+        }, 50, "linear")
+      }
 
-      })
+    } else {
 
+      if (($(window).scrollTop() > 225)) {
+        $('.title_container').css('font-size', '10px').stop().animate({
+          "opacity": "0"
+        }, 50, "linear")
+
+      } else if ($(window).scrollTop() < 225) {
+        $('.title_container').css('font-size', '12px').stop().animate({
+          "opacity": "1"
+        }, 50, "linear")
+      }
+    };
+
+  })
 }
-    
+
+
+
+
+
+
 
 
 
@@ -104,12 +115,11 @@ function titleContainerOpacity () {
   navbarActiveListener();
   titleContainerOpacity();
 
-  
+
   $('div#particles-js').animate({
     opacity: 1
-  },1000);
-    
- 
+  }, 1000);
+
+
 
 }));
-
