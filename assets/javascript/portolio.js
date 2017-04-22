@@ -67,7 +67,7 @@ function navbarActiveListener() {
 function changeOpacity() {
   // console.log('this function is activated');
   if ((window.screen.availHeight <= 732) && (window.screen.availWidth <= 412)) {
-
+      console.log('mobile opacity settings')
       if ($(window).scrollTop() > 600) {
         $('.title_container').css('font-size', '10px').stop().animate({
           "opacity": "0"
@@ -80,16 +80,17 @@ function changeOpacity() {
       }
 
     } else {
+      console.log('desktop opacity settings')
 
       if (($(window).scrollTop() > 225)) {
         $('.title_container').css('font-size', '10px').stop().animate({
           "opacity": "0"
-        }, 50, "linear");
+        }, 750, "linear");
 
       } else if ($(window).scrollTop() < 225) {
         $('.title_container').css('font-size', '12px').stop().animate({
           "opacity": "1"
-        }, 50, "linear");
+        }, 750, "linear");
       }
     }
 
