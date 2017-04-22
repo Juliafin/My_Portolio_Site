@@ -2,17 +2,17 @@ var portfolioState = {
   currentQuote: 0,
   initial: 0,
   quotes: [{
-      quote: `Choose a job you Love, and you will never have to work a day in your life`,
-      author: `~ Confucius`
-    },
-    {
-      quote: `The heart of human excellence often begins to beat when you discover a pursuit that absorbs you, frees you, challenges you, and gives you a sense of meaning, joy and passion.`,
-      author: `~ Terry Orlick`
-    },
-    {
-      quote: `“I have no special talent. I am only passionately curious."`,
-      author: `~ Albert Einstein`
-    }
+    quote: `Choose a job you Love, and you will never have to work a day in your life`,
+    author: `~ Confucius`
+  },
+  {
+    quote: `The heart of human excellence often begins to beat when you discover a pursuit that absorbs you, frees you, challenges you, and gives you a sense of meaning, joy and passion.`,
+    author: `~ Terry Orlick`
+  },
+  {
+    quote: `“I have no special talent. I am only passionately curious."`,
+    author: `~ Albert Einstein`
+  }
   ]
 };
 
@@ -53,7 +53,7 @@ function accordionListener() {
     $(this).next().slideToggle('1600');
     $(this).toggleClass('minus');
   });
-};
+}
 
 function navbarActiveListener() {
 
@@ -73,12 +73,12 @@ function titleContainerOpacity() {
       if ($(window).scrollTop() > 600) {
         $('.title_container').css('font-size', '10px').stop().animate({
           "opacity": "0"
-        }, 50, "linear")
+        }, 50, "linear");
 
       } else if ($(window).scrollTop() < 600) {
         $('.title_container').css('font-size', '12px').stop().animate({
           "opacity": "1"
-        }, 50, "linear")
+        }, 50, "linear");
       }
 
     } else {
@@ -86,16 +86,16 @@ function titleContainerOpacity() {
       if (($(window).scrollTop() > 225)) {
         $('.title_container').css('font-size', '10px').stop().animate({
           "opacity": "0"
-        }, 50, "linear")
+        }, 50, "linear");
 
       } else if ($(window).scrollTop() < 225) {
         $('.title_container').css('font-size', '12px').stop().animate({
           "opacity": "1"
-        }, 50, "linear")
+        }, 50, "linear");
       }
-    };
+    }
 
-  })
+  });
 }
 
 

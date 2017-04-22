@@ -71,7 +71,6 @@ button.accordion:hover {
   background: #ff9d95;
   color: #290303;
   transition: all ease-in-out 350ms;
-  max
 }
 
 img.github_link {
@@ -199,7 +198,7 @@ h3.contact {
 }
 
 .section_one {
-  color: rgba(160, 211, 228, 0.7);
+    color: #f5e9d9;
 }
 
 p.story_text {
@@ -282,6 +281,13 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.bottom_story_text a {
+    text-decoration: none;
+    color: #6dbfbf;
+    font-size: 2vw;
+    letter-spacing: 0.6pt;
 }
 
 img.icon {
@@ -404,6 +410,8 @@ div.reference_quote span {
 .bottom_story_text i {
   width: 100%;
   text-align: center;
+  display: inline-block;
+  margin-left: -5%;
 }
 
 footer {
@@ -454,7 +462,6 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {}
   code {
     font-size: 1.6vw;
   }
@@ -505,7 +512,6 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {}
   code {
     font-size: 1.3vw;
   }
@@ -556,7 +562,6 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {}
   code {
     font-size: 1.2vw;
   }
@@ -611,7 +616,6 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {}
   code {
     font-size: 1.2vw;
   }
@@ -669,7 +673,6 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {}
   code {
     font-size: 1.2vw;
   }
