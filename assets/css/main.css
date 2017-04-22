@@ -316,6 +316,7 @@ button.accordion {
   font-family: Proza Libre;
   font-size: 2em;
   margin-top: 7%;
+  margin-bottom: 6%;
   animation-name: glow;
   animation-duration: 3s;
   animation-iteration-count: infinite;
