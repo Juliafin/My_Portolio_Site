@@ -171,6 +171,13 @@ h1 {
   color: aliceblue;
 }
 
+h1.my_name {
+  animation-name: glow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 h2 {
   font-size: 2.9vw;
   text-align: center;
@@ -283,23 +290,21 @@ img.icon {
 }
 
 @keyframes glow {
-    0%,50%, 100% {
-      filter:brightness(100%);
-      filter:saturate(100%);
-    }
-    25%{
-      filter:brightness(130%);
-      filter:saturate(130%);
-      
-    }
-    75%{
-      filter:brightness(70%);
-      filter:saturate(70%);
-      
-    }
+  0%,
+  50%,
+  100% {
+    filter: brightness(100%);
+    filter: saturate(100%);
   }
-
-
+  25% {
+    filter: brightness(150%);
+    filter: saturate(150%);
+  }
+  75% {
+    filter: brightness(50%);
+    filter: saturate(50%);
+  }
+}
 
 button.accordion {
   background-color: #861357;
@@ -397,8 +402,8 @@ div.reference_quote span {
 }
 
 .bottom_story_text i {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 footer {
@@ -449,8 +454,7 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {
-  }
+  .img_container {}
   code {
     font-size: 1.6vw;
   }
@@ -501,8 +505,7 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {
-  }
+  .img_container {}
   code {
     font-size: 1.3vw;
   }
@@ -553,8 +556,7 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {
-  }
+  .img_container {}
   code {
     font-size: 1.2vw;
   }
@@ -609,8 +611,7 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {
-  }
+  .img_container {}
   code {
     font-size: 1.2vw;
   }
@@ -668,8 +669,7 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {
-  }
+  .img_container {}
   code {
     font-size: 1.2vw;
   }
@@ -1265,7 +1265,6 @@ footer:before {
     font-size: .5em;
     height: 20px;
   }
-
   img.icon {
     height: 40px;
     width: 40px;
