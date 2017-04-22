@@ -204,6 +204,7 @@ p.story_text {
   line-height: 1.5em;
   margin-top: 19px;
   font-family: Cormorant Garamond;
+  text-align: left;
 }
 
 p.bottom_story_text {
@@ -1179,6 +1180,7 @@ footer:before {
   button.accordion {
     font-size: .6em;
     height: 30px;
+    margin-bottom: 8%;
   }
   img.icon {
     height: 50px;
@@ -1324,7 +1326,8 @@ footer:before {
     top: 48%;
   }
   section.main {
-    background-color: rgba(150, 101, 115, 0.9)
+    background-color: rgba(150, 101, 115, 0.9);
+    margin-top: 77%;
   }
   article {
     width: 75%;
@@ -1345,20 +1348,23 @@ footer:before {
   }
   p.story_text {
     font-size: .9em;
+    margin-left: 11%;
+    margin-right: 11%;
   }
   p.story_text a {
     margin-left: 5%;
     margin-right: 5%
   }
   code.hljs {
-    font-size: .5em;
+    font-size: .6em;
   }
   code span {
     font-size: .8em;
   }
   blockquote {
     font-size: .7em;
-    width: 100%
+    width: 80%;
+    line-height: 1.5em;
   }
   div.reference_quote {
     width: 100%;
