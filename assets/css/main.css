@@ -222,7 +222,7 @@ section.main {
   border-top: #5b9f9f 2px solid;
   z-index: 100;
   position: relative;
-  margin-top: 34%;
+  margin-top: 38%;
 }
 
 article {
@@ -1330,7 +1330,7 @@ footer:before {
   }
   section.main {
     background-color: rgba(150, 101, 115, 0.9);
-    margin-top: 77%;
+    margin-top: 85%;
   }
   article {
     width: 75%;
@@ -1372,5 +1372,17 @@ footer:before {
   div.reference_quote {
     width: 100%;
     padding: 19px;
+  }
+}
+
+@media screen and (height:900px) and (width:1440px) {
+  section.main {
+   margin-top: 54%;
+  }
+}
+
+@media screen and (max-device-height:736px) and (max-device-width:414px) {
+    section.main {
+   margin-top: 154%;
   }
 }

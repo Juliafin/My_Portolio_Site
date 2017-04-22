@@ -2,11 +2,11 @@ var portfolioState = {
   currentQuote: 0,
   initial: 0,
   quotes: [{
-    quote: `Choose a job you Love, and you will never have to work a day in your life`,
+    quote: `"Choose a job you Love, and you will never have to work a day in your life"`,
     author: `~ Confucius`
   },
   {
-    quote: `The heart of human excellence often begins to beat when you discover a pursuit that absorbs you, frees you, challenges you, and gives you a sense of meaning, joy and passion.`,
+    quote: `"The heart of human excellence often begins to beat when you discover a pursuit that absorbs you, frees you, challenges you, and gives you a sense of meaning, joy and passion."`,
     author: `~ Terry Orlick`
   },
   {
