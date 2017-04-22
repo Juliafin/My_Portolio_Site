@@ -27,6 +27,11 @@ nav {
   bottom: 0px;
   z-index: 1000;
   border-top: #ca9d9d 2px solid;
+  animation-name: glow;
+  animation-direction: normal;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 #nav li.selected {
@@ -161,7 +166,6 @@ h1 {
   font-family: Proza Libre;
   padding-top: 5%;
   margin-bottom: 3%;
-  /* margin-top: -46px; */
   font-size: 5.5em;
   font-weight: 400;
   color: aliceblue;
@@ -277,6 +281,25 @@ img.icon {
   width: 150px;
 }
 
+@keyframes glow {
+    0%,50%, 100% {
+      filter:brightness(100%);
+      filter:saturate(100%);
+    }
+    25%{
+      filter:brightness(130%);
+      filter:saturate(130%);
+      
+    }
+    75%{
+      filter:brightness(70%);
+      filter:saturate(70%);
+      
+    }
+  }
+
+
+
 button.accordion {
   background-color: #861357;
   color: white;
@@ -292,6 +315,11 @@ button.accordion {
   font-family: Proza Libre;
   font-size: 2em;
   margin-top: 7%;
+  animation-name: glow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
 }
 
 button.accordion:after {
@@ -1234,6 +1262,7 @@ footer:before {
     font-size: .5em;
     height: 20px;
   }
+
   img.icon {
     height: 40px;
     width: 40px;
