@@ -1347,7 +1347,7 @@ footer:before {
     margin-top: 85%;
   }
   article {
-    width: 75%;
+    width: 80%;
     text-align: center;
     margin-left: 12%;
   }
@@ -1369,11 +1369,12 @@ footer:before {
     margin-right: 11%;
   }
   p.story_text a {
-    margin-left: 5%;
-    margin-right: 5%
+    margin-left: 2%;
+    margin-right: 2%;
   }
   code.hljs {
     font-size: .6em;
+    text-align:left;
   }
   code span {
     font-size: .8em;
