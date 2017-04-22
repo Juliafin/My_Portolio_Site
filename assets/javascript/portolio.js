@@ -64,21 +64,19 @@ function navbarActiveListener() {
   });
 }
 
-function titleContainerOpacity() {
-
-  $(window).scroll(function (event) {
-
-    if ((window.screen.availHeight <= 732) && (window.screen.availWidth <= 412)) {
+function changeOpacity() {
+  // console.log('this function is activated');
+  if ((window.screen.availHeight <= 732) && (window.screen.availWidth <= 412)) {
 
       if ($(window).scrollTop() > 600) {
         $('.title_container').css('font-size', '10px').stop().animate({
           "opacity": "0"
-        }, 50, "linear");
+        },2550, "linear");
 
       } else if ($(window).scrollTop() < 600) {
         $('.title_container').css('font-size', '12px').stop().animate({
           "opacity": "1"
-        }, 50, "linear");
+        }, 2550, "linear");
       }
 
     } else {
@@ -95,17 +93,13 @@ function titleContainerOpacity() {
       }
     }
 
-  });
 }
 
 
+function opacityListenerDeb() {
 
-
-
-
-
-
-
+  $(window).scroll($.throttle( 150, changeOpacity));
+}
 
 
 
@@ -113,7 +107,7 @@ function titleContainerOpacity() {
   renderQuote();
   accordionListener();
   navbarActiveListener();
-  titleContainerOpacity();
+  opacityListenerDeb();
 
 
   $('div#particles-js').animate({
