@@ -222,7 +222,7 @@ section.main {
   border-top: #5b9f9f 2px solid;
   z-index: 100;
   position: relative;
-  margin-top: 38%;
+  margin-top: 34.5%;
 }
 
 article {
@@ -356,6 +356,20 @@ button.minus:after {
   display: none;
   background: rgba(22, 67, 107, 0.3);
   padding: 0 6%;
+}
+
+.contact_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 7%;
+    padding-top: 3%;
+}
+
+.img_container_two:hover{
+
+    filter: brightness(130%);
+    color:#e2cdb4;
 }
 
 section.references {
