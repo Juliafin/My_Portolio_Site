@@ -82,15 +82,15 @@ function changeOpacity() {
     } else {
       // console.log('desktop opacity settings')
 
-      if (($(window).scrollTop() > 225)) {
+      if (($(window).scrollTop() > 400)) {
         $('.title_container').css('font-size', '10px').stop().animate({
           "opacity": "0"
-        }, 750, "linear");
+        }, 200, "linear");
 
-      } else if ($(window).scrollTop() < 225) {
+      } else if ($(window).scrollTop() < 400) {
         $('.title_container').css('font-size', '12px').stop().animate({
           "opacity": "1"
-        }, 750, "linear");
+        }, 200, "linear");
       }
     }
 
