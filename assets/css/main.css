@@ -1396,8 +1396,8 @@ footer:before {
   }
 }
 
-@media screen and (max-device-height:736px) and (max-device-width:414px) {
+@media screen and (max-device-height: 736px) and (max-device-width: 414px) {
     section.main {
-   margin-top: 85%;
+   margin-top: 154%;
   }
 }
