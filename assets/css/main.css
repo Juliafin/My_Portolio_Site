@@ -85,6 +85,7 @@ i {
 
 .reference_quote i:hover {
   filter: brightness(115%);
+  font-size: 1.9vw;
   color: #861313;
   transition: all ease-in-out 600ms;
 }
@@ -442,11 +443,6 @@ footer {
 footer:before {
   content: "\00a9 2017";
   margin-right: 1vw;
-}
-
-span#siteseal img {
-    height: 10%;
-    width: 10%;
 }
 
 @media screen and (max-width: 2600px) {
@@ -1400,17 +1396,8 @@ span#siteseal img {
   }
 }
 
-@media only screen 
-    and (min-device-width : 414px) 
-    and (max-device-width : 736px)
-    and (device-width : 414px)
-    and (device-height : 736px)
-    and (orientation : portrait) 
-    and (-webkit-min-device-pixel-ratio : 3) 
-    and (-webkit-device-pixel-ratio : 3)
-{ 
-section.main {
-   margin-top:154%;
+@media screen and (max-device-height: 736px) and (max-device-width: 414px) {
+    section.main {
+   margin-top: 154%;
   }
-
 }

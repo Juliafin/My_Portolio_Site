@@ -1,591 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Julia Finarovsky, Web Developer Portolio</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="A web portfolio for Julia Finarovsky, Web Developer">
-    <meta name="keywords" content="web, development, js, javascript, html, html5, css, css3, Julia, Finarovsky, portfolio, resume, web projects">
-    <meta name="author" content="Julia Finarovsky">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Google fonts-->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script|Cormorant+Garamond|Proza+Libre">
-    <!--Responsive Grid-->
-    <link href="./assets/css/float-grid.css" rel="stylesheet">
-    <!--Main Css-->
-    <link rel="stylesheet" href="./assets/css/main.css">
-    
-    <!--Code Highlight.js Style-->
-    <link rel="stylesheet" href="./assets/css/atom-dark.css">
-    
-    <!--Highlight Js-->
-    <script src="./assets/javascript/highlight.pack.js"></script>
-    
-    <!--Highlight JS init-->
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
-
-  </head>
-
-
-  <body>
-
-    <nav>
-      <div id="nav">
-        <ul>
-          <li tabindex="1"><a href="#Home">Home</a></li>
-          <li tabindex="2"><a href="#Projects">Projects</a></li>
-          <li tabindex="3"><a href="https://github.com/Juliafin" target="_blank">GitHub</a></li>
-          <li tabindex="4"><a href="#About_Me">About Me</a></li>
-          <li tabindex="5"><a href="#References">References</a></li>
-        </ul>
-      </div>
-    </nav>
-
-
-    <div id="Home"></div>
-    <section class="title_container">
-      <header class="image_container">
-        <h1 class="my_name">Julia Finarovsky, Web Developer</h1>
-        <div class="quote_container">
-          <h1 class="quote">Choose a job you Love, and you will never have to work a day in your life</h1>
-          <h2 class="author">~ Confucius</h2>
-        </div>
-      </header>
-    </section>
-
-
-
-    <section class="projects" id="Projects">
-      <h1 class="about_me section_two">Projects</h1>
-
-      <article class="bggapi">
-        <h2>BoardgameGeek Api </h2>
-
-        <div class="img_container">
-          <img class="bgg_screenshot1" src="./assets/images/bbg1.jpg" alt="BoardgameGeek Screenshot 1">
-        </div>
-        <p class="story_text">
-          I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the BoardgameGeek website. As my first Capstone, I set out to make a usable UI that would list the many various statistics for board games without overwhelming the user. A fun bonus: I photographed and edited the title and 404 images with my trusty Nikon D90 (I'm a semi-professional photographer as well).
-        </p>
-        <p class="story_text bottom_story_text">
-          Being the sole developer on this project, I was responsible for developing the MVP (minimum viable product) in both concept and execution, as well as the polished version. This included the app architecture, styling, AJAX calls, and code structure. After developing the MVP, I submitted the project for peer review and made changes to features as well as bug fixes.
-        </p>
-
-        <button class="accordion">Read the Project Story</button>
-        <div class="panel">
-
-          <h3>Challenges</h3>
-
-          <p class="story_text">
-            The first major challenge was circumventing a CORS error due to BoardgameGeek Api not having CORS headers enabled.
-          </p>
-
-          <pre>
-          <code class="hljs javascript">
-    (function() {
-      
-      var cors_api_host = // proxy for CORS here: 'corsproxy.' ;
-      var cors_api_url = 'http://' + cors_api_host + '/';
-      var slice = [].slice;
-      var origin = window.location.protocol + '//' + window.location.host;
-      var open = XMLHttpRequest.prototype.open;
-      XMLHttpRequest.prototype.open = function() {
-          var args = slice.call(arguments);
-          var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-          if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-              targetOrigin[1] !== cors_api_host) {
-              args[1] = cors_api_url + args[1];
-          }
-          return open.apply(this, args);
-      };
-  })(); 
-
-          </code>
-        </pre>
-
-
-          <p class="story_text">
-            The BoardgameGeek Api being in XML format created significant challenges. As a result, the data needed to be converted to JSON so that it could be parsed and processed appropriately.
-          </p>
-
-          <pre>
-          <code class="hljs javascript">
-    
-    function xmlToJson(xml) {
-      
-      var obj = {};
-
-      if (xml.nodeType == 1) {
-        if (xml.attributes.length > 0) {
-        obj["@attributes"] = {};
-          for (var j = 0; j < xml.attributes.length; j++) {
-            var attribute = xml.attributes.item(j);
-            obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
-          }
-        }
-      } else if (xml.nodeType == 3) { // text
-        obj = xml.nodeValue;
-      }
-
-      
-      if (xml.hasChildNodes()) {
-        for(var i = 0; i < xml.childNodes.length; i++) {
-          var item = xml.childNodes.item(i);
-          var nodeName = item.nodeName;
-          if (typeof(obj[nodeName]) == "undefined") {
-            obj[nodeName] = xmlToJson(item);
-          } else {
-            if (typeof(obj[nodeName].push) == "undefined") {
-              var old = obj[nodeName];
-              obj[nodeName] = [];
-              obj[nodeName].push(old);
-            }
-            obj[nodeName].push(xmlToJson(item));
-          }
-        }
-      }
-      return obj;
-    };
-          </code>
-        </pre>
-
-          <p class="story_text">
-            The resulting conversion caused issues with inconsistent JSON values. The solution was apply manual data correction before rendering the output to the DOM.
-          </p>
-
-          <pre>
-          <code class="hljs javascript">
-    
-    // If the key 'boardgamemechanics' exists in the JSON (as an object),
-    // Apply one set of conversions.
-    // If not, treat the key as an array.
-    
-    
-    if ('boardgamemechanics' in BggData.singleSearch) {
-      if (Array.isArray(BggData.singleSearch.boardgamemechanics)) {
-        var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics.map(function(element) {
-          return (`<li>${element}</li>`);
-        }).join().replace(/,/g, '');
-
-      } else if (!('boardgamemechanics' in BggData.singleSearch)) {
-        return;
-
-      } else {
-        var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics;
-
-      }
-    } else {
-      // convert board game mechanics to a list
-      if (Array.isArray(BggData.mainData[index].boardgamemechanics)) {
-        var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics.map(function(element) {
-          return `<li>${element}</li>`;
-        }).join().replace(/,/g, '');
-
-      } else if (!('boardgamemechanics' in BggData.mainData[index])) {
-        return;
-
-      } else {
-        var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics;
-      }
-
-    }
-
-          </code>
-        </pre>
-
-          <p class="story_text">
-            In terms of site layout, in order to display the detailed information for each board game result, the JSON data was first cached to avoid multiple API calls due to API limitations. A modal/lightbox was used to display the cached data to provide a responsive and informative user experience.
-          </p>
-
-          <div class=img_container>
-            <img class="bgg_screenshot2" alt="BoardgameGeek API modal/lightbox" src="./assets/images/lightbox.jpg">
-          </div>
-
-        </div>
-
-
-        <h3>Technologies used:</h3>
-
-        <div class="row">
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/html-5-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/css-3-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/javascript-icon.png" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/YouTube-logo-full_color.png" alt="">
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/ajax-logo.jpg" alt="">
-            </div>
-          </div>
-        </div>
-
-
-
-      </article>
-      <article class="ff-quiz">
-
-        <h2>Final Fantasy Quiz</h2>
-        <p class="story_text">
-          Growing up, I was a huge fan of role playing games (RPGS), and in particular the creations of then Squaresoft (now SquareEnix). Particularly I loved the stories with incredibly well developed characters, mature themes, and strategic gameplay. If your opinion is that Final Fantasy VII is the best Final Fantasy, I will argue with you (it was good but the depth of Final Fantasy VI was unmatched)!
-        </p>
-
-        <div class="img_container">
-          <img class="ff-quiz_screenshot_1" src="./assets/images/ff_quiz_1.jpg" alt="Final Fantasy quiz screenshot 1">
-        </div>
-
-        <button class="accordion">Read the Project Story</button>
-        <div class="panel">
-
-          <h3>Challenges</h3>
-
-          <p class="story_text">
-            With this project, my goal was to recreate the look and feel of the classic final fantasy menu and test user's knowledge about classic games in the series. I wanted this project to be a memorable experience, and with that in mind I wanted the user to be able to select a character.
-            <div class="img_container">
-              <img class="ff-quiz_screenshot_2" src="./assets/images/ff_quiz_2.jpg" alt="Final Fantasy quiz screeenshot 2">
-            </div>
-          </p>
-          <p class="story_text">
-            The beginning of the project involved writing out the user experience, and some notes about the inner logic of the application. The goal was to mock up the HTML of the landing page and main quiz page and wireframe basic styling. As my work on the project progressed, I worked on editing character sprites in Adobe Photoshop and sound effects in Adobe Audition.
-          </p>
-          <p class="story_text">
-            Some of the challenges this project included were asynchronous javascript (implemented using the JQuery library), custom radio button logic, appropriate use of event listeners, and implementation of styling and the interface. Application behavior was managed with a virtual state layer.
-          </p>
-
-
-          <pre>
-          <code class="javascript hljs">
-            
-
-  //Main Quiz State
-
-  var quizState = {
-
-    questionsAndAnswers: [
-
-      {
-        question: "How many adventurers were you able to play as in Final Fantasy I (Nes)?",
-        answers: ["One", "Two", "Three", "Four"],
-        correctAnswer: "Four"
-      }, ....
-      
-    ],
-
-    answerChoices: ['A. ', 'B. ', 'C. ', 'D. '],
-    answerClasses: [".answer-A", ".answer-B", ".answer-C", ".answer-D"],
-
-
-    currentQuestion: 0,
-    questionIsCorrect: 0,
-    questionIsWrong: 0,
-    quizFinished: 0,
-    characterClass: '',
-    quizSubmitCounter: 0,
-    submitClicked: 0,
-
-  };
-
-          </code>
-        </pre>
-
-          <pre>
-          <code class="javascript hljs">
-    
-    function testSelectedAnswer() {
-
-      var selectedAnswer = $("[class*='green-selected']").text().replace(/^.../, "");
-      var rightAnswer = quizState.questionsAndAnswers[quizState.currentQuestion-1].correctAnswer;
-
-          if (selectedAnswer === rightAnswer) answerIsCorrect();
-          else if (selectedAnswer !== rightAnswer) answerIsWrong();
-
-          var selectionClasses = quizState.answerClasses;
-          var answerArray = quizState.questionsAndAnswers[quizState.currentQuestion-1].answers;
-          answerArray.forEach(function(element, index){
-            if (element === rightAnswer) {
-              $(selectionClasses[index]).addClass('green-selected');
-            } else {
-              $(selectionClasses[index]).addClass('red-selected');
-
-            };
-
-          });
-    }
-          </code>
-        </pre>
-        </div>
-        <h3>Technologies used:</h3>
-
-        <div class="row">
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/html-5-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/css-3-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/javascript-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
-            </div>
-          </div>
-        </div>
-
-
-
-      </article>
-      <article class="tropical_vscode_theme">
-
-        <h2>Visual Studio Code - Tropical theme </h2>
-
-        <p class="story_text">
-          As the kind of person who is always interested in improving my workflow, I'm always refining my development environment, tweaking the editor I use, and learning new shortcuts. After using different IDE/text editors including IntelliJ, Notepad++, Sublime Text 3, and Atom, I settled on my new favorite editor, Visual Studio Code.
-        </p>
-
-        <p class="story_text">
-          After spending a significant amount of time configuring the editor, I could not settle on a theme, so I decided to publish my own (available from the VS Code extension marketplace under the name "tropical"). Given the amount of time I spend coding, using a theme I enjoyed was not just aesthetically important; it improved my workflow by allowing me to parse code easier and faster. The tropical theme is focused on high contrast and varied colors for optimal visibility.
-        </p>
-
-        <div class="img_container">
-          <img src="./assets/images/Javascipt_screenshot.jpg" alt="VsCode Tropical Theme">
-        </div>
-
-      </article>
-      <article class="text_analyzer">
-
-        <h2>Text Analyzer</h2>
-
-        <p class="story_text">
-          The text analyzer web app was my first foray into javascript. With every project I've worked on, I've pushed myself to learn new tools and libraries to be a better developer. With this app, I worked on writing clean and concise code. I also included many more analytics than required and applied some newly learned RegExp in my code.
-        </p>
-
-        <pre>
-          <code class="hljs javascript">
-
-  function arraySplitToSent(text) { // textToLineArray()
-    var standardSentEx = new RegExp('/[\.!\?"] /');
-    var sentenOut = [];
-    if (standardSentEx.test(text) === true) {
-      sentenOut = text.split(standardSent);
-      return sentenOut;
-    } else {
-      sentenOut = text.split("\n");
-      return sentenOut;
-    }
-  }
-
-          </code>
-        </pre>
-
-        <pre>
-          <code class="hljs javascript">
-  // return true if submitted text is a number AND has no white space
-  function hasNumberNoSpc(text) {
-
-    var regNum = new RegExp('[0-9]+'); // this matches the string "a9"
-    var regNoSpace = new RegExp('^[^\s]+$');
-
-    if ((regNum.test(text)) === true && (regNoSpace.test(text) === true)) {
-      return true;
-    }
-
-    return false;
-  }
-
-  // "5".LowerCase = 5, "%".toUpperCase = %
-  // Filters characters that have the same upper and lower case results
-  // removes special characters (but leaves spaces) (not including numbers from string)
-  function removeSpecial(text) { // removeSpecialChars
-    // return text.replace(/[^a-zA-Z0-9\s]/g, "");
-
-    if (text) {
-      var lower = text.toLowerCase();
-      var upper = text.toUpperCase();
-      var result = "";
-      for (var i = 0; i < lower.length; ++i) {
-        if (hasNumberNoSpc(text[i]) || (lower[i] != upper[i]) || (lower[i].trim() === '')) {
-          result += text[i];
-        }
-      }
-      console.log(result);
-      return result;
-    }
-    return '';
-  }
-
-          </code>
-        </pre>
-
-        <h3>Technologies used:</h3>
-
-        <div class="row">
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/html-5-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/css-3-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/javascript-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
-            </div>
-          </div>
-        </div>
-
-      </article>
-
-    </section>
-
-
-
-    <section class="main">
-      <article>
-        <h1 class="about_me section_one" id="About_Me">About Me</h1>
-
-        <p class="story_text">
-          Hi, I'm Julia! Thank you for visiting my page! I'm a Web Developer passionate about writing clean, efficient, and readable code. I get excited about being faced with new challenges and learning how to overcome them. I'm also a classically trained concert pianist, composer, arranger, teacher, accompanist. Also, I'm a huge nerd with interests: technology, audio engineering, graphic design, photography, science, history, cooking, politics, video games, board games, and computers. I'm equally comfortable wearing many hats (just not literally, I look terrible in some hats).
-        </p>
-        <p class="story_text">
-          The quotes above are a way of life for me. I've always held to the belief that one of the most important things is to find something that you are good at, and that you find intellectually stimulating. What I enjoy most about coding is finding innovative solutions to problems. And no matter how long I spend at a problem, It never feels as though it is work.
-        </p>
-
-        <h1 class="about_me section_one">My Motivation</h1>
-
-        <p class="story_text">
-          I've always been that person whose friends always turn to for computer help or technical support. My love of learning new things and being challenged comes from my childhood: When I was 10 years old, I was using my mom's 386 desktop when it suddenly broke. Windows 3.1 wouldn't boot from DOS. So I decided (somewhat foolishly) to take a screwdriver and unscrew the entire computer apart.
-
-        </p>
-        <p class="story_text">
-          At this time, there was no instruction manual, no technical support to call, and no internet (America Online was in it's infancy). And so I sat there for hours on the floor of my bedroom with all the computer parts spread around me. After several hours, I figured out what each part did, and how to put it together. And when I turned the machine on, to my (and my parents') surprise, it worked! For me, that moment when you run code and it works for the first time is incredibly satisfying and rewarding!
-        </p>
-
-        <h1 class="about_me section_one">My Goals</h1>
-
-        <p class="story_text">
-          I see myself in the future as an experienced developer, with a specialization in data science. I'm interested in combining my expertise in music to eventually write some useful software particularly in the category of music production and music notation. I eventually want to also learn how to develop for mobile platforms such as Android and IOS. Overall, I will pursue anything that intrigues me intellectually and provides a challenge!
-        </p>
-
-        <h3 class="contact">Contact</h3>
-
-        <div class="contact_info">
-            <div class="img_container_two">
-              <a href="mailto:Juliafinarovsky@gmail.com"><img alt="Email Julia" src="./assets/images/blue-jelly-mail.png" class="icon"></a>
-            </div>
-            <div class="img_container_two">
-              <a href="https://github.com/Juliafin"><img class="icon" src="./assets/images/github-512.png" alt="Github"></a>
-            </div>
-            <div class="img_container_two">
-              <a href="https://www.linkedin.com/in/julia-finarovsky-2a3732139/"><img class="icon" src="./assets/images/linkedin-icon.png" alt="LinkedIn"></a>
-            </div>
-        </div>
-
-  <!--
-        <p class="story_text bottom_story_text">
-          <i><a href="mailto:Juliafinarovsky@gmail.com">JuliaFinarovsky@gmail.com</a></i>
-        </p>-->
-
-      </article>
-    </section>
-
-
-    <section class="references" id="References">
-      <article>
-        <h1>References</h1>
-
-        <div class="reference_quote">
-          <blockquote>
-            For over a decade in this industry and work done with hundreds of people I can tell that Julie is talent and passion wise, on the top of my list. What most amazed me about Julie wasn't the fact she was picking up some complex subjects with ease, it was the fact that she really wanted to amaze me with whatever she was doing, always gave her best and never complained about the effort or how much time she put in, she realized that success doesn't happen without hard work and she always stood up to the challenge. I would work with Julie any time and I believe her energy, character and commitment are assets which any company would crave for. 
-          </blockquote>
-          <span><i>~Alexandar Grbic, Senior Web Developer and Thinkful Mentor</i></span>
-
-        </div>
-
-        <div class="reference_quote">
-          <blockquote>
-            Julie is an amazingly dedicated full-stack developer. Not one to shy from a challenge, she puts all her effort towards solving problems and mastering new skills. Her work ethic, technical skill, and tenacity would be an asset to any team. Julie readily shares her experience, and is always read to help her peers with thoughtful answers to their questions.  
-          </blockquote>
-          <span><i>~Ben Boyle, Senior Web Developer and Thinkful Mentor</i></span>
-
-
-
-        </div>
-
-
-
-
-      </article>
-
-      <footer>
-      <p> Julia Finarovsky </p>
-      <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=KAZNqqrAJseFHwflf2Lt1T1ZKjY6gs4msLXgBnDmQok58ZxkZqRAvXuHPEiM"></script></span>
-      </footer>
-
-
-    </section>
-
-
-    <!-- particles.js container -->
-    <div id="particles-js">
-      <canvas class="particles-js-canvas-el" width="1011" height="2500" style="width: 100%; height: 100%;"></canvas>
+<head>
+  <title>Julia Finarovsky, Web Developer Portolio</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="A web portfolio for Julia Finarovsky, Web Developer">
+  <meta name="keywords" content="web, development, js, javascript, html, html5, css, css3, Julia, Finarovsky, portfolio, resume, web projects">
+  <meta name="author" content="Julia Finarovsky">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Google fonts-->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script|Cormorant+Garamond|Proza+Libre">
+  <!--Responsive Grid-->
+  <link href="./assets/css/float-grid.css" rel="stylesheet">
+  <!--Main Css-->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  
+  <link rel="stylesheet" href="./assets/css/atom-dark.css">
+  <script src="./assets/javascript/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+
+<body>
+
+  <nav>
+    <div id="nav">
+      <ul>
+        <li tabindex="1"><a href="#Home">Home</a></li>
+        <li tabindex="2"><a href="#Projects">Projects</a></li>
+        <li tabindex="3"><a href="https://github.com/Juliafin" target="_blank">GitHub</a></li>
+        <li tabindex="4"><a href="#About_Me">About Me</a></li>
+        <li tabindex="5"><a href="#References">References</a></li>
+      </ul>
     </div>
+  </nav>
+
+
+  <div id="Home"></div>
+  <section class="title_container">
+    <header class="image_container">
+      <h1 class="my_name">Julia Finarovsky, Web Developer</h1>
+      <div class="quote_container">
+        <h1 class="quote">Choose a job you Love, and you will never have to work a day in your life</h1>
+        <h2 class="author">~ Confucius</h2>
+      </div>
+    </header>
+  </section>
+
+
+
+  <section class="projects" id="Projects">
+    <h1 class="about_me section_two">Projects</h1>
+
+    <article class="bggapi">
+      <h2>BoardgameGeek Api </h2>
+
+      <div class="img_container">
+        <img class="bgg_screenshot1" src="./assets/images/bbg1.jpg" alt="BoardgameGeek Screenshot 1">
+      </div>
+      <p class="story_text">
+        I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the BoardgameGeek website. As my first Capstone, I set out to make a usable UI that would list the many various statistics for board games without overwhelming the user. A fun bonus: I photographed and edited the title and 404 images with my trusty Nikon D90 (I'm a semi-professional photographer as well).
+      </p>
+      <p class="story_text bottom_story_text">
+        Being the sole developer on this project, I was responsible for developing the MVP (minimum viable product) in both concept and execution, as well as the polished version. This included the app architecture, styling, AJAX calls, and code structure. After developing the MVP, I submitted the project for peer review and made changes to features as well as bug fixes.
+      </p>
+
+      <button class="accordion">Read the Project Story</button>
+      <div class="panel">
+
+        <h3>Challenges</h3>
+
+        <p class="story_text">
+          The first major challenge was circumventing a CORS error due to BoardgameGeek Api not having CORS headers enabled.
+        </p>
+
+        <pre>
+        <code class="hljs javascript">
+  (function() {
     
-    <!--Particles background js-->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    var cors_api_host = // proxy for CORS here: 'corsproxy.' ;
+    var cors_api_url = 'http://' + cors_api_host + '/';
+    var slice = [].slice;
+    var origin = window.location.protocol + '//' + window.location.host;
+    var open = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function() {
+        var args = slice.call(arguments);
+        var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+        if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+            targetOrigin[1] !== cors_api_host) {
+            args[1] = cors_api_url + args[1];
+        }
+        return open.apply(this, args);
+    };
+})(); 
 
-    <!--Jquery-->
-    <script src="./assets/javascript/jquery-3.2.1.min.js"></script>
+        </code>
+      </pre>
+
+
+        <p class="story_text">
+          The BoardgameGeek Api being in XML format created significant challenges. As a result, the data needed to be converted to JSON so that it could be parsed and processed appropriately.
+        </p>
+
+        <pre>
+        <code class="hljs javascript">
+  
+  function xmlToJson(xml) {
     
-    <!--Jquery Debounce plugin-->
-    <script src='./assets/javascript/jquery.ba-throttle-debounce.js' charset=utf-8></script>
+    var obj = {};
 
-    <!--Particles js config-->
-    <script src="./assets/javascript/bubbles.js" charset="utf-8"></script>
+    if (xml.nodeType == 1) {
+      if (xml.attributes.length > 0) {
+      obj["@attributes"] = {};
+        for (var j = 0; j < xml.attributes.length; j++) {
+          var attribute = xml.attributes.item(j);
+          obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+        }
+      }
+    } else if (xml.nodeType == 3) { // text
+      obj = xml.nodeValue;
+    }
 
-    <!--Particles css config-->
-    <link rel="stylesheet" type="text/css" href="./assets/css/bubbles.css">
+    
+    if (xml.hasChildNodes()) {
+      for(var i = 0; i < xml.childNodes.length; i++) {
+        var item = xml.childNodes.item(i);
+        var nodeName = item.nodeName;
+        if (typeof(obj[nodeName]) == "undefined") {
+          obj[nodeName] = xmlToJson(item);
+        } else {
+          if (typeof(obj[nodeName].push) == "undefined") {
+            var old = obj[nodeName];
+            obj[nodeName] = [];
+            obj[nodeName].push(old);
+          }
+          obj[nodeName].push(xmlToJson(item));
+        }
+      }
+    }
+    return obj;
+  };
+        </code>
+      </pre>
 
-  <!--Main app JS-->
-    <script src="./assets/javascript/portolio.js" charset="utf-8"></script>
+        <p class="story_text">
+          The resulting conversion caused issues with inconsistent JSON values. The solution was apply manual data correction before rendering the output to the DOM.
+        </p>
+
+        <pre>
+        <code class="hljs javascript">
+  
+  // If the key 'boardgamemechanics' exists in the JSON (as an object),
+  // Apply one set of conversions.
+  // If not, treat the key as an array.
+  
+  
+  if ('boardgamemechanics' in BggData.singleSearch) {
+    if (Array.isArray(BggData.singleSearch.boardgamemechanics)) {
+      var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics.map(function(element) {
+        return (`<li>${element}</li>`);
+      }).join().replace(/,/g, '');
+
+    } else if (!('boardgamemechanics' in BggData.singleSearch)) {
+      return;
+
+    } else {
+      var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics;
+
+    }
+  } else {
+    // convert board game mechanics to a list
+    if (Array.isArray(BggData.mainData[index].boardgamemechanics)) {
+      var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics.map(function(element) {
+        return `<li>${element}</li>`;
+      }).join().replace(/,/g, '');
+
+    } else if (!('boardgamemechanics' in BggData.mainData[index])) {
+      return;
+
+    } else {
+      var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics;
+    }
+
+  }
+
+        </code>
+      </pre>
+
+        <p class="story_text">
+          In terms of site layout, in order to display the detailed information for each board game result, the JSON data was first cached to avoid multiple API calls due to API limitations. A modal/lightbox was used to display the cached data to provide a responsive and informative user experience.
+        </p>
+
+        <div class=img_container>
+          <img class="bgg_screenshot2" alt="BoardgameGeek API modal/lightbox" src="./assets/images/lightbox.jpg">
+        </div>
+
+      </div>
+
+
+      <h3>Technologies used:</h3>
+
+      <div class="row">
+        <div class="col-4">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/html-5-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/css-3-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/javascript-icon.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/YouTube-logo-full_color.png" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/ajax-logo.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+
+
+    </article>
+    <article class="ff-quiz">
+
+      <h2>Final Fantasy Quiz</h2>
+      <p class="story_text">
+        Growing up, I was a huge fan of role playing games (RPGS), and in particular the creations of then Squaresoft (now SquareEnix). Particularly I loved the stories with incredibly well developed characters, mature themes, and strategic gameplay. If your opinion is that Final Fantasy VII is the best Final Fantasy, I will argue with you (it was good but the depth of Final Fantasy VI was unmatched)!
+      </p>
+
+      <div class="img_container">
+        <img class="ff-quiz_screenshot_1" src="./assets/images/ff_quiz_1.jpg" alt="Final Fantasy quiz screenshot 1">
+      </div>
+
+      <button class="accordion">Read the Project Story</button>
+      <div class="panel">
+
+        <h3>Challenges</h3>
+
+        <p class="story_text">
+          With this project, my goal was to recreate the look and feel of the classic final fantasy menu and test user's knowledge about classic games in the series. I wanted this project to be a memorable experience, and with that in mind I wanted the user to be able to select a character.
+          <div class="img_container">
+            <img class="ff-quiz_screenshot_2" src="./assets/images/ff_quiz_2.jpg" alt="Final Fantasy quiz screeenshot 2">
+          </div>
+        </p>
+        <p class="story_text">
+          The beginning of the project involved writing out the user experience, and some notes about the inner logic of the application. The goal was to mock up the HTML of the landing page and main quiz page and wireframe basic styling. As my work on the project progressed, I worked on editing character sprites in Adobe Photoshop and sound effects in Adobe Audition.
+        </p>
+        <p class="story_text">
+          Some of the challenges this project included were asynchronous javascript (implemented using the JQuery library), custom radio button logic, appropriate use of event listeners, and implementation of styling and the interface. Application behavior was managed with a virtual state layer.
+        </p>
+
+
+        <pre>
+        <code class="javascript hljs">
+          
+
+//Main Quiz State
+
+var quizState = {
+
+  questionsAndAnswers: [
+
+    {
+      question: "How many adventurers were you able to play as in Final Fantasy I (Nes)?",
+      answers: ["One", "Two", "Three", "Four"],
+      correctAnswer: "Four"
+    }, ....
+    
+  ],
+
+  answerChoices: ['A. ', 'B. ', 'C. ', 'D. '],
+  answerClasses: [".answer-A", ".answer-B", ".answer-C", ".answer-D"],
+
+
+  currentQuestion: 0,
+  questionIsCorrect: 0,
+  questionIsWrong: 0,
+  quizFinished: 0,
+  characterClass: '',
+  quizSubmitCounter: 0,
+  submitClicked: 0,
+
+};
+
+        </code>
+      </pre>
+
+        <pre>
+        <code class="javascript hljs">
+  
+  function testSelectedAnswer() {
+
+    var selectedAnswer = $("[class*='green-selected']").text().replace(/^.../, "");
+    var rightAnswer = quizState.questionsAndAnswers[quizState.currentQuestion-1].correctAnswer;
+
+        if (selectedAnswer === rightAnswer) answerIsCorrect();
+        else if (selectedAnswer !== rightAnswer) answerIsWrong();
+
+        var selectionClasses = quizState.answerClasses;
+        var answerArray = quizState.questionsAndAnswers[quizState.currentQuestion-1].answers;
+        answerArray.forEach(function(element, index){
+          if (element === rightAnswer) {
+            $(selectionClasses[index]).addClass('green-selected');
+          } else {
+            $(selectionClasses[index]).addClass('red-selected');
+
+          };
+
+        });
+  }
+        </code>
+      </pre>
+      </div>
+      <h3>Technologies used:</h3>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/html-5-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/css-3-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/javascript-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+
+
+    </article>
+    <article class="tropical_vscode_theme">
+
+      <h2>Visual Studio Code - Tropical theme </h2>
+
+      <p class="story_text">
+        As the kind of person who is always interested in improving my workflow, I'm always refining my development environment, tweaking the editor I use, and learning new shortcuts. After using different IDE/text editors including IntelliJ, Notepad++, Sublime Text 3, and Atom, I settled on my new favorite editor, Visual Studio Code.
+      </p>
+
+      <p class="story_text">
+        After spending a significant amount of time configuring the editor, I could not settle on a theme, so I decided to publish my own (available from the VS Code extension marketplace under the name "tropical"). Given the amount of time I spend coding, using a theme I enjoyed was not just aesthetically important; it improved my workflow by allowing me to parse code easier and faster. The tropical theme is focused on high contrast and varied colors for optimal visibility.
+      </p>
+
+      <div class="img_container">
+        <img src="./assets/images/Javascipt_screenshot.jpg" alt="VsCode Tropical Theme">
+      </div>
+
+    </article>
+    <article class="text_analyzer">
+
+      <h2>Text Analyzer</h2>
+
+      <p class="story_text">
+        The text analyzer web app was my first foray into javascript. With every project I've worked on, I've pushed myself to learn new tools and libraries to be a better developer. With this app, I worked on writing clean and concise code. I also included many more analytics than required and applied some newly learned RegExp in my code.
+      </p>
+
+      <pre>
+        <code class="hljs javascript">
+
+function arraySplitToSent(text) { // textToLineArray()
+  var standardSentEx = new RegExp('/[\.!\?"] /');
+  var sentenOut = [];
+  if (standardSentEx.test(text) === true) {
+    sentenOut = text.split(standardSent);
+    return sentenOut;
+  } else {
+    sentenOut = text.split("\n");
+    return sentenOut;
+  }
+}
+
+        </code>
+      </pre>
+
+      <pre>
+        <code class="hljs javascript">
+// return true if submitted text is a number AND has no white space
+function hasNumberNoSpc(text) {
+
+  var regNum = new RegExp('[0-9]+'); // this matches the string "a9"
+  var regNoSpace = new RegExp('^[^\s]+$');
+
+  if ((regNum.test(text)) === true && (regNoSpace.test(text) === true)) {
+    return true;
+  }
+
+  return false;
+}
+
+// "5".LowerCase = 5, "%".toUpperCase = %
+// Filters characters that have the same upper and lower case results
+// removes special characters (but leaves spaces) (not including numbers from string)
+function removeSpecial(text) { // removeSpecialChars
+  // return text.replace(/[^a-zA-Z0-9\s]/g, "");
+
+  if (text) {
+    var lower = text.toLowerCase();
+    var upper = text.toUpperCase();
+    var result = "";
+    for (var i = 0; i < lower.length; ++i) {
+      if (hasNumberNoSpc(text[i]) || (lower[i] != upper[i]) || (lower[i].trim() === '')) {
+        result += text[i];
+      }
+    }
+    console.log(result);
+    return result;
+  }
+  return '';
+}
+
+        </code>
+      </pre>
+
+      <h3>Technologies used:</h3>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/html-5-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/css-3-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/javascript-icon.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="img_container">
+            <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+    </article>
+
+  </section>
+
+
+
+  <section class="main">
+    <article>
+      <h1 class="about_me section_one" id="About_Me">About Me</h1>
+
+      <p class="story_text">
+        Hi, I'm Julia! Thank you for visiting my page! I'm a Web Developer passionate about writing clean, efficient, and readable code. I get excited about being faced with new challenges and learning how to overcome them. I'm also a classically trained concert pianist, composer, arranger, teacher, accompanist. Also, I'm a huge nerd with interests: technology, audio engineering, graphic design, photography, science, history, cooking, politics, video games, board games, and computers. I'm equally comfortable wearing many hats (just not literally, I look terrible in some hats).
+      </p>
+      <p class="story_text">
+        The quotes above are a way of life for me. I've always held to the belief that one of the most important things is to find something that you are good at, and that you find intellectually stimulating. What I enjoy most about coding is finding innovative solutions to problems. And no matter how long I spend at a problem, It never feels as though it is work.
+      </p>
+
+      <h1 class="about_me section_one">My Motivation</h1>
+
+      <p class="story_text">
+        I've always been that person whose friends always turn to for computer help or technical support. My love of learning new things and being challenged comes from my childhood: When I was 10 years old, I was using my mom's 386 desktop when it suddenly broke. Windows 3.1 wouldn't boot from DOS. So I decided (somewhat foolishly) to take a screwdriver and unscrew the entire computer apart.
+
+      </p>
+      <p class="story_text">
+        At this time, there was no instruction manual, no technical support to call, and no internet (America Online was in it's infancy). And so I sat there for hours on the floor of my bedroom with all the computer parts spread around me. After several hours, I figured out what each part did, and how to put it together. And when I turned the machine on, to my (and my parents') surprise, it worked! For me, that moment when you run code and it works for the first time is incredibly satisfying and rewarding!
+      </p>
+
+      <h1 class="about_me section_one">My Goals</h1>
+
+      <p class="story_text">
+        I see myself in the future as an experienced developer, with a specialization in data science. I'm interested in combining my expertise in music to eventually write some useful software particularly in the category of music production and music notation. I eventually want to also learn how to develop for mobile platforms such as Android and IOS. Overall, I will pursue anything that intrigues me intellectually and provides a challenge!
+      </p>
+
+      <h3 class="contact">Contact</h3>
+
+      <div class="contact_info">
+          <div class="img_container_two">
+            <a href="mailto:Juliafinarovsky@gmail.com"><img alt="Email Julia" src="./assets/images/blue-jelly-mail.png" class="icon"></a>
+          </div>
+          <div class="img_container_two">
+            <a href="https://github.com/Juliafin"><img class="icon" src="./assets/images/github-512.png" alt="Github"></a>
+          </div>
+          <div class="img_container_two">
+            <a href="https://www.linkedin.com/in/julia-finarovsky-2a3732139/"><img class="icon" src="./assets/images/linkedin-icon.png" alt="LinkedIn"></a>
+          </div>
+      </div>
+
+<!--
+      <p class="story_text bottom_story_text">
+        <i><a href="mailto:Juliafinarovsky@gmail.com">JuliaFinarovsky@gmail.com</a></i>
+      </p>-->
+
+    </article>
+  </section>
+
+
+  <section class="references" id="References">
+    <article>
+      <h1>References</h1>
+
+      <div class="reference_quote">
+        <blockquote>
+          For over a decade in this industry and work done with hundreds of people I can tell that Julie is talent and passion wise, on the top of my list. What most amazed me about Julie wasn't the fact she was picking up some complex subjects with ease, it was the fact that she really wanted to amaze me with whatever she was doing, always gave her best and never complained about the effort or how much time she put in, she realized that success doesn't happen without hard work and she always stood up to the challenge. I would work with Julie any time and I believe her energy, character and commitment are assets which any company would crave for. 
+        </blockquote>
+        <span><i>~Alexandar Grbic, Senior Web Developer and Thinkful Mentor</i></span>
+
+      </div>
+
+      <div class="reference_quote">
+        <blockquote>
+          Julie is an amazingly dedicated full-stack developer. Not one to shy from a challenge, she puts all her effort towards solving problems and mastering new skills. Her work ethic, technical skill, and tenacity would be an asset to any team. Julie readily shares her experience, and is always read to help her peers with thoughtful answers to their questions.  
+        </blockquote>
+        <span><i>~Ben Boyle, Senior Web Developer and Thinkful Mentor</i></span>
+
+
+
+      </div>
+
+
+
+
+    </article>
+
+    <footer>
+    Julia Finarovsky
+    </footer>
+
+
+  </section>
+
+  
+
+
+  <!-- particles.js container -->
+  <div id="particles-js">
+    <canvas class="particles-js-canvas-el" width="1011" height="2500" style="width: 100%; height: 100%;"></canvas>
+  </div>
+  <!--Bubbles background css-->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="./assets/javascript/jquery-3.2.1.min.js"></script>
+  <script src='./assets/javascript/jquery.ba-throttle-debounce.js' charset=utf-8></script>
+  <script src="./assets/javascript/bubbles.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/bubbles.css">
+
+  <script src="./assets/javascript/portolio.js" charset="utf-8"></script>
+
+
+
+
+
 </body>
+
+
+
 </html>
