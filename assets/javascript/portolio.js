@@ -16,10 +16,10 @@ var portfolioState = {
   ]
 };
 
+
 function renderQuote() {
 
   setTimeout(function () {
-
 
     let quoteHTML = `${portfolioState.quotes[portfolioState.currentQuote].quote}`;
     let authorHTML = `${portfolioState.quotes[portfolioState.currentQuote].author}`;
@@ -46,14 +46,16 @@ function renderQuote() {
   }, 11000);
 }
 
+
 function accordionListener() {
+
   $('.accordion').click(function (event) {
     event.preventDefault();
-
     $(this).next().slideToggle('1600');
     $(this).toggleClass('minus');
   });
 }
+
 
 function navbarActiveListener() {
 
@@ -64,44 +66,41 @@ function navbarActiveListener() {
   });
 }
 
+
 function changeOpacity() {
-  // console.log('this function is activated');
+
   if ((window.screen.availHeight <= 732) && (window.screen.availWidth <= 412)) {
-      // console.log('mobile opacity settings')
-      if ($(window).scrollTop() > 600) {
-        $('.title_container').css('font-size', '10px').stop().animate({
-          "opacity": "0"
-        },2550, "linear");
+   
+    if ($(window).scrollTop() > 600) {
+      $('.title_container').css('font-size', '10px').stop().animate({
+        "opacity": "0"
+      },2550, "linear");
 
-      } else if ($(window).scrollTop() < 600) {
-        $('.title_container').css('font-size', '12px').stop().animate({
-          "opacity": "1"
-        }, 2550, "linear");
-      }
-
-    } else {
-      // console.log('desktop opacity settings')
-
-      if (($(window).scrollTop() > 400)) {
-        $('.title_container').css('font-size', '10px').stop().animate({
-          "opacity": "0"
-        }, 200, "linear");
-
-      } else if ($(window).scrollTop() < 400) {
-        $('.title_container').css('font-size', '12px').stop().animate({
-          "opacity": "1"
-        }, 200, "linear");
-      }
+    } else if ($(window).scrollTop() < 600) {
+      $('.title_container').css('font-size', '12px').stop().animate({
+        "opacity": "1"
+      }, 2550, "linear");
     }
 
+  } else {
+
+    if (($(window).scrollTop() > 400)) {
+      $('.title_container').css('font-size', '10px').stop().animate({
+        "opacity": "0"
+      }, 200, "linear");
+
+    } else if ($(window).scrollTop() < 400) {
+      $('.title_container').css('font-size', '12px').stop().animate({
+        "opacity": "1"
+      }, 200, "linear");
+    }
+  }
 }
 
 
 function opacityListenerDeb() {
-
   $(window).scroll($.throttle( 150, changeOpacity));
 }
-
 
 
 ($(document).ready(function () {
@@ -109,12 +108,7 @@ function opacityListenerDeb() {
   accordionListener();
   navbarActiveListener();
   opacityListenerDeb();
-
-
   $('div#particles-js').animate({
     opacity: 1
   }, 1000);
-
-
-
 }));
