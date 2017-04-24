@@ -237,7 +237,7 @@ section.projects {
   position: relative;
   border-top: #5b9f9f 2px solid;
   top: 0;
-  margin-top: 100vw;
+  margin-top: 57vw;
 }
 
 div#particles-js {
@@ -253,8 +253,8 @@ div#particles-js {
 }
 
 img {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   width: 69vw;
   margin-top: 3%;
 }
@@ -323,8 +323,8 @@ button.accordion {
   border: none;
   outline: none;
   transition: 0.4s;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   font-family: Proza Libre;
   font-size: 2em;
   margin-top: 7%;
@@ -385,8 +385,8 @@ section.references {
 .reference_quote {
   width: 74%;
   background: rgba(37, 111, 136, 0.85);
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   margin-left: auto;
   margin-right: auto;
   padding: 36px;
@@ -1299,8 +1299,8 @@ footer:before {
     font-size: 1.2vw;
   }
   code.hljs {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
   code span {
     font-size: 1.2vw;
