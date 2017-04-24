@@ -64,13 +64,18 @@ nav {
 }
 
 #nav li:hover,
-#nav a:hover,
 #nav li:focus,
 button.accordion:hover {
   filter: brightness(115%);
   background: #ff9d95;
   color: #290303;
   transition: all ease-in-out 350ms;
+}
+
+#nav a {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 img.github_link {
