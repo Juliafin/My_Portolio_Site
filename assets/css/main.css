@@ -90,6 +90,11 @@ i {
   margin-right: 3%;
 }
 
+i.fa {
+    font-size: 3vw;
+    cursor: pointer;
+}
+
 .reference_quote i:hover {
   filter: brightness(115%);
   font-size: 1.9vw;

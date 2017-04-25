@@ -72,17 +72,21 @@
         <div class="img_container">
           <img class="bgg_screenshot1" src="./assets/images/bbg1.jpg" alt="BoardgameGeek Screenshot 1">
         </div>
-        <p class="story_text">
-          I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the BoardgameGeek website. As my first Capstone, I set out to make a usable UI that would list the many various statistics for board games without overwhelming the user. A fun bonus: I photographed and edited the title and 404 images with my trusty Nikon D90 (I'm a semi-professional photographer as well).
-        </p>
-        <p class="story_text bottom_story_text">
-          Being the sole developer on this project, I was responsible for developing the MVP (minimum viable product) in both concept and execution, as well as the polished version. This included the app architecture, styling, AJAX calls, and code structure. After developing the MVP, I submitted the project for peer review and made changes to features as well as bug fixes.
+        
+        <p class="story_text top_story_text">
+            A custom board game search with video walkthroughs for new and old fans of tabletop games.
         </p>
 
+          
         <button class="accordion">Read the Project Story</button>
         <div class="panel">
-
-          <h3>Challenges</h3>
+          
+          <p class="story_text">
+            I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the BoardgameGeek website. As my first Capstone, I set out to make a usable UI that would list the many various statistics for board games without overwhelming the user. A fun bonus: I photographed and edited the title and 404 images with my trusty Nikon D90 (I'm a semi-professional photographer as well).
+          </p>
+          <p class="story_text bottom_story_text">
+            Being the sole developer on this project, I was responsible for developing the MVP (minimum viable product) in both concept and execution, as well as the polished version. This included the app architecture, styling, AJAX calls, and code structure. After developing the MVP, I submitted the project for peer review and made changes to features as well as bug fixes.
+          </p>
 
           <p class="story_text">
             The first major challenge was circumventing a CORS error due to BoardgameGeek Api not having CORS headers enabled.
@@ -255,8 +259,8 @@
       <article class="ff-quiz">
 
         <h2>Final Fantasy Quiz</h2>
-        <p class="story_text">
-          Growing up, I was a huge fan of role playing games (RPGS), and in particular the creations of then Squaresoft (now SquareEnix). Particularly I loved the stories with incredibly well developed characters, mature themes, and strategic gameplay. If your opinion is that Final Fantasy VII is the best Final Fantasy, I will argue with you (it was good but the depth of Final Fantasy VI was unmatched)!
+        <p class="story_text top_story_text">
+          A quiz on classic games in the Final Fantasy Series.
         </p>
 
         <div class="img_container">
@@ -266,7 +270,9 @@
         <button class="accordion">Read the Project Story</button>
         <div class="panel">
 
-          <h3>Challenges</h3>
+          <p class="story_text">
+          Growing up, I was a huge fan of role playing games (RPGS), and in particular the creations of then Squaresoft (now SquareEnix). Particularly I loved the stories with incredibly well developed characters, mature themes, and strategic gameplay. If your opinion is that Final Fantasy VII is the best Final Fantasy, I will argue with you (it was good but the depth of Final Fantasy VI was unmatched)!
+          </p>
 
           <p class="story_text">
             With this project, my goal was to recreate the look and feel of the classic final fantasy menu and test user's knowledge about classic games in the series. I wanted this project to be a memorable experience, and with that in mind I wanted the user to be able to select a character.
@@ -374,85 +380,98 @@
       <article class="tropical_vscode_theme">
 
         <h2>Visual Studio Code - Tropical theme </h2>
-
-        <p class="story_text">
-          As the kind of person who is always interested in improving my workflow, I'm always refining my development environment, tweaking the editor I use, and learning new shortcuts. After using different IDE/text editors including IntelliJ, Notepad++, Sublime Text 3, and Atom, I settled on my new favorite editor, Visual Studio Code.
-        </p>
-
-        <p class="story_text">
-          After spending a significant amount of time configuring the editor, I could not settle on a theme, so I decided to publish my own (available from the VS Code extension marketplace under the name "tropical"). Given the amount of time I spend coding, using a theme I enjoyed was not just aesthetically important; it improved my workflow by allowing me to parse code easier and faster. The tropical theme is focused on high contrast and varied colors for optimal visibility.
-        </p>
-
+        
         <div class="img_container">
           <img src="./assets/images/Javascipt_screenshot.jpg" alt="VsCode Tropical Theme">
         </div>
 
+        <p class="story_text top_story_text">
+          A Visual Studio Code theme for improved workflow.
+        </p>
+
+        <button class="accordion">Read the Project Story</button>
+        <div class="panel">
+
+          <p class="story_text">
+            As the kind of person who is always interested in improving my workflow, I'm always refining my development environment, tweaking the editor I use, and learning new shortcuts. After using different IDE/text editors including IntelliJ, Notepad++, Sublime Text 3, and Atom, I settled on my new favorite editor, Visual Studio Code.
+          </p>
+
+          <p class="story_text">
+            After spending a significant amount of time configuring the editor, I could not settle on a theme, so I decided to publish my own (available from the VS Code extension marketplace under the name "tropical"). Given the amount of time I spend coding, using a theme I enjoyed was not just aesthetically important; it improved my workflow by allowing me to parse code easier and faster. The tropical theme is focused on high contrast and varied colors for optimal visibility.
+          </p>
+        </div>
+        
       </article>
       <article class="text_analyzer">
 
         <h2>Text Analyzer</h2>
 
-        <p class="story_text">
-          The text analyzer web app was my first foray into javascript. With every project I've worked on, I've pushed myself to learn new tools and libraries to be a better developer. With this app, I worked on writing clean and concise code. I also included many more analytics than required and applied some newly learned RegExp in my code.
-        </p>
+        <p class="story_text top_story_text"></p>
 
-        <pre>
-          <code class="hljs javascript">
+        <button class="accordion">Read the Project Story</button>
+        <div class="panel">
+        
+          <p class="story_text">
+            The text analyzer web app was my first foray into javascript. With every project I've worked on, I've pushed myself to learn new tools and libraries to be a better developer. With this app, I worked on writing clean and concise code. I also included many more analytics than required and applied some newly learned RegExp in my code.
+          </p>
 
-  function arraySplitToSent(text) { // textToLineArray()
-    var standardSentEx = new RegExp('/[\.!\?"] /');
-    var sentenOut = [];
-    if (standardSentEx.test(text) === true) {
-      sentenOut = text.split(standardSent);
-      return sentenOut;
-    } else {
-      sentenOut = text.split("\n");
-      return sentenOut;
-    }
-  }
+          <pre>
+            <code class="hljs javascript">
 
-          </code>
-        </pre>
-
-        <pre>
-          <code class="hljs javascript">
-  // return true if submitted text is a number AND has no white space
-  function hasNumberNoSpc(text) {
-
-    var regNum = new RegExp('[0-9]+'); // this matches the string "a9"
-    var regNoSpace = new RegExp('^[^\s]+$');
-
-    if ((regNum.test(text)) === true && (regNoSpace.test(text) === true)) {
-      return true;
-    }
-
-    return false;
-  }
-
-  // "5".LowerCase = 5, "%".toUpperCase = %
-  // Filters characters that have the same upper and lower case results
-  // removes special characters (but leaves spaces) (not including numbers from string)
-  function removeSpecial(text) { // removeSpecialChars
-    // return text.replace(/[^a-zA-Z0-9\s]/g, "");
-
-    if (text) {
-      var lower = text.toLowerCase();
-      var upper = text.toUpperCase();
-      var result = "";
-      for (var i = 0; i < lower.length; ++i) {
-        if (hasNumberNoSpc(text[i]) || (lower[i] != upper[i]) || (lower[i].trim() === '')) {
-          result += text[i];
-        }
+    function arraySplitToSent(text) { // textToLineArray()
+      var standardSentEx = new RegExp('/[\.!\?"] /');
+      var sentenOut = [];
+      if (standardSentEx.test(text) === true) {
+        sentenOut = text.split(standardSent);
+        return sentenOut;
+      } else {
+        sentenOut = text.split("\n");
+        return sentenOut;
       }
-      console.log(result);
-      return result;
     }
-    return '';
-  }
 
-          </code>
-        </pre>
+            </code>
+          </pre>
 
+          <pre>
+            <code class="hljs javascript">
+    // return true if submitted text is a number AND has no white space
+    function hasNumberNoSpc(text) {
+
+      var regNum = new RegExp('[0-9]+'); // this matches the string "a9"
+      var regNoSpace = new RegExp('^[^\s]+$');
+
+      if ((regNum.test(text)) === true && (regNoSpace.test(text) === true)) {
+        return true;
+      }
+
+      return false;
+    }
+
+    // "5".LowerCase = 5, "%".toUpperCase = %
+    // Filters characters that have the same upper and lower case results
+    // removes special characters (but leaves spaces) (not including numbers from string)
+    function removeSpecial(text) { // removeSpecialChars
+      // return text.replace(/[^a-zA-Z0-9\s]/g, "");
+
+      if (text) {
+        var lower = text.toLowerCase();
+        var upper = text.toUpperCase();
+        var result = "";
+        for (var i = 0; i < lower.length; ++i) {
+          if (hasNumberNoSpc(text[i]) || (lower[i] != upper[i]) || (lower[i].trim() === '')) {
+            result += text[i];
+          }
+        }
+        console.log(result);
+        return result;
+      }
+      return '';
+    }
+
+            </code>
+          </pre>
+        </div>
         <h3>Technologies used:</h3>
 
         <div class="row">
