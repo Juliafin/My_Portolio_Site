@@ -86,6 +86,8 @@ img.github_link {
 
 i {
   font-size: 1.2em;
+  margin-left: 4%;
+  margin-right: 3%;
 }
 
 .reference_quote i:hover {
@@ -95,10 +97,31 @@ i {
   transition: all ease-in-out 600ms;
 }
 
+.icons {
+  position: relative;
+  top: 5%;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.icons a {
+  display: block;
+  height: 20px;
+  width: 120%;
+  position: relative;
+  top: -16px;
+}
+
 i:hover,
 p.bottom_story_text a:hover {
   color: #861313;
   transition: all ease-in-out 300ms;
+}
+
+.icons i:hover,
+.icons i:focus {
+  color: #861313;
+  transform: scale(1.5, 1.5);
 }
 
 section.title_container {
@@ -111,7 +134,7 @@ h1.my_name {
   margin: 0;
   color: brown;
   font-weight: 100;
-  padding-top: 3vw;
+  padding: 0;
 }
 
 .image_container {
@@ -204,7 +227,7 @@ h3.contact {
 }
 
 .section_one {
-    color: #f5e9d9;
+  color: #f5e9d9;
 }
 
 p.story_text {
@@ -290,10 +313,10 @@ img {
 }
 
 .bottom_story_text a {
-    text-decoration: none;
-    color: #6dbfbf;
-    font-size: 2vw;
-    letter-spacing: 0.6pt;
+  text-decoration: none;
+  color: #6dbfbf;
+  font-size: 2vw;
+  letter-spacing: 0.6pt;
 }
 
 img.icon {
@@ -365,17 +388,16 @@ button.minus:after {
 }
 
 .contact_info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-bottom: 7%;
-    padding-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 7%;
+  padding-top: 3%;
 }
 
-.img_container_two:hover{
-
-    filter: brightness(130%);
-    color:#e2cdb4;
+.img_container_two:hover {
+  filter: brightness(130%);
+  color: #e2cdb4;
 }
 
 section.references {
@@ -469,9 +491,6 @@ footer:before {
   p.story_text {
     font-size: 3em;
   }
-  i {
-    font-size: 2.8em;
-  }
   button.accordion {
     font-size: 3em;
   }
@@ -519,9 +538,6 @@ footer:before {
   p.story_text {
     font-size: 2.5em;
   }
-  i {
-    font-size: 2.3em;
-  }
   button.accordion {
     font-size: 2.5em;
   }
@@ -568,9 +584,6 @@ footer:before {
   }
   p.story_text {
     font-size: 2em;
-  }
-  i {
-    font-size: 1.8em;
   }
   button.accordion {
     font-size: 2em;
@@ -622,9 +635,6 @@ footer:before {
   }
   p.story_text {
     font-size: 1.7em;
-  }
-  i {
-    font-size: 1.8em;
   }
   button.accordion {
     font-size: 2em;
@@ -680,9 +690,6 @@ footer:before {
   p.story_text {
     font-size: 1.6em;
   }
-  i {
-    font-size: 1.6em;
-  }
   button.accordion {
     font-size: 1.7em;
   }
@@ -736,9 +743,6 @@ footer:before {
   }
   p.story_text {
     font-size: 1.5em;
-  }
-  i {
-    font-size: 1.6em;
   }
   button.accordion {
     font-size: 1.7em;
@@ -797,9 +801,6 @@ footer:before {
   }
   p.story_text {
     font-size: 1.4em;
-  }
-  i {
-    font-size: 1.6em;
   }
   button.accordion {
     font-size: 1.7em;
@@ -863,9 +864,6 @@ footer:before {
   p.story_text {
     font-size: 1.2em;
   }
-  i {
-    font-size: 1.3em;
-  }
   button.accordion {
     font-size: 1.5em;
   }
@@ -928,9 +926,6 @@ footer:before {
   p.story_text {
     font-size: 1.2em;
   }
-  i {
-    font-size: 1.3em;
-  }
   button.accordion {
     font-size: 1.3em;
   }
@@ -992,11 +987,6 @@ footer:before {
   }
   p.story_text {
     font-size: 1em;
-  }
-  i {
-    font-size: 1em;
-    margin-left: 4%;
-    margin-right: 3%;
   }
   button.accordion {
     font-size: 1em;
@@ -1243,7 +1233,6 @@ footer:before {
 @media screen and (max-width: 330px) {
   h1.my_name {
     font-size: 1.2em;
-    padding-top: 10%;
   }
   h1 {
     font-size: 1.2em;
@@ -1378,7 +1367,7 @@ footer:before {
   }
   code.hljs {
     font-size: .6em;
-    text-align:left;
+    text-align: left;
   }
   code span {
     font-size: .8em;
@@ -1393,4 +1382,3 @@ footer:before {
     padding: 19px;
   }
 }
-
