@@ -98,6 +98,7 @@ function opacityListenerDeb() {
 }
 
 ($(document).ready(function () {
+  $(this).scrollTop(0);
   renderQuote();
   accordionListener();
   navbarActiveListener();
