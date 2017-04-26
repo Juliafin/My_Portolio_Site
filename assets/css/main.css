@@ -125,6 +125,7 @@ p.bottom_story_text a:hover {
   transition: all ease-in-out 300ms;
 }
 .icons i:hover,
+i.fa.fa-github:hover,
 .icons i:focus {
   color: #861313;
   transform: scale(1.5, 1.5);
