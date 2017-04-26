@@ -358,7 +358,7 @@ button.minus:after {
 }
 .panel {
   display: none;
-  background: rgba(22, 67, 107, 0.3);
+  background: rgba(22, 67, 107, 0.49);
   padding: 0 6%;
   padding-top: 5%;
 }
