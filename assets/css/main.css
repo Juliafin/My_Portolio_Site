@@ -82,6 +82,9 @@ i.fa {
   font-size: 3vw;
   cursor: pointer;
 }
+i.fa.fa-github {
+    font-size: 6vw;
+}
 .reference_quote i:hover {
   filter: brightness(115%);
   font-size: 1.9vw;
@@ -199,9 +202,16 @@ h1.my_name {
 }
 h2 {
   font-size: 2.9vw;
-  text-align: center;
   font-family: Proza Libre;
   margin-top: 6%;
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-bottom: 0;
+}
+h2 + p {
+    text-align: center;
+    margin-top: 2%;
 }
 .section_one {
   color: #f5e9d9;
@@ -262,6 +272,9 @@ img {
   width: 100%;
   height: auto;
   text-align: center;
+}
+.img_container img.bgg_screenshot1:hover {
+    filter: brightness(105%);
 }
 .bgg_screenshot1 {
   width: 69%;
@@ -430,9 +443,7 @@ footer:before {
   h1 {
     font-size: 7em;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
+
   #nav li {
     font-size: 3em;
   }
@@ -473,9 +484,6 @@ footer:before {
   }
   h1 {
     font-size: 6.5em;
-  }
-  h2 {
-    margin-bottom: 5%;
   }
   #nav li {
     font-size: 2.5em;
@@ -518,9 +526,6 @@ footer:before {
   h1 {
     font-size: 6em;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
   #nav li {
     font-size: 2em;
   }
@@ -561,9 +566,6 @@ footer:before {
   }
   h1 {
     font-size: 5.5em;
-  }
-  h2 {
-    margin-bottom: 5%;
   }
   #nav li {
     font-size: 1.6em;
@@ -613,9 +615,6 @@ footer:before {
   h1 {
     font-size: 5em;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
   #nav li {
     font-size: 1.6em;
   }
@@ -664,9 +663,6 @@ footer:before {
   h1 {
     font-size: 4.9em;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
   #nav li {
     font-size: 1.4em;
   }
@@ -685,9 +681,6 @@ footer:before {
     width: 150px;
     margin-bottom: 1%;
     padding-bottom: 1%
-  }
-  .img_container {
-    height: auto;
   }
   code {
     font-size: 1.2vw;
@@ -719,9 +712,7 @@ footer:before {
     font-size: 4em;
     font-stretch: ultra-expanded;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
+
   #nav li {
     font-size: 1.2em;
   }
@@ -740,9 +731,6 @@ footer:before {
     width: 150px;
     margin-bottom: 1%;
     padding-bottom: 1%
-  }
-  .img_container {
-    height: auto;
   }
   code {
     font-size: 1.2vw;
@@ -773,9 +761,6 @@ footer:before {
   h1 {
     font-size: 3.5em;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
   #nav li {
     font-size: 1.1em;
   }
@@ -799,9 +784,6 @@ footer:before {
     width: 130px;
     margin-bottom: 1%;
     padding-bottom: 1%
-  }
-  .img_container {
-    height: auto;
   }
   code {
     font-size: 1.2vw;
@@ -832,9 +814,6 @@ footer:before {
   h1 {
     font-size: 3em;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
   #nav li {
     font-size: 1em;
   }
@@ -858,9 +837,6 @@ footer:before {
     width: 110px;
     margin-bottom: 1%;
     padding-bottom: 1%
-  }
-  .img_container {
-    height: auto;
   }
   code {
     font-size: 1.2vw;
@@ -891,9 +867,6 @@ footer:before {
   h1 {
     font-size: 2.5em;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
   #nav li {
     font-size: .9em;
   }
@@ -917,9 +890,6 @@ footer:before {
     width: 90px;
     margin-bottom: 1%;
     padding-bottom: 1%
-  }
-  .img_container {
-    height: auto;
   }
   code {
     font-size: 1.2vw;
@@ -950,9 +920,6 @@ footer:before {
   h1 {
     font-size: 2em;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
   #nav li {
     font-size: .8em;
   }
@@ -981,9 +948,6 @@ footer:before {
     width: 70px;
     margin-bottom: 1%;
     padding-bottom: 1%
-  }
-  .img_container {
-    height: auto;
   }
   code {
     font-size: 1.2vw;
@@ -1015,9 +979,6 @@ footer:before {
     font-size: 1.7em;
     padding-top: 15%;
   }
-  h2 {
-    margin-bottom: 5%;
-  }
   #nav li {
     font-size: .6em;
   }
@@ -1047,9 +1008,6 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {
-    height: auto;
-  }
   code {
     font-size: 1.2vw;
   }
@@ -1078,9 +1036,6 @@ footer:before {
   }
   h1 {
     font-size: 1.5em;
-  }
-  h2 {
-    margin-bottom: 5%;
   }
   #nav li {
     font-size: .5em;
@@ -1112,9 +1067,6 @@ footer:before {
     width: 50px;
     margin-bottom: 1%;
     padding-bottom: 1%
-  }
-  .img_container {
-    height: auto;
   }
   code {
     font-size: 1.2vw;
@@ -1152,7 +1104,6 @@ footer:before {
   }
   h2 {
     font-size: .9em;
-    margin-bottom: 5%;
   }
   #nav li {
     font-size: .4em;
@@ -1191,9 +1142,7 @@ footer:before {
     margin-bottom: 1%;
     padding-bottom: 1%
   }
-  .img_container {
-    height: auto;
-  }
+
   img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
