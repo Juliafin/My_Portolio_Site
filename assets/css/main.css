@@ -214,6 +214,13 @@ h2 + p {
     text-align: center;
     margin-top: 2%;
 }
+h2 + p a {
+    height: 5vw;
+    width: 7vw;
+    display: block;
+    position: relative;
+    top: -6vw;
+}
 .section_one {
   color: #f5e9d9;
 }
