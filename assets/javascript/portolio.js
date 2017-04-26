@@ -49,7 +49,7 @@ function accordionListener() {
 
   $('.accordion').click(function (event) {
     event.preventDefault();
-    $(this).next().slideToggle('1600');
+    $(this).next().slideToggle('600');
     $(this).toggleClass('minus');
   });
 }
