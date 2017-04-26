@@ -124,7 +124,7 @@ p.bottom_story_text a:hover {
   color: #861313;
   transition: all ease-in-out 300ms;
 }
-.icons i:hover, i.fa.fa-github:hover,
+.icons i:hover,
 .icons i:focus {
   color: #861313;
   transform: scale(1.5, 1.5);
@@ -360,6 +360,7 @@ button.minus:after {
   display: none;
   background: rgba(22, 67, 107, 0.3);
   padding: 0 6%;
+  padding-top: 5%;
 }
 .contact_info {
   display: flex;
