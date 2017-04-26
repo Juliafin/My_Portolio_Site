@@ -99,10 +99,10 @@ i.fa.fa-github {
 }
 .icons a {
   display: block;
-  height: 20px;
-  width: 120%;
+  height: 4vw;
+  width: 6vw;
   position: relative;
-  top: -16px;
+  top: -41vh;
 }
 .technologies {
     text-align: center;
