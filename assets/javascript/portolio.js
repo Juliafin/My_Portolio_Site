@@ -16,7 +16,6 @@ var portfolioState = {
   ]
 };
 
-
 function renderQuote() {
 
   setTimeout(function () {
@@ -46,7 +45,6 @@ function renderQuote() {
   }, 11000);
 }
 
-
 function accordionListener() {
 
   $('.accordion').click(function (event) {
@@ -56,7 +54,6 @@ function accordionListener() {
   });
 }
 
-
 function navbarActiveListener() {
 
   $('#nav li').click(function (event) {
@@ -65,7 +62,6 @@ function navbarActiveListener() {
     $('#nav li').not($(this)).removeClass('selected');
   });
 }
-
 
 function changeOpacity() {
 
@@ -84,24 +80,22 @@ function changeOpacity() {
 
   } else {
 
-    if (($(window).scrollTop() > 400)) {
+    if (($(window).scrollTop() > 175)) {
       $('.title_container').css('font-size', '10px').stop().animate({
         "opacity": "0"
-      }, 200, "linear");
+      }, 350, "linear");
 
-    } else if ($(window).scrollTop() < 400) {
+    } else if ($(window).scrollTop() < 175) {
       $('.title_container').css('font-size', '12px').stop().animate({
         "opacity": "1"
-      }, 200, "linear");
+      }, 350, "linear");
     }
   }
 }
 
-
 function opacityListenerDeb() {
   $(window).scroll($.throttle( 150, changeOpacity));
 }
-
 
 ($(document).ready(function () {
   renderQuote();

@@ -61,30 +61,42 @@
       </header>
     </section>
 
-
-
     <section class="projects" id="Projects">
       <h1 class="about_me section_two">Projects</h1>
 
       <article class="bggapi">
         <h2>BoardgameGeek Api </h2>
-
-        <div class="img_container">
-          <img class="bgg_screenshot1" src="./assets/images/bbg1.jpg" alt="BoardgameGeek Screenshot 1">
-        </div>
-        
-        <p class="story_text top_story_text">
+         
+         <p class="story_text top_story_text">
             A custom board game search with video walkthroughs for new and old fans of tabletop games.
         </p>
 
+        <div class="technologies bgg">
+          <p>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Javascript</span>
+          </p>
+          <p>
+            <span>JQuery</span>
+            <span>AJAX</span>
+            <span>Youtube</span>
+          </p>
+        </div>
+
+        <div class="img_container">
+          <a href="https://juliafin.github.io/capstone_boardgamegeek_search/boardgamegeek_api/">
+            <img class="bgg_screenshot1" src="./assets/images/bbg1.jpg" alt="BoardgameGeek Screenshot 1">
+          </a>
+        </div>
           
         <button class="accordion">Read the Project Story</button>
         <div class="panel">
           
-          <p class="story_text">
+          <p class="story_text top_story_text">
             I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the BoardgameGeek website. As my first Capstone, I set out to make a usable UI that would list the many various statistics for board games without overwhelming the user. A fun bonus: I photographed and edited the title and 404 images with my trusty Nikon D90 (I'm a semi-professional photographer as well).
           </p>
-          <p class="story_text bottom_story_text">
+          <p class="story_text">
             Being the sole developer on this project, I was responsible for developing the MVP (minimum viable product) in both concept and execution, as well as the polished version. This included the app architecture, styling, AJAX calls, and code structure. After developing the MVP, I submitted the project for peer review and made changes to features as well as bug fixes.
           </p>
 
@@ -114,7 +126,6 @@
 
           </code>
         </pre>
-
 
           <p class="story_text">
             The BoardgameGeek Api being in XML format created significant challenges. As a result, the data needed to be converted to JSON so that it could be parsed and processed appropriately.
@@ -168,11 +179,6 @@
           <pre>
           <code class="hljs javascript">
     
-    // If the key 'boardgamemechanics' exists in the JSON (as an object),
-    // Apply one set of conversions.
-    // If not, treat the key as an array.
-    
-    
     if ('boardgamemechanics' in BggData.singleSearch) {
       if (Array.isArray(BggData.singleSearch.boardgamemechanics)) {
         var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics.map(function(element) {
@@ -209,51 +215,13 @@
             In terms of site layout, in order to display the detailed information for each board game result, the JSON data was first cached to avoid multiple API calls due to API limitations. A modal/lightbox was used to display the cached data to provide a responsive and informative user experience.
           </p>
 
-          <div class=img_container>
-            <img class="bgg_screenshot2" alt="BoardgameGeek API modal/lightbox" src="./assets/images/lightbox.jpg">
+          <div class="img_container">
+            <a href="https://juliafin.github.io/capstone_boardgamegeek_search/boardgamegeek_api/">
+              <img class="bgg_screenshot2" alt="BoardgameGeek API modal/lightbox" src="./assets/images/lightbox.jpg">
+            </a>
           </div>
 
         </div>
-
-
-        <h3>Technologies used:</h3>
-
-        <div class="row">
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/html-5-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/css-3-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/javascript-icon.png" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/YouTube-logo-full_color.png" alt="">
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/ajax-logo.jpg" alt="">
-            </div>
-          </div>
-        </div>
-
-
 
       </article>
       <article class="ff-quiz">
@@ -263,36 +231,47 @@
           A quiz on classic games in the Final Fantasy Series.
         </p>
 
+        <div class="technologies">
+          <p>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Javascript</span>
+            <span>JQuery</span>
+          </p>
+        </div>
+
         <div class="img_container">
-          <img class="ff-quiz_screenshot_1" src="./assets/images/ff_quiz_1.jpg" alt="Final Fantasy quiz screenshot 1">
+          <a href="https://juliafin.github.io/final_fantasy_quiz/">
+            <img class="ff-quiz_screenshot_1" src="./assets/images/ff_quiz_1.jpg" alt="Final Fantasy quiz screenshot 1">
+          </a>
         </div>
 
         <button class="accordion">Read the Project Story</button>
         <div class="panel">
 
-          <p class="story_text">
+          <p class="story_text top_story_text">
           Growing up, I was a huge fan of role playing games (RPGS), and in particular the creations of then Squaresoft (now SquareEnix). Particularly I loved the stories with incredibly well developed characters, mature themes, and strategic gameplay. If your opinion is that Final Fantasy VII is the best Final Fantasy, I will argue with you (it was good but the depth of Final Fantasy VI was unmatched)!
           </p>
 
           <p class="story_text">
             With this project, my goal was to recreate the look and feel of the classic final fantasy menu and test user's knowledge about classic games in the series. I wanted this project to be a memorable experience, and with that in mind I wanted the user to be able to select a character.
             <div class="img_container">
-              <img class="ff-quiz_screenshot_2" src="./assets/images/ff_quiz_2.jpg" alt="Final Fantasy quiz screeenshot 2">
+              
+               <a href="https://juliafin.github.io/final_fantasy_quiz/">
+                <img class="ff-quiz_screenshot_2" src="./assets/images/ff_quiz_2.jpg" alt="Final Fantasy quiz screeenshot 2">
+               </a>
             </div>
           </p>
           <p class="story_text">
             The beginning of the project involved writing out the user experience, and some notes about the inner logic of the application. The goal was to mock up the HTML of the landing page and main quiz page and wireframe basic styling. As my work on the project progressed, I worked on editing character sprites in Adobe Photoshop and sound effects in Adobe Audition.
           </p>
-          <p class="story_text">
+          <p class="story_text bottom_story_text">
             Some of the challenges this project included were asynchronous javascript (implemented using the JQuery library), custom radio button logic, appropriate use of event listeners, and implementation of styling and the interface. Application behavior was managed with a virtual state layer.
           </p>
 
 
           <pre>
           <code class="javascript hljs">
-            
-
-  //Main Quiz State
 
   var quizState = {
 
@@ -349,45 +328,21 @@
           </code>
         </pre>
         </div>
-        <h3>Technologies used:</h3>
-
-        <div class="row">
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/html-5-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/css-3-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/javascript-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
-            </div>
-          </div>
-        </div>
-
-
 
       </article>
       <article class="tropical_vscode_theme">
 
         <h2>Visual Studio Code - Tropical theme </h2>
-        
-        <div class="img_container">
-          <img src="./assets/images/Javascipt_screenshot.jpg" alt="VsCode Tropical Theme">
-        </div>
 
         <p class="story_text top_story_text">
           A Visual Studio Code theme for improved workflow.
         </p>
+        
+        <div class="img_container">
+          <a href="https://marketplace.visualstudio.com/items?itemName=Juliafin.tropical">
+            <img src="./assets/images/Javascipt_screenshot.jpg" alt="VsCode Tropical Theme">
+          </a>
+        </div>
 
         <button class="accordion">Read the Project Story</button>
         <div class="panel">
@@ -396,7 +351,7 @@
             As the kind of person who is always interested in improving my workflow, I'm always refining my development environment, tweaking the editor I use, and learning new shortcuts. After using different IDE/text editors including IntelliJ, Notepad++, Sublime Text 3, and Atom, I settled on my new favorite editor, Visual Studio Code.
           </p>
 
-          <p class="story_text">
+          <p class="story_text bottom_story_text">
             After spending a significant amount of time configuring the editor, I could not settle on a theme, so I decided to publish my own (available from the VS Code extension marketplace under the name "tropical"). Given the amount of time I spend coding, using a theme I enjoyed was not just aesthetically important; it improved my workflow by allowing me to parse code easier and faster. The tropical theme is focused on high contrast and varied colors for optimal visibility.
           </p>
         </div>
@@ -405,6 +360,24 @@
       <article class="text_analyzer">
 
         <h2>Text Analyzer</h2>
+        
+        <p class="story_text top_story_text">
+          Robust analytics for inputted text.
+        </p>
+
+        <div class="technologies">
+          <p>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Javascript</span>
+          </p>
+        </div>
+
+        <div class="img_container">
+          <a href="https://juliafin.github.io/text_analyzer/">
+            <img src="./assets/images/text_analyzer.jpg" alt="Text Analyzer">
+          </a>
+        </div>
 
         <p class="story_text top_story_text"></p>
 
@@ -435,7 +408,7 @@
 
           <pre>
             <code class="hljs javascript">
-    // return true if submitted text is a number AND has no white space
+
     function hasNumberNoSpc(text) {
 
       var regNum = new RegExp('[0-9]+'); // this matches the string "a9"
@@ -448,11 +421,7 @@
       return false;
     }
 
-    // "5".LowerCase = 5, "%".toUpperCase = %
-    // Filters characters that have the same upper and lower case results
-    // removes special characters (but leaves spaces) (not including numbers from string)
-    function removeSpecial(text) { // removeSpecialChars
-      // return text.replace(/[^a-zA-Z0-9\s]/g, "");
+    function removeSpecial(text) { 
 
       if (text) {
         var lower = text.toLowerCase();
@@ -472,42 +441,16 @@
             </code>
           </pre>
         </div>
-        <h3>Technologies used:</h3>
-
-        <div class="row">
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/html-5-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/css-3-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/javascript-icon.png" alt="">
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="img_container">
-              <img class="icon" src="./assets/images/icon_jquery.jpg" alt="">
-            </div>
-          </div>
-        </div>
 
       </article>
 
     </section>
 
-
-
     <section class="main">
       <article>
         <h1 class="about_me section_one" id="About_Me">About Me</h1>
 
-        <p class="story_text">
+        <p class="story_text top_story_text">
           Hi, I'm Julia! Thank you for visiting my page! I'm a Web Developer passionate about writing clean, efficient, and readable code. I get excited about being faced with new challenges and learning how to overcome them. I'm also a classically trained concert pianist, composer, arranger, teacher, accompanist. Also, I'm a huge nerd with interests: technology, audio engineering, graphic design, photography, science, history, cooking, politics, video games, board games, and computers. I'm equally comfortable wearing many hats (just not literally, I look terrible in some hats).
         </p>
         <p class="story_text">
@@ -526,59 +469,12 @@
 
         <h1 class="about_me section_one">My Goals</h1>
 
-        <p class="story_text">
-          I see myself in the future as an experienced developer, with a specialization in data science. I'm interested in combining my expertise in music to eventually write some useful software particularly in the category of music production and music notation. I eventually want to also learn how to develop for mobile platforms such as Android and IOS. Overall, I will pursue anything that intrigues me intellectually and provides a challenge!
-        </p>
-
-        <!--<h3 class="contact">Contact</h3>
-
-        <div class="contact_info">
-            <div class="img_container_two">
-              
-            </div>
-            <div class="img_container_two">
-              <a href="https://github.com/Juliafin"></a>
-            </div>
-            <div class="img_container_two">
-              <a href="https://www.linkedin.com/in/julia-finarovsky-2a3732139/"></a>
-            </div>
-        </div>-->
-        
-        <div class="icons">
-          <ul>
-            <i class="fa fa-envelope-o" aria-hidden="true">
-              <a href="mailto:Juliafinarovsky@gmail.com" alt="Email Julia"></a>
-            </i>
-            <i class="fa fa-linkedin" aria-hidden="true">
-              <a href="https://www.linkedin.com/in/julia-finarovsky-2a3732139/" alt="LinkedIn" target="_blank"></a>
-            </i>
-            <i class="fa fa-github" aria-hidden="true">
-              <a href="https://github.com/Juliafin" alt="Github" target="_blank"></a>
-            </i>
-            </i>
-          </ul>
-        </div>
-               <!--<i class="fa fa-html5" aria-hidden="true">
-              <a href="https://www.w3.org/html/" alt="HTML5 Official Site" target="_blank"></a>
-            </i>
-            <i class="fa fa-css3" aria-hidden="true">
-              <a href="https://www.w3.org/Style/CSS/" alt="CSS3 Offical Site" target="_blank"></a>-->
-            <!--<i class="jquery" aria-hidden="true" src="./assets/images/1493161316_jquery-2048-black.png">
-              <a href="http://jquery.com/" alt="JQuery Official Site"></a>
-            </i>
-            <i class="mongoDB" aria-hidden="true" src="./assets/images/mongodb-logo.png">
-              <a href="http://www.mongoDB.com/" alt="MongoDB Official Site"></a>
-            </i>-->
-
-
-  <!--
         <p class="story_text bottom_story_text">
-          <i><a href="mailto:Juliafinarovsky@gmail.com">JuliaFinarovsky@gmail.com</a></i>
-        </p>-->
-
+          My future goals include a specialization in data science. I'm interested in combining my expertise in music to eventually write some useful software particularly in the category of music production and music notation. I eventually want to also learn how to develop for mobile platforms such as Android and IOS. Overall, I will pursue anything that intrigues me intellectually and provides a challenge!
+        </p>
+        
       </article>
     </section>
-
 
     <section class="references" id="References">
       <article>
@@ -598,12 +494,7 @@
           </blockquote>
           <span><i>~Ben Boyle, Front-end Developer, Artella</i></span>
 
-
-
         </div>
-
-
-
 
       </article>
 
@@ -612,20 +503,18 @@
       </footer>
 
        <nav>
-      <div id="nav">
-        <ul>
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#Projects">Projects</a></li>
-          <li><a href="https://github.com/Juliafin" target="_blank">GitHub</a></li>
-          <li><a href="#About_Me">About Me</a></li>
-          <li><a href="#References">References</a></li>
-        </ul>
+        <div id="nav">
+          <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="https://github.com/Juliafin" target="_blank">GitHub</a></li>
+            <li><a href="#About_Me">About Me</a></li>
+            <li><a href="#References">References</a></li>
+          </ul>
       </div>
     </nav>
 
-
     </section>
-
 
     <!-- particles.js container -->
     <div id="particles-js">
@@ -642,10 +531,10 @@
     <script src='./assets/javascript/jquery.ba-throttle-debounce.js' charset=utf-8></script>
 
     <!--Particles js config-->
-    <script src="./assets/javascript/bubbles.js" charset="utf-8"></script>
+    <script src="./assets/javascript/particles.js" charset="utf-8"></script>
 
     <!--Particles css config-->
-    <link rel="stylesheet" type="text/css" href="./assets/css/bubbles.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/particles.css">
 
   <!--Main app JS-->
     <script src="./assets/javascript/portolio.js" charset="utf-8"></script>
