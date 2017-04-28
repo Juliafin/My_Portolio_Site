@@ -323,62 +323,30 @@ div#particles-js {
 img {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  width: 69vw;
+  width: 57vw;
   margin-top: 3%;
 }
 
 .img_container {
-  width: 100%;
-  height: auto;
-  text-align: center;
+  width: 57vw;
+  height: 36vw;
+  overflow: hidden;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-@-webkit-keyframes shake {
-    0%,100% {
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0)
-    }
-
-    10%,30%,50%,70%,90% {
-        -webkit-transform: translate3d(-10px,0,0);
-        transform: translate3d(-3px,0,0)
-    }
-
-    20%,40%,60%,80% {
-        -webkit-transform: translate3d(10px,0,0);
-        transform: translate3d(3px,0,0)
-    }
-}
-
-@keyframes shake {
-    0%,100% {
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0)
-    }
-
-    10%,30%,50%,70%,90% {
-        -webkit-transform: translate3d(-10px,0,0);
-        transform: translate3d(-3px,0,0)
-    }
-
-    20%,40%,60%,80% {
-        -webkit-transform: translate3d(10px,0,0);
-        transform: translate3d(3px,0,0)
-    }
-}
 
 
 div.img_container img:hover {
   filter: brightness(115%);
   filter: saturation(50%);
-  animation-name: shake;
-  animation-duration:100ms;
-  animation-timing-function:linear;
+  transform: rotateZ(5deg) scale(1.15);
+  transition: 600ms all cubic-bezier(0.2, -0.18, 0.74, 0.05);
 }
 
 .bgg_screenshot1 {
-  width: 69%;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 1.6vw;
