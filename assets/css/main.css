@@ -338,8 +338,6 @@ img {
   border-top-right-radius: 5px;
 }
 
-
-
 div.img_container img:hover {
   filter: brightness(115%);
   filter: saturation(50%);
