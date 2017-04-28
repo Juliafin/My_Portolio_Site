@@ -333,8 +333,48 @@ img {
   text-align: center;
 }
 
-.img_container img.bgg_screenshot1:hover {
-  filter: brightness(105%);
+
+@-webkit-keyframes shake {
+    0%,100% {
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0)
+    }
+
+    10%,30%,50%,70%,90% {
+        -webkit-transform: translate3d(-10px,0,0);
+        transform: translate3d(-3px,0,0)
+    }
+
+    20%,40%,60%,80% {
+        -webkit-transform: translate3d(10px,0,0);
+        transform: translate3d(3px,0,0)
+    }
+}
+
+@keyframes shake {
+    0%,100% {
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0)
+    }
+
+    10%,30%,50%,70%,90% {
+        -webkit-transform: translate3d(-10px,0,0);
+        transform: translate3d(-3px,0,0)
+    }
+
+    20%,40%,60%,80% {
+        -webkit-transform: translate3d(10px,0,0);
+        transform: translate3d(3px,0,0)
+    }
+}
+
+
+div.img_container img:hover {
+  filter: brightness(115%);
+  filter: saturation(50%);
+  animation-name: shake;
+  animation-duration:100ms;
+  animation-timing-function:linear;
 }
 
 .bgg_screenshot1 {
