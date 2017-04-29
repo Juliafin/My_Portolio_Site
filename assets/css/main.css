@@ -329,7 +329,7 @@ img {
 
 .img_container {
   width: 57vw;
-  height: 36vw;
+  height: auto;
   overflow: hidden;
   margin-top: 3%;
   margin-left: auto;
@@ -354,14 +354,15 @@ div.img_container img:hover {
 
 .bgg_screenshot2 {
   background-image: url('../images/lightbox.jpg');
-  height: 100%;
+  height: 318%;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
-  width: 81%;
+  width: 99%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 10vw;
 }
 
 .bottom_story_text a {
@@ -423,14 +424,18 @@ button.accordion:after {
   color: #777;
   float: right;
   margin-left: 5px;
-  font-size: 1em;
+  font-size: 1.1em;
   color: aliceblue;
+  border: aliceblue 2px solid;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  padding: 2px;
 }
 
 button.minus:after {
   content: "\2193";
   /* Unicode character for "arrow down */
-  color: #9a866f
+  color: #ecdecd
 }
 
 .panel {
@@ -438,6 +443,7 @@ button.minus:after {
   background: rgba(22, 67, 107, 0.49);
   padding: 0 6%;
   padding-top: 5%;
+  min-height: 100%;
 }
 
 .contact_info {
