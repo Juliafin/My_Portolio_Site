@@ -49,10 +49,42 @@ function accordionListener() {
 
   $('.accordion').click(function (event) {
     event.preventDefault();
+
     $(this).next().slideToggle('600');
     $(this).toggleClass('minus');
+    
+    if ($(this).attr('aria-expanded') === 'true') {
+      $(this).attr('aria-expanded', 'false');
+    } else {
+      ($(this).attr('aria-expanded', 'true'));
+    }
+
+    if ($(this).attr('aria-selected') === 'true') {
+      $(this).attr('aria-selected', 'false');
+    } else {
+      ($(this).attr('aria-selected', 'true'));
+    }
+
+    if ($(this).attr('aria-selected') === 'true') {
+      $(this).attr('aria-selected', 'false');
+    } else {
+      ($(this).attr('aria-selected', 'true'));
+    }
+   
+  
+    if ($(this).next().attr('aria-hidden') === 'true') {
+      $(this).next().attr('aria-hidden', 'false');
+    } else {
+      ($(this).next().attr('aria-hidden', 'true'));
+    }
+
+
+
   });
 }
+
+
+
 
 function navbarActiveListener() {
 
