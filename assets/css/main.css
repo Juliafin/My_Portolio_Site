@@ -1269,6 +1269,11 @@ footer:before {
   blockquote i {
     font-size: 1em;
   }
+  p i.fa.fa-github{
+    margin-right: 43px;
+    margin-top: 10px;
+    font-size: 13vw;
+  }
 }
 
 @media only screen and (max-device-width: 412px) and (max-device-height: 732px) {
