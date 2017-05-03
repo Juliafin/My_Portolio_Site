@@ -1347,4 +1347,7 @@ footer:before {
   i.fa.fa-github {
     font-size: 8vw;
   }
+  footer {
+    margin-bottom:50px;
+  }
 }
