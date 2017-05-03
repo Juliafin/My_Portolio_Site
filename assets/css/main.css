@@ -420,22 +420,26 @@ button.accordion {
 button.accordion:after {
   content: '\2191';
   /* Unicode character for arrow up */
-  font-size: 13px;
   color: #777;
   float: right;
   margin-left: 5px;
-  font-size: 1.1em;
+  font-size: 3vw;
   color: aliceblue;
-  border: aliceblue 2px solid;
+  border: aliceblue 1px solid;
   border-top-left-radius:5px;
   border-top-right-radius:5px;
-  padding: 2px;
+  position:relative;
+  top:-4px
 }
 
 button.minus:after {
   content: "\2193";
   /* Unicode character for "arrow down */
-  color: #ecdecd
+  color: #ecdecd;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
 }
 
 div#panel-1, div#panel-2, div#panel-3, div#panel-4 {
