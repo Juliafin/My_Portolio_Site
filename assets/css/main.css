@@ -85,7 +85,7 @@ img.github_link {
 }
 
 i {
-  font-size: 1.2em;
+  font-size: 1.6vw;
   margin-left: 4%;
   margin-right: 3%;
 }
@@ -106,7 +106,6 @@ p i.fa.fa-github {
 
 .reference_quote i:hover {
   filter: brightness(115%);
-  font-size: 1.9vw;
   color: #861313;
   transition: all ease-in-out 600ms;
 }
@@ -1033,7 +1032,6 @@ footer:before {
     font-size: .8em;
   }
   i {
-    font-size: .8em;
     margin-left: 4%;
     margin-right: 3%;
   }
@@ -1092,7 +1090,6 @@ footer:before {
     font-size: .6em;
   }
   i {
-    font-size: .6em;
     margin-left: 4%;
     margin-right: 3%;
   }
@@ -1271,7 +1268,7 @@ footer:before {
   }
 }
 
-@media only screen and (max-device-width: 412px) and (max-device-height: 732px) {
+@media only screen and (max-device-height: 732px) and (max-device-width: 412px) {
   h1.my_name {
     font-size: 2em;
     margin-top: 17%;
@@ -1285,11 +1282,11 @@ footer:before {
     max-height: 87%;
   }
   section.projects {
-    background-color: rgb(110, 159, 175);
+    background-color: rgba(110, 159, 175, 0.88);
     margin-top: 95vw;
   }
   section.main {
-    background-color: rgba(150, 101, 115, 0.9);
+    background-color: rgba(150, 101, 115, 0.67);
   }
   article {
     width: 80%;
