@@ -1269,11 +1269,6 @@ footer:before {
   blockquote i {
     font-size: 1em;
   }
-  p i.fa.fa-github{
-    margin-right: 43px;
-    margin-top: 10px;
-    font-size: 13vw;
-  }
 }
 
 @media only screen and (max-device-width: 412px) and (max-device-height: 732px) {
@@ -1305,7 +1300,7 @@ footer:before {
     height: 100px;
   }
   h1 {
-    padding-top: 35%;
+    padding-top: 12%;
   }
   nav {
     height: 35px;
@@ -1321,6 +1316,10 @@ footer:before {
   p.story_text a {
     margin-left: 2%;
     margin-right: 2%;
+  }
+  button.accordion:after {
+    display:relative;
+    top:-8px;
   }
   code.hljs {
     font-size: .6em;
