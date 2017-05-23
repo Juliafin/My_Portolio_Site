@@ -99,12 +99,12 @@ function changeOpacity() {
 
   if ((window.screen.availHeight <= 732) && (window.screen.availWidth <= 412)) {
    
-    if ($(window).scrollTop() > 600) {
+    if ($(window).scrollTop() > 400) {
       $('.title_container').css('font-size', '10px').stop().animate({
         "opacity": "0"
       },550, "linear");
 
-    } else if ($(window).scrollTop() < 600) {
+    } else if ($(window).scrollTop() < 400) {
       $('.title_container').css('font-size', '12px').stop().animate({
         "opacity": "1"
       }, 550, "linear");
