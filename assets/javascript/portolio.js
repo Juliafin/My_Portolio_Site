@@ -102,12 +102,12 @@ function changeOpacity() {
     if ($(window).scrollTop() > 600) {
       $('.title_container').css('font-size', '10px').stop().animate({
         "opacity": "0"
-      },2550, "linear");
+      },550, "linear");
 
     } else if ($(window).scrollTop() < 600) {
       $('.title_container').css('font-size', '12px').stop().animate({
         "opacity": "1"
-      }, 2550, "linear");
+      }, 550, "linear");
     }
 
   } else {
