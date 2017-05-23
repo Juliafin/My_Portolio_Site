@@ -1249,6 +1249,12 @@ footer:before {
   button.accordion {
     font-size: .5em;
   }
+  button.accordion:after{
+    height:80%;
+    margin-right:2%;
+    border: .5px white solid;
+    margin-top:2%
+  }
   img.icon {
     height: 40px;
     width: 40px;
@@ -1335,10 +1341,12 @@ footer:before {
   p.story_text a {
     margin-left: 2%;
     margin-right: 2%;
-  }
-  button.accordion:after {
-    display: relative;
-    top: -8px;
+  } 
+  button.accordion:after{
+    height:80%;
+    margin-right:2%;
+    border: .5px white solid;
+    margin-top:2%
   }
   code.hljs {
     font-size: .6em;
