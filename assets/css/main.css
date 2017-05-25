@@ -284,10 +284,6 @@ p.story_text {
   margin-bottom: 2%;
 }
 
-p.top_story_text {
-  text-align: center;
-}
-
 p.story_text.bottom_story_text.goals {
   padding-bottom: 4%;
   margin-bottom: 0%;
@@ -301,8 +297,8 @@ section.main {
 }
 
 article {
-  margin-left: 4em;
-  margin-right: 4em;
+  margin-left: 6em;
+  margin-right: 6em;
   text-align: center;
 }
 
@@ -1317,9 +1313,9 @@ footer:before {
     background-color: rgba(150, 101, 115, 0.67);
   }
   article {
-    width: 80%;
     text-align: center;
-    margin-left: 12%;
+    margin-left: 0;
+    margin-right: 0;
   }
   .image_container {
     height: 100px;
