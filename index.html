@@ -94,6 +94,7 @@
             <span>Node.JS</span>
             <span>MongoDB</span>
             <span>Express</span>
+            <span>Fuse.js</span>
           </p>
           <p>
             <span>JSON Web Tokens</span>
@@ -419,7 +420,6 @@
                       return res.status(201).json(user.showUser());
                     })
                     .catch((err) => {
-                      console.error(err);
                       return res.status(500).json(err);
                     });
                 });
@@ -456,7 +456,6 @@
           })
           .then((user) => {
             _user = user;
-            // console.log(user);
             if (user) {
               return user.validatePassword(password);
             } else { // user not found
@@ -482,7 +481,6 @@
             }
           })
           .catch((err) => {
-            console.log(err);
             res.status(500).json({
               error: err
             });
@@ -491,6 +489,315 @@
 
             </code>
           </pre>
+
+          <p class="story_text">
+            A challenge on the front end was to validate student data. A solution here was to write custom validation instead of using built in HTML5 validation to prevent page refreshes with AJAX calls to the server. 
+          </p>
+
+          <pre>
+            <code class="hljs javascript">
+            
+      //  Validate main Student data both for add and edit student versions
+      function validateNewStudent(studentObj) {
+
+        // remove previous errors
+        $('.error, .errors').remove();
+
+        // return borders to normal
+        $('input').css('border', 'none');
+
+        var errors = {};
+        var formData = {};
+        formData.address = {};
+        formData.student_lesson_time = {};
+        $('.error').remove();
+
+        Object.keys(studentObj).forEach(function (field) {
+
+          if (studentObj[field] === "" || studentObj[field] === null) {
+            // If the following fields are empty, do nothing (they are optional)
+            switch (field) {
+            case 'parent_first_name':
+            case 'parent_last_name':
+            case 'apartment_number':
+            case 'teacher_comments':
+              break;
+            default:
+              errors[field] = `The ${field.replace('_', ' ')} field is empty.`;
+            }
+          
+          // If the fields have values, then create custom error messages if they exist or add the fields to the formdata object as a success
+          } else {
+            switch (field) {
+
+            case "first_name":
+            case "last_name":
+            case "parent_first_name":
+            case "parent_last_name":
+            case 'existing_first_name':
+            case 'existing_last_name':
+            
+              if (studentObj[field].length > 35) {
+                errors[field] = `The ${field.replace('_', ' ')} field must contain more than 35 characters.`;
+              } else {
+                formData[field] = studentObj[field];
+              }
+              break;
+
+            case "email":
+            case "existing_email":
+              var emailValid = new RegExp(/^.+@{1}.+\.[a-zA-Z]{2,4}$/);
+              if (!(emailValid.test(studentObj[field]))) {
+                errors[field] = `The ${field} field is not valid.`;
+              } else {
+                formData[field] = studentObj[field];
+              }
+              break;
+
+            case "city":
+              var cityValid = new RegExp(/^([ \u00c0-\u01ffa-zA-Z'\-]{2,20})+$/);
+              if (!(cityValid.test(studentObj[field]))) {
+                errors[field] = `The ${field} field must contain only UTF-8 letters and be between 2 and 20 characters.`;
+              } else {
+                formData.address[field] = studentObj[field];
+              }
+              break;
+
+            case "zipcode":
+              var zipcodeValid = new RegExp(/^\d{5}(?:[-\s]\d{4})?$/);
+              if (!(zipcodeValid.test(studentObj[field]))) {
+                errors[field] = `The ${field} field must either be in the format XXXXX or XXXXX-XXXX.`;
+              } else {
+                formData.address[field] = studentObj[field];
+              }
+              break;
+
+            case "apartment_number":
+            case "state":
+            case "street_address":
+              formData.address[field] = studentObj[field];
+              break;
+
+            case "teacher_comments":
+              formData[field] = studentObj[field];
+              break;
+
+            case "startDate":
+            case "weekday":
+            case "startTime":
+              formData.student_lesson_time[field] = studentObj[field];
+              break;
+            case "endTime":
+              var startTime = moment(studentObj.startTime).format("HH:mm");
+              var endTime = moment(studentObj.endTime).format("HH:mm");
+              var startTimeN = parseInt(startTime.replace(":", ""));
+              var endTimeN = parseInt(endTime.replace(":", ""));
+
+              if (endTimeN < startTimeN) {
+                errors[field] = `The ${field} cannot be before the start time.`;
+              } else {
+                formData.student_lesson_time[field] = studentObj[field];
+              }
+            }
+          }
+        });
+
+        // If the error object has keys, render the error html.
+        if (Object.keys(errors).length > 0) {
+
+          var errorHtml = Object.keys(errors).map(function (elem, index) {
+            var currentError = errors[elem];
+            var errorMsg = `<p class="error" id="${elem}_error"> ${currentError}</p>`;
+
+            $(`input[name="${elem}"]`).css('border', '0.3vw solid red');
+            
+            if (index === 0) {
+              var errorDiv = `<div class="errors"><p class="error" id="${elem}_error"> ${currentError}</p>`;
+              return (errorDiv);
+            } else if (index === Object.keys(errors).length-1) {
+              var closeErrDiv = `<p class="error" id="${elem}_error"> ${currentError}</p></div>`;
+              return (closeErrDiv);
+            } else {
+              return errorMsg;
+            }
+                  
+          }).join("").replace(',', "");
+
+          $(`.mode_select`).after(errorHtml);
+          // Scroll to start of form
+          $(document).scrollTop(138.5);
+          return errors;
+        
+        // If there are no errors, return the form data with a success message
+        } else {
+          formData.message = "No errors found.";
+          return formData;
+        }
+      }
+            </code>
+          </pre>
+
+          <p class="story_text">Sorting the data using a real time search feature was important as well. One extremely useful sub feature is displaying students in order according to the current day.
+          </p>
+
+          <pre>
+            <code class="hljs javascript">
+      
+      // Listener for typing in the input search box for the student list
+      function studentSearchListener() {
+        $('input#student_search').keydown(  
+            $.debounce(500, sortResults)
+          );
+      }
+
+      // sort results based on the value of the Select tag option on the student list using fuse.js library
+      function sortResults(event) {
+
+        var input = $('input#student_search').val();
+
+        var options = {
+          shouldSort: true,
+          tokenize: true,
+          matchAllTokens: true,
+          threshold: 0.3,
+          location: 0,
+          distance: 20,
+          maxPatternLength: 32,
+          minMatchCharLength: 4,
+          keys: [
+            "first_name",
+            "last_name",
+            "parent_first_name",
+            "parent_last_name",
+            "email",
+            "address.city",
+            "address.state",
+            "address.street_address",
+            "address.zipcode",
+            "student_lesson_time.weekday",
+          ]
+        };
+        var fuse = new Fuse(state.student_records, options);
+        var result = fuse.search(input);
+        state.current_sort = result;
+        var arrayToSort = null;
+
+        if (input === "") {
+          arrayToSort = state.student_records;
+        } else {
+          arrayToSort = state.current_sort;
+        }
+
+        var arrayToDisplay = null;
+        var selected = +($('select#sort').val());
+        if (selected === 5) {
+          arrayToDisplay = daySort(arrayToSort);
+        } else if (selected) {
+          
+          arrayToDisplay = sortFields(arrayToSort,
+                  sortOptions[selected][0],
+                  sortOptions[selected][1]);
+        }else {
+          arrayToDisplay = arrayToSort;
+        }
+        $('.card_container').empty();
+        renderStudentCard(arrayToDisplay);
+      }
+
+
+      // wrapper for .sort function to select various fields for sort
+      function sortFields (arr, field, descending = true ) {
+        var sorted = arr.sort(function(a, b) {
+          if (a[field] < b[field]) {
+            if (descending === true) {
+              return 1;
+            } else {
+              return -1;
+            }
+          }
+
+          if (a[field] > b[field]) {
+            if (descending === true) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }
+          return 0;
+        });
+
+        return sorted;
+              
+      }
+
+
+      // Sorts on changes to the select tag
+      function studentListSortListener() {
+
+        $('select#sort').change(sortResults);
+      }
+
+
+      // Sorts students according to the upcoming schedule when the Select tag is set to 'upcoming lessons'
+      function daySort(arr) {
+
+        var daysArray = arr.map(function(element) {
+
+          var dayElement = {
+            weekday: element.student_lesson_time.weekday,
+            id: element.id,
+            startTime: moment(element.student_lesson_time.startTime).format('HH:mm')
+          }; 
+          return dayElement;
+        });
+
+        var weekdays = [
+          'Sunday',
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday'
+        ];
+
+        var currentDay = weekdays.indexOf(moment().format('dddd'));
+
+        var days = {};
+
+        weekdays.forEach(function(day, i) {
+          days[day] = (i + 7 - currentDay) % 7;
+        });
+
+        var currentDay = moment().format('dddd');
+
+        daysArray.sort(function(a, b){
+          return days[a.weekday] - days[b.weekday] 
+        || parseInt(a.startTime.replace(':', '')) - parseInt(b.startTime.replace(':', ''));
+        });
+
+        var daySortedArray = daysArray.map(function(record) {
+          var currentID = record.id;
+          var foundRecord = state.student_records.find(function(student_record) {
+            if (currentID === student_record.id) {
+              return student_record;
+            }
+          });
+          return foundRecord;
+
+
+        });
+
+        return daySortedArray;
+      }
+            
+            
+            </code>
+          </pre>
+
+
+
+
 
         </div>
 
