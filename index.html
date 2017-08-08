@@ -64,15 +64,447 @@
     <section class="projects" id="Projects">
       <h1 class="about_me section_two">Projects</h1>
 
+      <article class="curriculum_manager">
+        <h2>Curriculum Manager</h2>
+        <p>
+          <i class="fa fa-github" aria-hidden="true">
+            <a 
+            href="https://github.com/Juliafin/backend_node_capstone_curriculum_and_student_manager" alt="Github" target="_blank"></a>
+
+          </i>
+
+        </p>
+
+        <p class="story_text top_story_text">
+            Manager of student data and online student portal for private students.
+        </p>
+
+        <div class="technologies curriculum">
+          <p>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Javascript</span>
+          </p>
+          <p>
+            <span>JQuery</span>
+            <span>AJAX</span>
+            <span>Youtube</span>
+          </p>
+          <p>
+            <span>Node.JS</span>
+            <span>MongoDB</span>
+            <span>Express</span>
+          </p>
+          <p>
+            <span>JSON Web Tokens</span>
+            <span>Moment.js</span>
+            <span>Mocha.js</span>
+            <span>Chai.js</span>
+          </p>
+        </div>
+
+        <div class="img_container">
+          <a href="https://teacher-student-manager.herokuapp.com/">
+            <img class="curriculum_screenshot1" src="./assets/images/teacher_student_manager-title.jpg" alt="Curriculum Manager Title Screen">
+          </a>
+        </div>
+
+        <button class="accordion" type="button" aria-controls="panel-1" aria-expanded="false" role="false" id="panel-1_tab" aria-selected="false">Read the Project Story</button>
+        <div class=“panel” id="panel-1" aria-labelledby="panel-1_tab" role="tabpanel" aria-hidden="true">
+
+          <p class="story_text top_story_text">
+            As a teacher for many years, I have always wanted an app that allows me to see all of my student's information as a glance. I noticed that there are similiar services for classroom application, but not really much for private instruction. This app supports such functionality and allows that information to be instantly searchable.
+          </p>
+
+          <p class="story_text">
+            A common issue with private lessons is that assignments and instructions for students can be inconsistent. There are various methods I have tried over the years, including requiring students to have a notebook (they would misplace it), and using my tablet (it takes more time than I would like out of the lesson). I realized that the ideal would be a centralized place where these notes could kept. It was important to give students to log in with their own accounts to access notes and assignments that they were working on. 
+          </p>
+
+          <p class="story_text">
+            A clean user interface that could serve to allow student content to be displayed, edited, and searched was both necessary from an aesthetic and functional point of view.                        
+          </p>
+
+          <div class="img_container">
+          <a href="https://teacher-student-manager.herokuapp.com/">
+            <img class="curriculum_screenshot1" src="./assets/images/teacher_student_manager-student_list.jpg" alt="Curriculum Manager Student List">
+          </a>
+        </div>
+
+        <div class="img_container">
+          <a href="https://teacher-student-manager.herokuapp.com/">
+            <img class="curriculum_screenshot1" src="./assets/images/teacher_student_manager-student_info_screen.jpg" alt="Curriculum Manager Student Info">
+          </a>
+        </div>
+
+        <div class="img_container">
+          <a href="https://teacher-student-manager.herokuapp.com/">
+            <img class="curriculum_screenshot1" src="./assets/images/teacher_student_manager-project_screen.jpg" alt="Curriculum Manager Student Projects">
+          </a>
+        </div>
+
+        <div class="img_container">
+          <a href="https://teacher-student-manager.herokuapp.com/">
+            <img class="curriculum_screenshot1" src="./assets/images/teacher_student_manager-dashboard.jpg" alt="Curriculum Manager Dashboard">
+          </a>
+        </div>
+
+          <p class="story_text">
+            Creating two classes of users using Node.js posed an interesting problem of how to make sure that each user in the teacher class can only access their students. The solution was to have teacher information written into every student document, and when the client connects to the server, it searches for students with that specific teacher (or author) key:  
+          </p>
+
+          <pre>
+            <code class="hljs javascript">
+              
+      const studentAddressSchema = new mongoose.Schema({
+        street_address: {
+          type: String,
+          required: true,
+          trim: true
+        },
+        apartment_number: mongoose.Schema.Types.Mixed,
+        city: {
+          type: String,
+          required: true,
+          trim: true
+        },
+        state: {
+          type: String,
+          required: true,
+          minlength: 2,
+          maxlength: 2
+        },
+        zipcode: {
+          type: String,
+          required: true,
+          match: zipcodeValid
+        },
+        _id: false
+      });
+
+      const studentCurriculumSchema = new mongoose.Schema({
+        project_date: {
+          type: Date,
+          default: Date.now(),
+          required: true
+        },
+        project_name: {
+          type: String,
+          required: true,
+          trim: true
+        },
+        project_description: {
+          type: String,
+          required: true,
+          trim: true
+        },
+          // array of comments TODO
+        teacher_project_comments: {
+          type: String,
+          trim: true
+        },
+        _id: false
+      });
+
+      const studentLessonTimeSchema = new mongoose.Schema({
+        startDate: {
+          type: Date,
+          required: true,
+          default: Date()
+        },
+        weekday: {
+          type: String,
+          required: true,
+          trim: true
+        },
+        startTime: {
+          type: Date,
+          required: true
+        },
+        endTime: {
+          type: Date,
+          required: true
+        },
+        _id: false
+      });
+ 
+      const studentSchema = mongoose.Schema({
+        first_name: {
+          type: String,
+          required: true,
+          maxlength: maxlength,
+          trim: true
+        },
+        last_name: {
+          type: String,
+          required: true,
+          maxlength: maxlength,
+          trim: true
+        },
+        email: {
+          type: String,
+          required: true,
+          trim: true,
+          match: emailValid
+        },
+        parent_first_name: {
+          type: String,
+          maxlength: maxlength,
+          trim: true
+        },
+        parent_last_name: {
+          type: String,
+          maxlength: maxlength,
+          trim: true
+        },
+        address: {
+          type: studentAddressSchema,
+          required: true
+        },
+        student_curriculum: {
+          type: [studentCurriculumSchema]
+        },
+        student_lesson_time: {
+          type: studentLessonTimeSchema,
+          required: true
+        },
+        teacher_comments: {
+          type: String
+        }, // private to students (only teachers can see)
+        author: {
+          id: {
+            type: mongoose.Schema.Types.ObjectId
+          },
+          first_name: {
+            type: String
+          },
+          last_name: {
+            type: String
+          }
+        }
+      });
+            
+            </code>
+          </pre>
+
+          <pre>
+            <code class="hljs javascript">
+
+      curriculum_router.get('/', (req, res) => {
+
+        if (req.user._user.role === 'student') {
+          Curriculum
+            .findOne({
+              'first_name': req.user._user.first_name,
+              'last_name': req.user._user.last_name
+            })
+            .then((student_record) => {
+              return res.status(200).json({
+                student_record: student_record.studentView()
+              });
+            })
+            .catch((err) => {
+              return res.status(500).json({
+                error: err
+              });
+            });
+        } else if (req.user._user.role === 'teacher') {
+
+          if (Object.keys(req.query).length === 0) {
+            Curriculum
+              .find({
+                'author.id': req.user._user._id
+              })
+              .then((student_records) => {
+                return res.status(200).json({
+                  student_records: student_records.map((record) => {
+                    return record.apiView();
+                  })
+                });
+              })
+              .catch((err) => {
+                return res.status(500).json({
+                  error: err
+                });
+              });
+          } else if (Object.keys(req.query).length > 0) {
+
+            const filtersToSearch = {};
+            const queryableFields = ['first_name', 'last_name', 'email', 'parent_first_name', 'parent_last_name', 'student_lesson_time'];
+            queryableFields.forEach(field => {
+                //  ?first_name=
+              if (req.query[field]) {
+                filtersToSearch[field] = req.query[field];
+              }
+            });
+            Curriculum
+                .find(filtersToSearch)
+                .then(student_records => {
+                  res.status(200).json({
+                    student_records: student_records.map((record) => {
+                      return record.apiView();
+                    })
+                  });
+
+                })
+                .catch((err) => {
+                  res.status(500).json({
+                    message: 'Something went wrong with the server'
+                  });
+                });
+
+          }
+
+        }
+
+      });
+
+            </code>
+          </pre>
+
+          <p class="story_text">
+            Authentication was handled using JSON web tokens:
+          </p>
+
+          <pre>
+            <code class="hljs javascript">
+      
+      /* Strategy:
+      Check if fields are missing.
+      If there are, let the user know which ones.
+      If there are no missing fields,
+      Check if a user with that username exists,
+      If the user exists, return an error.
+      If not, hash the password then create the user.
+      To add: redirection
+      */
+    auth_router.post('/register', (req, res) => {
+      const userFields = ['username', 'password', 'first_name', 'last_name', 'role'];
+      const missingFields = [];
+
+      userFields.forEach((field) => {
+        if (!(field in req.body) || (field === "")) {
+          missingFields.push(field);
+        }
+      });
+
+      if (missingFields.length !== 0) {
+        res.status(400).json({
+          missingFields
+        });
+      } else {
+        let password = req.body.password;
+
+        User
+          .find({
+            'username': req.body.username
+          })
+          .count()
+          .then((count) => {
+            if (count > 0) {
+              return res.status(422).json({
+                message: 'username already taken'
+              });
+            } else {
+              return User.hashPassword(password)
+                .then((hash) => {
+                  return User
+                    .create({
+                      username: req.body.username,
+                      password: hash,
+                      role: req.body.role,
+                      first_name: req.body.first_name,
+                      last_name: req.body.last_name
+                    })
+                    .then((user) => {
+                      return res.status(201).json(user.showUser());
+                    })
+                    .catch((err) => {
+                      console.error(err);
+                      return res.status(500).json(err);
+                    });
+                });
+            }
+          });
+      }
+    });
+          
+            </code>
+          </pre>
+
+          <pre>
+            <code class="hljs javascript">
+      
+      /* Strategy:
+      Accept a username and password to login
+      Search the database for the username
+      If the user is not found return an bad request error
+      If the user is found valid the password in the db by hashing the provided one and checking the hashes
+      If passwords do not match, return an unauthorized error
+      If passwords match, sign a json web token and send it to the user
+      To add: redirection
+      */
+
+      auth_router.post('/login', (req, res) => {
+        const {
+          username,
+          password
+        } = req.body;
+        let _user;
+        User
+          .findOne({
+            username
+          })
+          .then((user) => {
+            _user = user;
+            // console.log(user);
+            if (user) {
+              return user.validatePassword(password);
+            } else { // user not found
+              return res.status(400).json({
+                error: 'Username or Password not found.'
+              });
+            }
+          })
+          .then((passwordValid) => {
+            if (passwordValid) {
+              const token = jwt.sign({
+                _user
+              }, SECRET);
+              return res.status(200).json({
+                token:token,
+                username:req.body.username,
+                url: `/welcome/dashboard/${req.body.username}` 
+              });
+            } else { // password doesn't match
+              return res.status(401).json({
+                error: 'Username or Password not Found.'
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            res.status(500).json({
+              error: err
+            });
+          });
+      });
+
+            </code>
+          </pre>
+
+        </div>
+
+      </article>
+
       <article class="bggapi">
-        <h2>BoardgameGeek Api </h2>
+        <h2>BoardgameGeek Api Search Engine </h2>
         <p>
           <i class="fa fa-github" aria-hidden="true">
             <a href="https://github.com/Juliafin/capstone_boardgamegeek_search/tree/master/boardgamegeek_api" alt="Github" target="_blank"></a>
           </i>
         </p>
-         
-         <p class="story_text top_story_text">
+        
+        <p class="story_text top_story_text">
             A custom board game search with video walkthroughs for new and old fans of tabletop games.
         </p>
 
@@ -95,8 +527,8 @@
           </a>
         </div>
           
-        <button class="accordion" type="button" aria-controls="panel-1" aria-expanded="false" role="false" id="panel-1_tab" aria-selected="false">Read the Project Story</button>
-        <div class=“panel” id="panel-1" aria-labelledby="panel-1_tab" role="tabpanel" aria-hidden="true">
+        <button class="accordion" type="button" aria-controls="panel-2" aria-expanded="false" role="false" id="panel-2_tab" aria-selected="false">Read the Project Story</button>
+        <div class=“panel” id="panel-2" aria-labelledby="panel-2_tab" role="tabpanel" aria-hidden="true">
           
           <p class="story_text top_story_text">
             I'm a huge nerd, so naturally boardgames are one of my most enjoyable hobbies! Over time, I've frequently purchased games on kickstarter or at the local game store that I have found through the BoardgameGeek website. As my first Capstone, I set out to make a usable UI that would list the many various statistics for board games without overwhelming the user. A fun bonus: I photographed and edited the title and 404 images with my trusty Nikon D90 (I'm a semi-professional photographer as well).
@@ -111,23 +543,23 @@
 
           <pre>
           <code class="hljs javascript">
-    (function() {
-      
-      var cors_api_host = // proxy for CORS here: 'corsproxy.' ;
-      var cors_api_url = 'http://' + cors_api_host + '/';
-      var slice = [].slice;
-      var origin = window.location.protocol + '//' + window.location.host;
-      var open = XMLHttpRequest.prototype.open;
-      XMLHttpRequest.prototype.open = function() {
-          var args = slice.call(arguments);
-          var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-          if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-              targetOrigin[1] !== cors_api_host) {
-              args[1] = cors_api_url + args[1];
-          }
-          return open.apply(this, args);
-      };
-  })(); 
+      (function() {
+        
+        var cors_api_host = // proxy for CORS here: 'corsproxy.' ;
+        var cors_api_url = 'http://' + cors_api_host + '/';
+        var slice = [].slice;
+        var origin = window.location.protocol + '//' + window.location.host;
+        var open = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function() {
+            var args = slice.call(arguments);
+            var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+            if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+                targetOrigin[1] !== cors_api_host) {
+                args[1] = cors_api_url + args[1];
+            }
+            return open.apply(this, args);
+        };
+      })(); 
 
           </code>
         </pre>
@@ -139,41 +571,41 @@
           <pre>
           <code class="hljs javascript">
     
-    function xmlToJson(xml) {
-      
-      var obj = {};
+      function xmlToJson(xml) {
+        
+        var obj = {};
 
-      if (xml.nodeType == 1) {
-        if (xml.attributes.length > 0) {
-        obj["@attributes"] = {};
-          for (var j = 0; j < xml.attributes.length; j++) {
-            var attribute = xml.attributes.item(j);
-            obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
-          }
-        }
-      } else if (xml.nodeType == 3) { // text
-        obj = xml.nodeValue;
-      }
-
-      
-      if (xml.hasChildNodes()) {
-        for(var i = 0; i < xml.childNodes.length; i++) {
-          var item = xml.childNodes.item(i);
-          var nodeName = item.nodeName;
-          if (typeof(obj[nodeName]) == "undefined") {
-            obj[nodeName] = xmlToJson(item);
-          } else {
-            if (typeof(obj[nodeName].push) == "undefined") {
-              var old = obj[nodeName];
-              obj[nodeName] = [];
-              obj[nodeName].push(old);
+        if (xml.nodeType == 1) {
+          if (xml.attributes.length > 0) {
+          obj["@attributes"] = {};
+            for (var j = 0; j < xml.attributes.length; j++) {
+              var attribute = xml.attributes.item(j);
+              obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
             }
-            obj[nodeName].push(xmlToJson(item));
+          }
+        } else if (xml.nodeType == 3) { // text
+          obj = xml.nodeValue;
+        }
+
+        
+        if (xml.hasChildNodes()) {
+          for(var i = 0; i < xml.childNodes.length; i++) {
+            var item = xml.childNodes.item(i);
+            var nodeName = item.nodeName;
+            if (typeof(obj[nodeName]) == "undefined") {
+              obj[nodeName] = xmlToJson(item);
+            } else {
+              if (typeof(obj[nodeName].push) == "undefined") {
+                var old = obj[nodeName];
+                obj[nodeName] = [];
+                obj[nodeName].push(old);
+              }
+              obj[nodeName].push(xmlToJson(item));
+            }
           }
         }
-      }
-      return obj;
-    };
+        return obj;
+      };
           </code>
         </pre>
 
@@ -184,34 +616,34 @@
           <pre>
           <code class="hljs javascript">
     
-    if ('boardgamemechanics' in BggData.singleSearch) {
-      if (Array.isArray(BggData.singleSearch.boardgamemechanics)) {
-        var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics.map(function(element) {
-          return (`<li>${element}</li>`);
-        }).join().replace(/,/g, '');
+      if ('boardgamemechanics' in BggData.singleSearch) {
+        if (Array.isArray(BggData.singleSearch.boardgamemechanics)) {
+          var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics.map(function(element) {
+            return (`<li>${element}</li>`);
+          }).join().replace(/,/g, '');
 
-      } else if (!('boardgamemechanics' in BggData.singleSearch)) {
-        return;
+        } else if (!('boardgamemechanics' in BggData.singleSearch)) {
+          return;
 
+        } else {
+          var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics;
+
+        }
       } else {
-        var boardgamemechanicshtml = BggData.singleSearch.boardgamemechanics;
+        // convert board game mechanics to a list
+        if (Array.isArray(BggData.mainData[index].boardgamemechanics)) {
+          var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics.map(function(element) {
+            return `<li>${element}</li>`;
+          }).join().replace(/,/g, '');
+
+        } else if (!('boardgamemechanics' in BggData.mainData[index])) {
+          return;
+
+        } else {
+          var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics;
+        }
 
       }
-    } else {
-      // convert board game mechanics to a list
-      if (Array.isArray(BggData.mainData[index].boardgamemechanics)) {
-        var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics.map(function(element) {
-          return `<li>${element}</li>`;
-        }).join().replace(/,/g, '');
-
-      } else if (!('boardgamemechanics' in BggData.mainData[index])) {
-        return;
-
-      } else {
-        var boardgamemechanicshtml = BggData.mainData[index].boardgamemechanics;
-      }
-
-    }
 
           </code>
         </pre>
@@ -237,7 +669,7 @@
             <a href="https://github.com/Juliafin/final_fantasy_quiz" alt="Github" target="_blank"></a>
           </i>
         </p>
-         
+
         <p class="story_text top_story_text">
           A quiz on classic games in the Final Fantasy Series.
         </p>
@@ -257,8 +689,8 @@
           </a>
         </div>
 
-        <button class="accordion" type="button" aria-controls="panel-2" aria-expanded="false" role="false" id="panel-1_tab" aria-selected="false">Read the Project Story</button>
-        <div class=“panel” id="panel-2" aria-labelledby="panel-2_tab" role="tabpanel" aria-hidden="true">
+        <button class="accordion" type="button" aria-controls="panel-3" aria-expanded="false" role="false" id="panel-3_tab" aria-selected="false">Read the Project Story</button>
+        <div class=“panel” id="panel-3" aria-labelledby="panel-3_tab" role="tabpanel" aria-hidden="true">
 
           <p class="story_text top_story_text">
           Growing up, I was a huge fan of role playing games (RPGS), and in particular the creations of then Squaresoft (now SquareEnix). Particularly I loved the stories with incredibly well developed characters, mature themes, and strategic gameplay. If your opinion is that Final Fantasy VII is the best Final Fantasy, I will argue with you (it was good but the depth of Final Fantasy VI was unmatched)!
@@ -284,31 +716,31 @@
           <pre>
           <code class="javascript hljs">
 
-  var quizState = {
+      var quizState = {
 
-    questionsAndAnswers: [
+        questionsAndAnswers: [
 
-      {
-        question: "How many adventurers were you able to play as in Final Fantasy I (Nes)?",
-        answers: ["One", "Two", "Three", "Four"],
-        correctAnswer: "Four"
-      }, ....
-      
-    ],
+          {
+            question: "How many adventurers were you able to play as in Final Fantasy I (Nes)?",
+            answers: ["One", "Two", "Three", "Four"],
+            correctAnswer: "Four"
+          }, ....
+          
+        ],
 
-    answerChoices: ['A. ', 'B. ', 'C. ', 'D. '],
-    answerClasses: [".answer-A", ".answer-B", ".answer-C", ".answer-D"],
+        answerChoices: ['A. ', 'B. ', 'C. ', 'D. '],
+        answerClasses: [".answer-A", ".answer-B", ".answer-C", ".answer-D"],
 
 
-    currentQuestion: 0,
-    questionIsCorrect: 0,
-    questionIsWrong: 0,
-    quizFinished: 0,
-    characterClass: '',
-    quizSubmitCounter: 0,
-    submitClicked: 0,
+        currentQuestion: 0,
+        questionIsCorrect: 0,
+        questionIsWrong: 0,
+        quizFinished: 0,
+        characterClass: '',
+        quizSubmitCounter: 0,
+        submitClicked: 0,
 
-  };
+      };
 
           </code>
         </pre>
@@ -316,26 +748,26 @@
           <pre>
           <code class="javascript hljs">
     
-    function testSelectedAnswer() {
+      function testSelectedAnswer() {
 
-      var selectedAnswer = $("[class*='green-selected']").text().replace(/^.../, "");
-      var rightAnswer = quizState.questionsAndAnswers[quizState.currentQuestion-1].correctAnswer;
+        var selectedAnswer = $("[class*='green-selected']").text().replace(/^.../, "");
+        var rightAnswer = quizState.questionsAndAnswers[quizState.currentQuestion-1].correctAnswer;
 
-          if (selectedAnswer === rightAnswer) answerIsCorrect();
-          else if (selectedAnswer !== rightAnswer) answerIsWrong();
+            if (selectedAnswer === rightAnswer) answerIsCorrect();
+            else if (selectedAnswer !== rightAnswer) answerIsWrong();
 
-          var selectionClasses = quizState.answerClasses;
-          var answerArray = quizState.questionsAndAnswers[quizState.currentQuestion-1].answers;
-          answerArray.forEach(function(element, index){
-            if (element === rightAnswer) {
-              $(selectionClasses[index]).addClass('green-selected');
-            } else {
-              $(selectionClasses[index]).addClass('red-selected');
+            var selectionClasses = quizState.answerClasses;
+            var answerArray = quizState.questionsAndAnswers[quizState.currentQuestion-1].answers;
+            answerArray.forEach(function(element, index){
+              if (element === rightAnswer) {
+                $(selectionClasses[index]).addClass('green-selected');
+              } else {
+                $(selectionClasses[index]).addClass('red-selected');
 
-            };
+              };
 
-          });
-    }
+            });
+      }
           </code>
         </pre>
         </div>
@@ -347,7 +779,7 @@
 
         <p class="story_text top_story_text">
           A Visual Studio Code theme for improved workflow.
-        </p>
+        </p>  
         
         <div class="img_container">
           <a href="https://marketplace.visualstudio.com/items?itemName=Juliafin.tropical">
@@ -355,8 +787,8 @@
           </a>
         </div>
 
-        <button class="accordion" type="button" aria-controls="panel-3" aria-expanded="false" role="false" id="panel-1_tab" aria-selected="false">Read the Project Story</button>
-        <div class=“panel” id="panel-3" aria-labelledby="panel-3_tab" role="tabpanel" aria-hidden="true">
+        <button class="accordion" type="button" aria-controls="panel-4" aria-expanded="false" role="false" id="panel-4_tab" aria-selected="false">Read the Project Story</but>
+        <div class=“panel” id="panel-4" aria-labelledby="panel-4_tab" role="tabpanel" aria-hidden="true">
 
           <p class="story_text">
             I'm obsessed with improving my workflow and refining my development environment, always tweaking my editor and learning new shortcuts. After using text editors like Sublime Text, Atom, and Notepad++ to IDE's like IntelliJ, I settled on my new favorite editor, Visual Studio Code.
@@ -397,8 +829,8 @@
 
         <p class="story_text top_story_text"></p>
 
-      <button class="accordion text_analyzer" type="button" aria-controls="panel-4" aria-expanded="false" role="false" id="panel-1_tab" aria-selected="false">Read the Project Story</button>
-      <div class=“panel” id="panel-4" aria-labelledby="panel-4_tab" role="tabpanel" aria-hidden="true">
+      <button class="accordion text_analyzer" type="button" aria-controls="panel-5" aria-expanded="false" role="false" id="panel-5_tab" aria-selected="false">Read the Project Story</button>
+      <div class=“panel” id="panel-5" aria-labelledby="panel-5_tab" role="tabpanel" aria-hidden="true">
         
           <p class="story_text">
             The text analyzer web app was my first foray into javascript. With every project I've worked on, I've pushed myself to learn new tools and libraries to be a better developer. With this app, I worked on writing clean and concise code. I also included many more analytics than required and applied some newly learned RegExp in my code.

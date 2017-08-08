@@ -553,6 +553,10 @@ footer:before {
   margin-right: 1vw;
 }
 
+div.technologies p {
+    padding-top: 1vw;
+}
+
 @media screen and (max-width: 2600px) {
   h1.my_name {
     font-size: 7em;
