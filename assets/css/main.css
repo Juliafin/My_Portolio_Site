@@ -247,7 +247,1398 @@ h1.my_name {
   animation-timing-function: linear;
 }
 
+
 h2 {
+  font-family: Arial;
+  font-size: 16px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1#About_Me {
+  color: #861313;
+}
+
+section.references h1 {
+  color: #861313;
+}
+
+div#particles-js {
+  opacity: 0
+}
+
+div#Home {
+    position: absolute;
+    top: 0;
+}
+
+
+html {
+  font-size: calc(1em + 1vw);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+}
+
+nav {
+  width: 100%;
+  height: 13%;
+  background: #861357;
+  position: fixed;
+  bottom: 0px;
+  z-index: 1000;
+  border-top: #ca9d9d 2px solid;
+  animation-name: glow;
+  animation-direction: normal;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#nav li.selected {
+  background: rgba(133, 209, 234, 0.83);
+}
+
+#nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  /* margin: 0; */
+  /* padding: 0; */
+  position: relative;
+  text-align: center;
+  font-family: Proza Libre;
+}
+
+#nav a,
+#nav li {
+  text-decoration: none;
+  color: antiquewhite;
+  font-size: 1.2em;
+  height: 100%;
+  width: 100%;
+  line-height: 5vw;
+  text-transform: uppercase;
+}
+
+#nav li:hover,
+#nav li:focus,
+button.accordion:hover {
+  filter: brightness(115%);
+  background: #4d7390;
+  color: #290303;
+  transition: all ease-in-out 350ms;
+}
+
+button.accordion:active {
+  color: green;
+}
+
+#nav a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+img.github_link {
+  height: 40px;
+  width: 40px;
+  margin-top: 4%;
+}
+
+i {
+  font-size: 1.6vw;
+  margin-left: 4%;
+  margin-right: 3%;
+}
+
+i.fa {
+  font-size: 3vw;
+  cursor: pointer;
+}
+
+i.fa.fa-github {
+  font-size: 4vw;
+}
+
+p i.fa.fa-github {
+  font-size: 10vw;
+}
+
+.reference_quote i:hover {
+  filter: brightness(115%);
+  color: #861313;
+  transition: all ease-in-out 600ms;
+}
+
+.icons {
+  position: relative;
+  top: 5%;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.icons a {
+  display: block;
+  height: 4vw;
+  width: 6vw;
+  position: relative;
+  top: -9vh;
+}
+
+.technologies {
+  text-align: center;
+  position: relative;
+  top: 2vw;
+  height: 100%;
+}
+
+.technologies.bgg {
+  top: 1.5vw;
+}
+
+.technologies span {
+  margin: 0 2vw;
+  border-top: 1px solid #a40964;
+  font-size: 2vw;
+  font-family: Ruboto;
+}
+
+i:hover,
+p.bottom_story_text a:hover {
+  color: #861313;
+  transition: all ease-in-out 300ms;
+}
+
+.icons i:hover,
+i.fa.fa-github:hover,
+.icons i:focus {
+  color: #861313;
+  transform: scale(1.5, 1.5);
+}
+
+section.title_container {
+  background-image: url("../images/title_blurred.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1.my_name {
+  margin: 0;
+  color: brown;
+  font-weight: 100;
+  padding: 0;
+}
+
+.image_container {
+  height: 100%;
+  position: relative;
+  text-align: center;
+  margin: auto;
+}
+
+section.title_container {
+  min-height: 87%;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 125%;
+  border-bottom: #b9a997 1px solid;
+  opacity: 1;
+  top: 0;
+}
+
+.quote_container {
+  position: relative;
+  text-align: center;
+  top: 19%;
+  margin-top: 0;
+}
+
+.author,
+.quote {
+  font-family: Dancing Script;
+  color: #861313;
+  font-size: 1.5em;
+  margin-top: 0%;
+  padding: 2%;
+}
+
+.quote_container {
+  display: inline-block;
+  width: 89%;
+  font-family: "Dancing Script";
+  font-size: 1.5vw;
+  margin-top: 0%;
+  height: 325px;
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h1.quote {
+  margin-bottom: 0px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Proza Libre;
+  margin: 3% 0;
+  0: 5.5em
+  font-weight: 400;
+  color: #020202;
+  font-weight: 400;
+  padding: 0;
+}
+
+h1.my_name {
+  animation-name: glow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+h2 {
+  font-size: 2.9vw;
+  font-family: Proza Libre;
+  display: block;
+  position: relative;
+  text-align: center;
+  margin: 4% 0;
+}
+
+h2+p {
+  text-align: center;
+  margin-top: 2%;
+}
+
+h2+p a {
+  height: 5vw;
+  width: 7vw;
+  display: block;
+  position: relative;
+  top: -6vw;
+}
+
+.section_one {
+  color: #020202;
+}
+
+p.story_text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  text-indent: 4%;
+  line-height: 1.5em;
+  font-family: Cormorant Garamond;
+  text-align: left;
+  margin-bottom: 2%;
+}
+
+p.story_text.bottom_story_text.goals {
+  padding-bottom: 4%;
+  margin-bottom: 0%;
+}
+
+section.main {
+  background-color: rgba(239, 202, 212, 0.36);
+  border-top: #5b9f9f 2px solid;
+  z-index: 1;
+  position: relative;
+}
+
+article {
+  margin-left: 6em;
+  margin-right: 6em;
+  text-align: center;
+}
+
+section.projects {
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  min-height: 100%;
+  position: relative;
+  border-top: #5b9f9f 2px solid;
+  top: 0;
+  margin-top: 57vw;
+}
+
+div#particles-js {
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.section_two {
+  color: #861313;
+}
+
+img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 57vw;
+  margin-top: 3%;
+}
+
+.img_container {
+  width: 57vw;
+  height: auto;
+  overflow: hidden;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 3%;
+}
+
+.img_container.final_fantasy {
+  margin-bottom: 3%;
+}
+
+div.img_container img:hover {
+  filter: brightness(115%);
+  filter: saturation(50%);
+  transform: scale(1.1);
+  transition: 500ms all cubic-bezier(0.2, -0.08, 0.65, 0.5);
+}
+
+.bgg_screenshot1 {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 1.6vw;
+}
+
+.bgg_screenshot2 {
+  background-image: url('../images/lightbox.jpg');
+  height: 318%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  width: 99%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3%;
+}
+
+.bottom_story_text a {
+  text-decoration: none;
+  color: #6dbfbf;
+  font-size: 2vw;
+  letter-spacing: 0.6pt;
+}
+
+img.icon {
+  height: 130px;
+  width: 150px;
+}
+
+@keyframes glow {
+  0%,
+  50%,
+  100% {
+    filter: brightness(100%);
+    filter: saturate(100%);
+  }
+  25% {
+    filter: brightness(150%);
+    filter: saturate(150%);
+  }
+  75% {
+    filter: brightness(50%);
+    filter: saturate(50%);
+  }
+}
+
+button.accordion {
+  background-color: #861357;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-family: Proza Libre;
+  font-size: 2em;
+  animation-name: glow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  height: 8vw;
+  line-height: 8vw;
+  padding: 0;
+  width: 50%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+button.text_analyzer {
+  margin-bottom: 3%;
+}
+
+button.accordion:after {
+  content: '\2191';
+  /* Unicode character for arrow up */
+  color: #777;
+  float: right;
+  margin-left: 5px;
+  font-size: 3vw;
+  color: aliceblue;
+  border: aliceblue 1px solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  height: 96%;
+}
+
+button.minus:after {
+  content: "\2193";
+  /* Unicode character for "arrow down */
+  color: #ecdecd;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+div#panel-1,
+div#panel-2,
+div#panel-3,
+div#panel-4 {
+  display: none;
+  background: rgba(22, 67, 107, 0.49);
+  padding: 3% 6%;
+  min-height: 100%;
+}
+
+.contact_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 7%;
+  padding-top: 3%;
+}
+
+.img_container_two:hover {
+  filter: brightness(130%);
+  color: #e2cdb4;
+}
+
+section.references {
+  z-index: 1;
+  min-height: 100%;
+  width: 100;
+  background-color: rgba(251, 222, 250, 0.52);
+  position: relative;
+  border-top: #40ab87 2px solid;
+}
+
+.reference_quote {
+  width: 74%;
+  background: rgba(35, 35, 35, 0.85);
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 36px;
+  color: antiquewhite;
+  line-height: 1.8em;
+  text-indent: 5%;
+  font-style: italic;
+  margin-bottom: 5%;
+  min-height: 70%;
+}
+
+blockquote {
+  font-size: 1.2em;
+}
+
+blockquote:before {
+  content: "\201c";
+  font-size: 2em;
+}
+
+blockquote:after {
+  content: "\201d";
+  font-size: 2em;
+}
+
+div.reference_quote span {
+  font-size: .7em;
+  margin-left: 3%;
+  margin-bottom: 4%;
+  margin-top: 5%;
+  display: inline-block;
+  width: 95%;
+}
+
+.bottom_story_text i {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  margin-left: -5%;
+}
+
+footer {
+  z-index: 100;
+  position: relative;
+  display: inline-block;
+  font-family: Cormorant Garamond;
+  bottom: 5.7vw;
+  text-align: center;
+  width: 100%;
+  font-size: 2vw;
+  font-weight: 600;
+}
+
+footer:before {
+  content: "\00a9 2017";
+  margin-right: 1vw;
+}
+
+div.technologies p {
+    padding-top: 1vw;
+}
+
+@media screen and (max-width: 2600px) {
+  h1.my_name {
+    font-size: 7em;
+  }
+  h1 {
+    font-size: 7em;
+  }
+  #nav li {
+    font-size: 3em;
+  }
+  p.story_text {
+    font-size: 3em;
+  }
+  button.accordion {
+    font-size: 3em;
+  }
+  img.icon {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.6vw;
+  }
+  code span {
+    font-size: 1.6vw;
+  }
+  blockquote {
+    font-size: 4em;
+    line-height: 1.5em
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1.2em;
+  }
+  blockquote i {
+    font-size: 1.1em
+  }
+}
+
+@media screen and (max-width: 1950px) {
+  h1.my_name {
+    font-size: 6.5em;
+  }
+  h1 {
+    font-size: 6.5em;
+  }
+  #nav li {
+    font-size: 2.5em;
+  }
+  p.story_text {
+    font-size: 2.5em;
+  }
+  button.accordion {
+    font-size: 2.5em;
+  }
+  img.icon {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.3vw;
+  }
+  code span {
+    font-size: 1.3vw;
+  }
+  blockquote {
+    font-size: 3em;
+    line-height: 1.5em
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  h1.my_name {
+    font-size: 6em;
+  }
+  h1 {
+    font-size: 6em;
+  }
+  #nav li {
+    font-size: 2em;
+  }
+  p.story_text {
+    font-size: 2em;
+  }
+  button.accordion {
+    font-size: 2em;
+  }
+  img.icon {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: 2.5em;
+    line-height: 1.5em
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  h1.my_name {
+    font-size: 5.5em;
+  }
+  h1 {
+    font-size: 5.5em;
+  }
+  #nav li {
+    font-size: 1.6em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 1.6%
+  }
+  p.story_text {
+    font-size: 1.7em;
+  }
+  button.accordion {
+    font-size: 2em;
+  }
+  img.icon {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: 2em;
+    line-height: 1.5em;
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  h1.my_name {
+    font-size: 5em;
+  }
+  h1 {
+    font-size: 5em;
+  }
+  #nav li {
+    font-size: 1.6em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 1.6%
+  }
+  p.story_text {
+    font-size: 1.6em;
+  }
+  button.accordion {
+    font-size: 1.7em;
+  }
+  img.icon {
+    height: 170px;
+    width: 170px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: 1.8em;
+    line-height: 1.5em;
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  h1.my_name {
+    font-size: 4.5em;
+  }
+  h1 {
+    font-size: 4.9em;
+  }
+  #nav li {
+    font-size: 1.4em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 1.6%
+  }
+  p.story_text {
+    font-size: 1.5em;
+  }
+  button.accordion {
+    font-size: 1.7em;
+  }
+  img.icon {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: 1.6em;
+    line-height: 1.5em;
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  h1.my_name {
+    font-size: 4em;
+  }
+  h1 {
+    font-size: 4em;
+    font-stretch: ultra-expanded;
+  }
+  #nav li {
+    font-size: 1.2em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 1.6%
+  }
+  p.story_text {
+    font-size: 1.4em;
+  }
+  button.accordion {
+    font-size: 1.7em;
+  }
+  img.icon {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: 1.4em;
+    line-height: 1.5em;
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  h1.my_name {
+    font-size: 3.5em;
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+  #nav li {
+    font-size: 1.1em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 0%
+  }
+  #nav img {
+    margin-top: 1%;
+    height: 25%;
+    width: 15%
+  }
+  p.story_text {
+    font-size: 1.2em;
+  }
+  button.accordion {
+    font-size: 1.5em;
+  }
+  img.icon {
+    height: 130px;
+    width: 130px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 860px) {
+  h1.my_name {
+    font-size: 3em;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  #nav li {
+    font-size: 1em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 0%
+  }
+  #nav img {
+    margin-top: 3%;
+    height: 18%;
+    width: 15%
+  }
+  p.story_text {
+    font-size: 1.2em;
+  }
+  button.accordion {
+    font-size: 1.3em;
+  }
+  img.icon {
+    height: 110px;
+    width: 110px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: 1em;
+    line-height: 1.5em;
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 740px) {
+  h1.my_name {
+    font-size: 2.5em;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  #nav li {
+    font-size: .9em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 0;
+  }
+  #nav img {
+    margin-top: 2%;
+    height: 18%;
+    width: 15%
+  }
+  p.story_text {
+    font-size: 1em;
+  }
+  button.accordion {
+    font-size: 1em;
+  }
+  img.icon {
+    height: 90px;
+    width: 90px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: .8em;
+    line-height: 1.5em;
+    width: 81%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 650px) {
+  h1.my_name {
+    font-size: 2em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  #nav li {
+    font-size: .8em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 0;
+  }
+  #nav img {
+    margin-top: 2%;
+    height: 13%;
+    width: 15%
+  }
+  p.story_text {
+    font-size: .8em;
+  }
+  i {
+    margin-left: 4%;
+    margin-right: 3%;
+  }
+  button.accordion {
+    font-size: .8em;
+  }
+  img.icon {
+    height: 70px;
+    width: 70px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: .7em;
+    line-height: 1.5em;
+    width: 81%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 520px) {
+  h1.my_name {
+    font-size: 1.7em;
+  }
+  h1 {
+    font-size: 1.7em;
+    padding-top: 3%;
+  }
+  #nav li {
+    font-size: .6em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 0;
+  }
+  #nav img {
+    margin-top: 1%;
+    height: 9%;
+    width: 13%
+  }
+  p.story_text {
+    font-size: .6em;
+  }
+  i {
+    margin-left: 4%;
+    margin-right: 3%;
+  }
+  button.accordion {
+    font-size: .8em;
+  }
+  img.icon {
+    height: 70px;
+    width: 70px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  blockquote {
+    font-size: .6em;
+    line-height: 1.5em;
+    width: 81%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em
+  }
+}
+
+@media screen and (max-width: 440px) {
+  h1.my_name {
+    font-size: 1.5em;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  #nav li {
+    font-size: .5em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 0;
+  }
+  #nav img {
+    margin-top: 0%;
+    height: 8%;
+    width: 13%
+  }
+  p.story_text {
+    font-size: .5em;
+  }
+  p i {
+    font-size: .5em;
+  }
+  button.accordion {
+    font-size: .6em;
+    margin-bottom: 8%;
+  }
+  img.icon {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  div.reference_quote {
+    width: 90%;
+  }
+  blockquote {
+    font-size: .5em;
+    line-height: 1.5em;
+    width: 87%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  h1.my_name {
+    font-size: 1.2em;
+  }
+  h1 {
+    font-size: 1.2em;
+    padding-top: 25%;
+  }
+  h2 {
+    font-size: .9em;
+  }
+  #nav li {
+    font-size: .4em;
+  }
+  #nav a,
+  #nav img {
+    margin-top: 0;
+  }
+  #nav img {
+    margin-top: 0%;
+    height: 6%;
+    width: 13%
+  }
+  article {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p.story_text {
+    font-size: .4em;
+    margin-bottom: 0;
+    margin-top: 6px;
+  }
+  p i {
+    font-size: .5em;
+    margin-left: 25%;
+    margin-right: 4%;
+  }
+  button.accordion {
+    font-size: .5em;
+  }
+  button.accordion:after{
+    height:80%;
+    margin-right:2%;
+    border: .5px white solid;
+    margin-top:2%
+  }
+  img.icon {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 1%;
+    padding-bottom: 1%
+  }
+  img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  code {
+    font-size: 1.2vw;
+  }
+  code.hljs {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: left;
+  }
+  code span {
+    font-size: 1.2vw;
+  }
+  div.reference_quote {
+    width: 100%;
+  }
+  blockquote {
+    font-size: .4em;
+    line-height: 1.5em;
+    width: 87%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote span {
+    margin-left: 5%;
+    font-size: 1em;
+  }
+  blockquote i {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-device-height: 732px) and (max-device-width: 412px) {
+  h1.my_name {
+    font-size: 2em;
+    margin-top: 17%;
+  }
+  div.quote_container {
+    font-size: .75em;
+    line-height: 1.9em;
+  }
+  section.title_container {
+    min-height: 91px;
+    max-height: 87%;
+  }
+  section.projects {
+    background-color: rgba(110, 159, 175, 0.88);
+    margin-top: 95vw;
+  }
+  section.main {
+    background-color: rgba(150, 101, 115, 0.67);
+  }
+  article {
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .image_container {
+    height: 100px;
+  }
+  h1 {
+    padding-top: 12%;
+  }
+  nav {
+    height: 35px;
+  }
+  #nav ul {
+    font-size: 1.3em;
+  }
+  p.story_text {
+    font-size: .9em;
+    margin-left: 11%;
+    margin-right: 11%;
+  }
+  p.story_text a {
+    margin-left: 2%;
+    margin-right: 2%;
+  } 
+  button.accordion:after{
+    height:80%;
+    margin-right:2%;
+    border: .5px white solid;
+    margin-top:2%
+  }
+  code.hljs {
+    font-size: .6em;
+    text-align: left;
+  }
+  code span {
+    font-size: .8em;
+  }
+  blockquote {
+    font-size: .7em;
+    width: 80%;
+    line-height: 1.5em;
+  }
+  div.reference_quote {
+    width: 100%;
+    padding: 19px;
+  }
+  .icons {
+    position: relative;
+    top: 51%;
+    text-align: center;
+    margin-bottom: 2%;
+  }
+  i.fa {
+    font-size: 7vw;
+    cursor: pointer;
+  }
+  i.fa.fa-github {
+    font-size: 8vw;
+  }
+  footer {
+    margin-bottom: 50px;
+  }
+}
   font-size: 2.9vw;
   font-family: Proza Libre;
   display: block;
