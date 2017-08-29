@@ -302,7 +302,7 @@ p.story_text.bottom_story_text.goals {
 
 section.main {
   background-color: rgba(255, 255, 255, 0.72);
-  border-top: #5b9f9f 2px solid;
+  border-top: #ffffff 2px solid;
   z-index: 1;
   position: relative;
 }
@@ -499,22 +499,22 @@ section.references {
   width: 100;
   background-color: rgba(251, 222, 250, 0.52);
   position: relative;
-  border-top: #40ab87 2px solid;
+  border-top: #ffffff 2px solid;
 }
 
 .reference_quote {
-  width: 74%;
-  background: rgba(35, 35, 35, 0.85);
+  width: 80%;
+  background: rgba(0, 0, 0, 0.78);
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-left: auto;
   margin-right: auto;
-  padding: 36px;
+  padding: 2vw;
   color: antiquewhite;
   line-height: 1.8em;
   text-indent: 5%;
   font-style: italic;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
   min-height: 70%;
 }
 
@@ -872,7 +872,7 @@ div.technologies p {
   blockquote {
     font-size: 1.4em;
     line-height: 1.5em;
-    width: 78%;
+    width: 96%;
     margin-left: auto;
     margin-right: auto;
   }
