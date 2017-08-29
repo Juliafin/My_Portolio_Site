@@ -254,6 +254,7 @@ h2 {
   position: relative;
   text-align: center;
   margin: 4% 0;
+  padding-top: 4%;
 }
 
 h2+p {
@@ -270,15 +271,17 @@ h2+p a {
 }
 
 h1#About_Me {
-  color: #861313;
+  color: #ffffff;
+  padding-top: 4%;
 }
 
 section.references h1 {
-  color: #861313;
+  color: #ffe5e5;
+  padding-top: 4%;
 }
 
 .section_one {
-  color: #020202;
+  color: #ffffff;
 }
 
 p.story_text {
@@ -298,7 +301,7 @@ p.story_text.bottom_story_text.goals {
 }
 
 section.main {
-  background-color: rgba(239, 202, 212, 0.36);
+  background-color: rgba(255, 255, 255, 0.72);
   border-top: #5b9f9f 2px solid;
   z-index: 1;
   position: relative;
@@ -308,10 +311,11 @@ article {
   margin-left: 6em;
   margin-right: 6em;
   text-align: center;
+  background: rgba(136, 18, 88, 0.47);
 }
 
 section.projects {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.72);
   z-index: 1;
   min-height: 100%;
   position: relative;
