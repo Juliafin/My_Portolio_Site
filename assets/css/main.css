@@ -1322,11 +1322,8 @@ div.technologies p {
     max-height: 87%;
   }
   section.projects {
-    background-color: rgba(110, 159, 175, 0.88);
+    
     margin-top: 95vw;
-  }
-  section.main {
-    background-color: rgba(150, 101, 115, 0.67);
   }
   article {
     text-align: center;
