@@ -32,7 +32,6 @@ nav {
   position: fixed;
   bottom: 0px;
   z-index: 1000;
-  border-top: #ca9d9d 2px solid;
   animation-name: glow;
   animation-direction: normal;
   animation-duration: 7s;
@@ -578,13 +577,11 @@ div.technologies p {
     font-size: 7em;
   }
   h1 {
-    font-size: 7em;
   }
   #nav li {
     font-size: 3em;
   }
   p.story_text {
-    font-size: 3em;
   }
   button.accordion {
     font-size: 3em;
@@ -617,14 +614,10 @@ div.technologies p {
   h1.my_name {
     font-size: 6.5em;
   }
-  h1 {
-    font-size: 6.5em;
-  }
   #nav li {
     font-size: 2.5em;
   }
   p.story_text {
-    font-size: 2.5em;
   }
   button.accordion {
     font-size: 2.5em;
@@ -656,14 +649,11 @@ div.technologies p {
   h1.my_name {
     font-size: 6em;
   }
-  h1 {
-    font-size: 6em;
-  }
+
   #nav li {
     font-size: 2em;
   }
   p.story_text {
-    font-size: 2em;
   }
   button.accordion {
     font-size: 2em;
@@ -693,9 +683,6 @@ div.technologies p {
 
 @media screen and (max-width: 1600px) {
   h1.my_name {
-    font-size: 5.5em;
-  }
-  h1 {
     font-size: 5.5em;
   }
   #nav li {
@@ -742,9 +729,6 @@ div.technologies p {
   h1.my_name {
     font-size: 5em;
   }
-  h1 {
-    font-size: 5em;
-  }
   #nav li {
     font-size: 1.6em;
   }
@@ -788,9 +772,6 @@ div.technologies p {
 @media screen and (max-width: 1300px) {
   h1.my_name {
     font-size: 4.5em;
-  }
-  h1 {
-    font-size: 4.9em;
   }
   #nav li {
     font-size: 1.4em;
@@ -837,7 +818,6 @@ div.technologies p {
     font-size: 4em;
   }
   h1 {
-    font-size: 4em;
     font-stretch: ultra-expanded;
   }
   #nav li {
@@ -884,9 +864,6 @@ div.technologies p {
 
 @media screen and (max-width: 1030px) {
   h1.my_name {
-    font-size: 3.5em;
-  }
-  h1 {
     font-size: 3.5em;
   }
   #nav li {
@@ -939,9 +916,6 @@ div.technologies p {
   h1.my_name {
     font-size: 3em;
   }
-  h1 {
-    font-size: 3em;
-  }
   #nav li {
     font-size: 1em;
   }
@@ -992,9 +966,6 @@ div.technologies p {
   h1.my_name {
     font-size: 2.5em;
   }
-  h1 {
-    font-size: 2.5em;
-  }
   #nav li {
     font-size: .9em;
   }
@@ -1043,9 +1014,6 @@ div.technologies p {
 
 @media screen and (max-width: 650px) {
   h1.my_name {
-    font-size: 2em;
-  }
-  h1 {
     font-size: 2em;
   }
   #nav li {
@@ -1103,7 +1071,6 @@ div.technologies p {
     font-size: 1.7em;
   }
   h1 {
-    font-size: 1.7em;
     padding-top: 3%;
   }
   #nav li {
@@ -1158,9 +1125,6 @@ div.technologies p {
 
 @media screen and (max-width: 440px) {
   h1.my_name {
-    font-size: 1.5em;
-  }
-  h1 {
     font-size: 1.5em;
   }
   #nav li {
@@ -1220,10 +1184,6 @@ div.technologies p {
 @media screen and (max-width: 330px) {
   h1.my_name {
     font-size: 1.2em;
-  }
-  h1 {
-    font-size: 1.2em;
-    padding-top: 25%;
   }
   h2 {
     font-size: .9em;
