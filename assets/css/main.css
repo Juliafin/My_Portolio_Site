@@ -28,7 +28,7 @@ body {
 nav {
   width: 100%;
   height: 64px;
-  background: #99210A;
+  background: #1E0703;
   position: fixed;
   bottom: 0px;
   z-index: 1000;
@@ -72,7 +72,7 @@ nav {
 #nav li:focus,
 button.accordion:hover {
   filter: brightness(115%);
-  background: #1E0703;
+  background: #D2452A;
   transition: all ease-in-out 350ms;
 }
 
@@ -292,9 +292,9 @@ p.story_text {
   text-indent: 4%;
   line-height: 1.5em;
   font-family: Cormorant Garamond;
-  text-align: center;
+  text-align: left;
   margin-bottom: 2%;
-  padding: 10px;
+  padding: 0 15px;
 }
 
 p.story_text.bottom_story_text.goals {
@@ -418,7 +418,7 @@ img.icon {
 }
 
 button.accordion {
-  background-color: #D2452A;
+  background-color: #1E0703;
   color: white;
   cursor: pointer;
   width: 100%;
@@ -521,7 +521,9 @@ section.references {
 }
 
 blockquote {
-  font-size: 1.2em;
+  font-size: 24px;
+  text-align: left;
+  padding: 15px 0;
 }
 
 blockquote:before {
@@ -600,8 +602,7 @@ div.technologies p {
     font-size: 1.6vw;
   }
   blockquote {
-    font-size: 4em;
-    line-height: 1.5em
+    line-height: 1.5em;
   }
   blockquote span {
     margin-left: 5%;
@@ -641,8 +642,6 @@ div.technologies p {
     font-size: 1.3vw;
   }
   blockquote {
-    font-size: 3em;
-    line-height: 1.5em
   }
   blockquote span {
     margin-left: 5%;
@@ -682,8 +681,6 @@ div.technologies p {
     font-size: 1.2vw;
   }
   blockquote {
-    font-size: 2.5em;
-    line-height: 1.5em
   }
   blockquote span {
     margin-left: 5%;
