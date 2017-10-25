@@ -27,8 +27,8 @@ body {
 
 nav {
   width: 100%;
-  height: 13%;
-  background: #861357;
+  height: 64px;
+  background: #99210A;
   position: fixed;
   bottom: 0px;
   z-index: 1000;
@@ -41,7 +41,8 @@ nav {
 }
 
 #nav li.selected {
-  background: rgba(133, 209, 234, 0.83);
+  background: #F1A597;
+  color: #1E0703;
 }
 
 #nav ul {
@@ -49,7 +50,6 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
   /* margin: 0; */
   /* padding: 0; */
   position: relative;
@@ -60,20 +60,19 @@ nav {
 #nav a,
 #nav li {
   text-decoration: none;
-  color: antiquewhite;
-  font-size: 1.2em;
-  height: 100%;
+  color: #f7f0e7;
+  font-size: 30px;
+  height: 64px;
   width: 100%;
-  line-height: 5vw;
   text-transform: uppercase;
+  line-height: 64px;
 }
 
 #nav li:hover,
 #nav li:focus,
 button.accordion:hover {
   filter: brightness(115%);
-  background: #4d7390;
-  color: #290303;
+  background: #1E0703;
   transition: all ease-in-out 350ms;
 }
 
@@ -149,6 +148,7 @@ p i.fa.fa-github {
   border-top: 1px solid #a40964;
   font-size: 2vw;
   font-family: Ruboto;
+  color: #1E0703;
 }
 
 i:hover,
@@ -172,7 +172,7 @@ section.title_container {
 
 h1.my_name {
   margin: 0;
-  color: brown;
+  color: #99210A;
   font-weight: 100;
   padding: 0;
 }
@@ -205,7 +205,7 @@ section.title_container {
 .author,
 .quote {
   font-family: Dancing Script;
-  color: #861313;
+  color: #1E0703;
   font-size: 1.5em;
   margin-top: 0%;
   padding: 2%;
@@ -235,7 +235,7 @@ h1 {
   margin: 3% 0;
   0: 5.5em
   font-weight: 400;
-  color: aliceblue;
+  color: #020202;
   font-weight: 400;
   padding: 0;
 }
@@ -254,6 +254,8 @@ h2 {
   position: relative;
   text-align: center;
   margin: 4% 0;
+  padding-top: 4%;
+  color: #1E0703;
 }
 
 h2+p {
@@ -269,19 +271,30 @@ h2+p a {
   top: -6vw;
 }
 
+h1#About_Me {
+  color: #1E0703;
+  padding-top: 4%;
+}
+
+section.references h1 {
+  color: #1E0703;
+  padding-top: 4%;
+}
+
 .section_one {
-  color: #f5e9d9;
+  color: #1E0703;
 }
 
 p.story_text {
   font-size: 24px;
   font-weight: 600;
-  color: #ffffff;
+  color: #1E0703;
   text-indent: 4%;
   line-height: 1.5em;
   font-family: Cormorant Garamond;
   text-align: left;
   margin-bottom: 2%;
+  padding: 10px;
 }
 
 p.story_text.bottom_story_text.goals {
@@ -290,8 +303,8 @@ p.story_text.bottom_story_text.goals {
 }
 
 section.main {
-  background-color: rgba(173, 106, 125, 0.57);
-  border-top: #5b9f9f 2px solid;
+  background-color: rgba(255, 255, 255, 0.90);
+  border-top: #ffffff 2px solid;
   z-index: 1;
   position: relative;
 }
@@ -300,10 +313,11 @@ article {
   margin-left: 6em;
   margin-right: 6em;
   text-align: center;
+  background: #D06E5B;
 }
 
 section.projects {
-  background-color: rgba(65, 164, 197, 0.57);
+  background-color: rgba(255, 255, 255, 0.90);
   z-index: 1;
   min-height: 100%;
   position: relative;
@@ -321,7 +335,7 @@ div#particles-js {
 }
 
 .section_two {
-  color: #861313;
+  color: #1E0703;
 }
 
 img {
@@ -376,7 +390,7 @@ div.img_container img:hover {
 
 .bottom_story_text a {
   text-decoration: none;
-  color: #6dbfbf;
+  color: #99210A;
   font-size: 2vw;
   letter-spacing: 0.6pt;
 }
@@ -404,7 +418,7 @@ img.icon {
 }
 
 button.accordion {
-  background-color: #861357;
+  background-color: #D2452A;
   color: white;
   cursor: pointer;
   width: 100%;
@@ -485,24 +499,24 @@ section.references {
   z-index: 1;
   min-height: 100%;
   width: 100;
-  background-color: rgba(175, 175, 83, 0.52);
+  background-color: rgba(255, 255, 255, 0.90);
   position: relative;
-  border-top: #40ab87 2px solid;
+  border-top: #ffffff 2px solid;
 }
 
 .reference_quote {
-  width: 74%;
-  background: rgba(37, 111, 136, 0.85);
+  width: 80%;
+  background: #1E0703;
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-left: auto;
   margin-right: auto;
-  padding: 36px;
+  padding: 2vw;
   color: antiquewhite;
   line-height: 1.8em;
   text-indent: 5%;
   font-style: italic;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
   min-height: 70%;
 }
 
@@ -692,7 +706,6 @@ div.technologies p {
   }
   #nav a,
   #nav img {
-    margin-top: 1.6%
   }
   p.story_text {
     font-size: 1.7em;
@@ -740,7 +753,6 @@ div.technologies p {
   }
   #nav a,
   #nav img {
-    margin-top: 1.6%
   }
   p.story_text {
     font-size: 1.6em;
@@ -788,7 +800,6 @@ div.technologies p {
   }
   #nav a,
   #nav img {
-    margin-top: 1.6%
   }
   p.story_text {
     font-size: 1.5em;
@@ -837,7 +848,6 @@ div.technologies p {
   }
   #nav a,
   #nav img {
-    margin-top: 1.6%
   }
   p.story_text {
     font-size: 1.4em;
@@ -860,9 +870,11 @@ div.technologies p {
   blockquote {
     font-size: 1.4em;
     line-height: 1.5em;
-    width: 78%;
+    width: 96%;
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
+    padding-top: 1.8vw;
   }
   blockquote span {
     margin-left: 5%;
@@ -1310,11 +1322,8 @@ div.technologies p {
     max-height: 87%;
   }
   section.projects {
-    background-color: rgba(110, 159, 175, 0.88);
+    
     margin-top: 95vw;
-  }
-  section.main {
-    background-color: rgba(150, 101, 115, 0.67);
   }
   article {
     text-align: center;
