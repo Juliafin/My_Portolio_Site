@@ -21,8 +21,8 @@ hue-6-2: #e6c07b
   padding: 0.5em;
   color: #abb2bf;
   background: #282c34;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
   font-family: monospace;
   text-align: left;
 }
