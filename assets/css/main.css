@@ -397,7 +397,6 @@ div.img_container img:hover {
 .bottom_story_text a {
   text-decoration: none;
   color: #99210A;
-  font-size: 2vw;
   letter-spacing: 0.6pt;
 }
 
@@ -579,8 +578,6 @@ div.technologies p {
 }
 
 @media screen and (max-width: 2600px) {
-  p.story_text {
-  }
   button.accordion {
     font-size: 3em;
   }
@@ -609,8 +606,6 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1950px) {
-  p.story_text {
-  }
   button.accordion {
     font-size: 2.5em;
   }
@@ -638,8 +633,7 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1750px) {
-  p.story_text {
-  }
+
   button.accordion {
     font-size: 2em;
   }
@@ -670,9 +664,7 @@ div.technologies p {
   #nav a,
   #nav img {
   }
-  p.story_text {
-    font-size: 1.7em;
-  }
+
   button.accordion {
     font-size: 2em;
   }
@@ -708,9 +700,7 @@ div.technologies p {
   #nav a,
   #nav img {
   }
-  p.story_text {
-    font-size: 1.6em;
-  }
+
   button.accordion {
     font-size: 1.7em;
   }
@@ -746,12 +736,7 @@ div.technologies p {
   #nav a,
   #nav img {
   }
-  p.story_text {
-    font-size: 1.5em;
-  }
-  button.accordion {
-    font-size: 1.7em;
-  }
+
   img.icon {
     height: 150px;
     width: 150px;
@@ -784,12 +769,7 @@ div.technologies p {
   #nav a,
   #nav img {
   }
-  p.story_text {
-    font-size: 1.4em;
-  }
-  button.accordion {
-    font-size: 1.7em;
-  }
+
   img.icon {
     height: 150px;
     width: 150px;
@@ -830,12 +810,7 @@ div.technologies p {
     height: 25%;
     width: 15%
   }
-  p.story_text {
-    font-size: 1.2em;
-  }
-  button.accordion {
-    font-size: 1.5em;
-  }
+
   img.icon {
     height: 130px;
     width: 130px;
@@ -876,12 +851,6 @@ div.technologies p {
     height: 18%;
     width: 15%
   }
-  p.story_text {
-    font-size: 1.2em;
-  }
-  button.accordion {
-    font-size: 1.3em;
-  }
   img.icon {
     height: 110px;
     width: 110px;
@@ -921,12 +890,7 @@ div.technologies p {
     height: 18%;
     width: 15%
   }
-  p.story_text {
-    font-size: 1em;
-  }
-  button.accordion {
-    font-size: 1em;
-  }
+
   img.icon {
     height: 90px;
     width: 90px;
@@ -966,16 +930,11 @@ div.technologies p {
     height: 13%;
     width: 15%
   }
-  p.story_text {
-    font-size: .8em;
-  }
   i {
     margin-left: 4%;
     margin-right: 3%;
   }
-  button.accordion {
-    font-size: .8em;
-  }
+
   img.icon {
     height: 70px;
     width: 70px;
@@ -1015,16 +974,12 @@ div.technologies p {
     height: 9%;
     width: 13%
   }
-  p.story_text {
-    font-size: .6em;
-  }
+ 
   i {
     margin-left: 4%;
     margin-right: 3%;
   }
-  button.accordion {
-    font-size: .8em;
-  }
+
   img.icon {
     height: 70px;
     width: 70px;
@@ -1065,14 +1020,11 @@ div.technologies p {
     height: 8%;
     width: 13%
   }
-  p.story_text {
-    font-size: .5em;
-  }
+
   p i {
     font-size: .5em;
   }
   button.accordion {
-    font-size: .6em;
     margin-bottom: 8%;
   }
   img.icon {
@@ -1124,7 +1076,6 @@ div.technologies p {
     margin-right: auto;
   }
   p.story_text {
-    font-size: .4em;
     margin-bottom: 0;
     margin-top: 6px;
   }
@@ -1132,9 +1083,6 @@ div.technologies p {
     font-size: .5em;
     margin-left: 25%;
     margin-right: 4%;
-  }
-  button.accordion {
-    font-size: .5em;
   }
   button.accordion:after{
     height:80%;
@@ -1225,7 +1173,6 @@ div.technologies p {
     font-size: 1.3em;
   }
   p.story_text {
-    font-size: .9em;
     margin-left: 11%;
     margin-right: 11%;
   }
