@@ -126,7 +126,7 @@ function changeOpacity() {
 }
 
 function navOpacity(event) {
-  console.log('scroll here')
+  // console.log('scroll here')
   setTimeout(
     $('nav').fadeOut('slow'), 300
   )

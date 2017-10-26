@@ -195,6 +195,10 @@ section#Projects {
   padding-top: 1rem;
 }
 
+pre {
+  padding: 1rem;
+}
+
 .quote_container {
   position: relative;
   text-align: center;
@@ -233,7 +237,6 @@ h1 {
   text-align: center;
   font-family: Proza Libre;
   margin: 3% 0;
-  0: 5.5em
   font-weight: 400;
   color: #020202;
   font-weight: 400;
@@ -579,8 +582,7 @@ div.technologies p {
 }
 
 @media screen and (max-width: 2600px) {
-  button.accordion {
-  }
+
   img.icon {
     height: 200px;
     width: 200px;
@@ -603,8 +605,7 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1950px) {
-  button.accordion {
-  }
+
   img.icon {
     height: 200px;
     width: 200px;
@@ -626,8 +627,6 @@ div.technologies p {
 
 @media screen and (max-width: 1750px) {
 
-  button.accordion {
-  }
   img.icon {
     height: 200px;
     width: 200px;
@@ -648,12 +647,7 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1600px) {
-  #nav a,
-  #nav img {
-  }
 
-  button.accordion {
-  }
   img.icon {
     height: 200px;
     width: 200px;
@@ -678,12 +672,7 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1450px) {
-  #nav a,
-  #nav img {
-  }
 
-  button.accordion {
-  }
   img.icon {
     height: 170px;
     width: 170px;
@@ -708,10 +697,7 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1300px) {
-  #nav a,
-  #nav img {
-  }
-
+ 
   img.icon {
     height: 150px;
     width: 150px;
@@ -736,9 +722,6 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1200px) {
-  #nav a,
-  #nav img {
-  }
 
   img.icon {
     height: 150px;
