@@ -191,6 +191,10 @@ section.title_container {
   top: 0;
 }
 
+section#Projects {
+  padding-top: 1rem;
+}
+
 .quote_container {
   position: relative;
   text-align: center;
