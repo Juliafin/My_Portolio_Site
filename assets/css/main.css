@@ -309,7 +309,7 @@ p.story_text.project_summary{
 }
 
 section.main {
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.78);
   /* border-top: #ffffff 2px solid; */
   z-index: 1;
   position: relative;
@@ -324,7 +324,7 @@ article {
 }
 
 section.projects {
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.78);
   z-index: 1;
   min-height: 100%;
   position: relative;
@@ -505,7 +505,7 @@ div#panel-4 {
 section.references {
   z-index: 1;
   min-height: 100%;
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.78);
   position: relative;
 }
 
