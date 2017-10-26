@@ -125,6 +125,24 @@ function changeOpacity() {
   }
 }
 
+function navOpacity(event) {
+  console.log('scroll here')
+  $('nav').fadeOut('slow')
+  // console.log(event);
+}
+
+// function scrollStop() {
+//   $(window).on('scrollstop', (event) => {
+//     console.log('The scrolling stopped!')
+//   })
+// }
+
+function scrollNavListener() {
+  $(window).scroll($.throttle(150, navOpacity));
+}
+
+
+
 function opacityListenerDeb() {
   $(window).scroll($.throttle( 150, changeOpacity));
 }
@@ -135,6 +153,7 @@ function opacityListenerDeb() {
   accordionListener();
   navbarActiveListener();
   opacityListenerDeb();
+  scrollNavListener();
   $('div#particles-js').animate({
     opacity: 1
   }, 1000);
