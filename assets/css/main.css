@@ -37,6 +37,7 @@ nav {
   animation-duration: 7s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  box-shadow: 2px 0px 6px black;
 }
 
 #nav li.selected {
@@ -301,6 +302,10 @@ p.story_text.bottom_story_text.goals {
   margin-bottom: 0%;
 }
 
+p.story_text.project_summary{
+  text-align: center;
+}
+
 section.main {
   background-color: rgba(255, 255, 255, 0.90);
   border-top: #ffffff 2px solid;
@@ -313,6 +318,7 @@ article {
   margin-right: 6em;
   text-align: center;
   background: #D06E5B;
+  box-shadow: -1px 1px 6px black;
 }
 
 section.projects {
