@@ -109,6 +109,7 @@ i.fa.fa-github {
 
 p i.fa.fa-github {
   font-size: 10vw;
+  position: relative;
 }
 
 .reference_quote i:hover {
@@ -157,9 +158,7 @@ p.bottom_story_text a:hover {
   transition: all ease-in-out 300ms;
 }
 
-.icons i:hover,
-i.fa.fa-github:hover,
-.icons i:focus {
+.icons i:hover,.icons i:focus {
   color: #861313;
   transform: scale(1.5, 1.5);
 }
@@ -250,12 +249,13 @@ h1.my_name {
 h2 {
   font-size: 2.9vw;
   font-family: Proza Libre;
-  display: block;
+  display: inline-block;
   position: relative;
   text-align: center;
   margin: 4% 0;
   padding-top: 4%;
   color: #1E0703;
+  width: 50%;
 }
 
 h2+p {
@@ -308,7 +308,7 @@ p.story_text.project_summary{
 
 section.main {
   background-color: rgba(255, 255, 255, 0.90);
-  border-top: #ffffff 2px solid;
+  /* border-top: #ffffff 2px solid; */
   z-index: 1;
   position: relative;
 }
@@ -326,7 +326,6 @@ section.projects {
   z-index: 1;
   min-height: 100%;
   position: relative;
-  border-top: #5b9f9f 2px solid;
   top: 0;
   margin-top: 57vw;
 }
@@ -448,7 +447,6 @@ button.accordion {
   width: 50%;
   margin-top: 2%;
   margin-bottom: 3%;
-  box-shadow: 2px 0px 6px black;
 }
 
 button.text_analyzer {
@@ -505,10 +503,8 @@ div#panel-4 {
 section.references {
   z-index: 1;
   min-height: 100%;
-  width: 100;
   background-color: rgba(255, 255, 255, 0.90);
   position: relative;
-  border-top: #ffffff 2px solid;
 }
 
 .reference_quote {
@@ -1284,7 +1280,6 @@ div.technologies p {
     max-height: 87%;
   }
   section.projects {
-    
     margin-top: 95vw;
   }
   article {
@@ -1295,8 +1290,16 @@ div.technologies p {
   .image_container {
     height: 100px;
   }
+  h1#About_Me{
+    padding:10px;
+    margin:0;
+  }
   h1 {
-    padding-top: 12%;
+    padding-top: 8%;
+  }
+  section.references h1 {
+    padding:10px;
+    margin:0;
   }
   nav {
     height: 35px;
@@ -1317,8 +1320,7 @@ div.technologies p {
   button.accordion:after{
     height:80%;
     margin-right:2%;
-    border: .5px white solid;
-    margin-top:2%
+    font-size: 4vw;
   }
   code.hljs {
     font-size: .6em;
