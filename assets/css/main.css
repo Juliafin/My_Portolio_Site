@@ -283,6 +283,11 @@ section.references h1 {
   margin: 0;
 }
 
+section.references article {
+  padding-bottom: 2vw;
+  margin-bottom: 5vw;
+}
+
 .section_one {
   color: #1E0703;
 }
