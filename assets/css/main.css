@@ -50,8 +50,6 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* margin: 0; */
-  /* padding: 0; */
   position: relative;
   text-align: center;
   font-family: Proza Libre;
@@ -147,7 +145,6 @@ p i.fa.fa-github {
 .technologies span {
   margin: 0 2vw;
   border-top: 1px solid #a40964;
-  font-size: 2vw;
   font-family: Ruboto;
   color: #1E0703;
 }
@@ -310,7 +307,6 @@ p.story_text.project_summary{
 
 section.main {
   background-color: rgba(255, 255, 255, 0.90);
-  /* border-top: #ffffff 2px solid; */
   z-index: 1;
   position: relative;
 }
@@ -425,10 +421,10 @@ img.icon {
 
 
 button.accordion {
+  font-size: 1rem;
   background-color: #1E0703;
   color: white;
   cursor: pointer;
-  width: 100%;
   text-align: center;
   border: none;
   outline: none;
@@ -436,16 +432,15 @@ button.accordion {
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-family: Proza Libre;
-  font-size: 2em;
   animation-name: glow;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: linear;
-  height: 8vw;
-  line-height: 8vw;
+  height: 6vw;
+  line-height: 6vw;
   padding: 0;
-  width: 50%;
+  width: 25%;
   margin-top: 2%;
   margin-bottom: 3%;
 }
@@ -579,7 +574,6 @@ div.technologies p {
 
 @media screen and (max-width: 2600px) {
   button.accordion {
-    font-size: 3em;
   }
   img.icon {
     height: 200px;
@@ -607,7 +601,6 @@ div.technologies p {
 
 @media screen and (max-width: 1950px) {
   button.accordion {
-    font-size: 2.5em;
   }
   img.icon {
     height: 200px;
@@ -635,7 +628,6 @@ div.technologies p {
 @media screen and (max-width: 1750px) {
 
   button.accordion {
-    font-size: 2em;
   }
   img.icon {
     height: 200px;
@@ -666,7 +658,6 @@ div.technologies p {
   }
 
   button.accordion {
-    font-size: 2em;
   }
   img.icon {
     height: 200px;
@@ -702,7 +693,6 @@ div.technologies p {
   }
 
   button.accordion {
-    font-size: 1.7em;
   }
   img.icon {
     height: 170px;
@@ -844,7 +834,6 @@ div.technologies p {
   #nav a,
   #nav img {
     margin-top: 0%;
-    /* font-size: 2.5vw; */
   }
   #nav img {
     margin-top: 3%;
@@ -883,7 +872,6 @@ div.technologies p {
   #nav a,
   #nav img {
     margin-top: 0;
-    /* font-size: 2.5vw; */
   }
   #nav img {
     margin-top: 2%;
@@ -967,7 +955,6 @@ div.technologies p {
   #nav a,
   #nav img {
     margin-top: 0;
-    /* font-size: 3vw; */
   }
   #nav img {
     margin-top: 1%;
