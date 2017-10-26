@@ -37,7 +37,7 @@ nav {
   animation-duration: 7s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  box-shadow: 2px 0px 6px black;
+  box-shadow: -1px -1px 3px #615f5f;
 }
 
 #nav li.selected {
