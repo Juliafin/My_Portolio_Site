@@ -549,7 +549,8 @@ button.minus:after {
 div#panel-1,
 div#panel-2,
 div#panel-3,
-div#panel-4 {
+div#panel-4,
+div#panel-5 {
   display: none;
   padding: 3% 6%;
   min-height: 100%;
