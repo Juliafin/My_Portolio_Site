@@ -63,22 +63,13 @@ function accordionListener() {
       $(this).attr('aria-selected', 'false');
     } else {
       ($(this).attr('aria-selected', 'true'));
-    }
-
-    if ($(this).attr('aria-selected') === 'true') {
-      $(this).attr('aria-selected', 'false');
-    } else {
-      ($(this).attr('aria-selected', 'true'));
-    }
-   
+    } 
   
     if ($(this).next().attr('aria-hidden') === 'true') {
       $(this).next().attr('aria-hidden', 'false');
     } else {
       ($(this).next().attr('aria-hidden', 'true'));
     }
-
-
 
   });
 }
@@ -127,8 +118,9 @@ function changeOpacity() {
 
 function navOpacity(event) {
   // console.log('scroll here')
-  setTimeout(
-    $('nav').fadeOut('slow'), 300
+  setTimeout( () => {
+    $('nav').fadeOut('slow')
+   }, 300
   )
   // console.log(event);
 }

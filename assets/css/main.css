@@ -101,6 +101,15 @@ img.github_link {
   margin-top: 4%;
 }
 
+img#my_avatar {
+  height: 169px;
+  width: auto;
+  float: left;
+  margin-left: 3rem;
+  margin-top: 0;
+  margin-right: 3rem;
+}
+
 i {
   font-size: 1.6vw;
   margin-left: 4%;
@@ -508,7 +517,7 @@ button.accordion {
   margin-right: auto;
 }
 
-button.text_analyzer {
+button.text_analyzer_button {
   margin-bottom: 3%;
 }
 
