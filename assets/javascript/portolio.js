@@ -122,14 +122,8 @@ function navOpacity(event) {
     $('nav').fadeOut('slow')
    }, 300
   )
-  // console.log(event);
 }
 
-// function scrollStop() {
-//   $(window).on('scrollstop', (event) => {
-//     console.log('The scrolling stopped!')
-//   })
-// }
 
 function scrollNavListener() {
   $(window).scroll($.throttle(150, navOpacity));
