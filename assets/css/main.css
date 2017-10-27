@@ -787,6 +787,11 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1200px) {
+  
+  .technologies span {
+    
+margin: 0 1.5vw;
+  }
 
   img.icon {
     height: 150px;
@@ -814,6 +819,10 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1030px) {
+
+  .technologies span {
+    margin: 0 1vw;
+  }
   #nav a,
   #nav img {
     margin-top: 0%
@@ -849,6 +858,10 @@ div.technologies p {
 
 @media screen and (max-width: 860px) {
 
+  .technologies span {
+    margin: 0 .5vw
+  }
+
   #nav a,
   #nav img {
     margin-top: 0%;
@@ -883,6 +896,58 @@ div.technologies p {
 }
 
 @media screen and (max-width: 740px) {
+
+  div.panel-left {
+    width: 100%;
+  }
+
+  div.panel-right {
+    width: 100%;
+  }
+
+  .bggapi button#panel-2_tab, .curriculum_manager
+button#panel-1_tab {
+  margin: 1vw auto;
+} 
+
+  button.accordion {
+    margin: -1rem auto;
+  }
+
+  article.tropical_vscode_theme .panel-right, article.text_analyzer .panel-right{
+    width: 100%;
+  }
+
+  article.tropical_vscode_theme .panel-left, article.text_analyzer .panel-left{
+    width: 100%
+  }
+
+  .tropical_vscode_theme p.story_text.top_story_text.project_summary{
+    margin-bottom: 0;
+  }
+
+  .text_analyzer .technologies{
+    margin-bottom: 0;
+  }
+  
+  .technologies span {
+    margin: 1vw 0.1vw;
+  }
+
+  .tropical_vscode_theme img, .text_analyzer img {
+    width: 40vw;
+    margin-bottom: 1rem;
+  }
+
+  article.tropical_vscode_theme .img_container, article.text_analyzer .img_container{
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .technologies {
+    width: 100%;
+  }
+
   #nav a,
   #nav img {
     margin-top: 0;
