@@ -84,6 +84,17 @@ button.accordion:active {
   width: 100%;
 }
 
+.panel-left {
+  width: 41%;
+  display: inline-block;
+  float: left;
+}
+
+.panel-right {
+  width: 59%;
+  display: inline-block;
+}
+
 img.github_link {
   height: 40px;
   width: 40px;
@@ -324,6 +335,44 @@ article {
   text-align: center;
   background: #D06E5B;
   box-shadow: -1px 1px 6px black;
+  padding-bottom: 5%;
+}
+
+article.tropical_vscode_theme .img_container, article.text_analyzer .img_container {
+  margin-left: 2rem;
+}
+
+.tropical_vscode_theme p.story_text.top_story_text.project_summary {
+  margin-bottom: 6rem;
+}
+
+.bggapi button#panel-2_tab, .curriculum_manager
+button#panel-1_tab {
+   margin-top: 8rem;
+}
+
+img.curriculum_screenshot1, img.ff-quiz_screenshot_1, img[alt="Tropical VsCode Theme"] {
+   margin-bottom: 4rem;
+   width: 44vw;
+   padding-top: 4rem;
+}
+
+img.ff-quiz_screenshot_1 {}
+
+article.tropical_vscode_theme .panel-left, article.text_analyzer .panel-left {
+   width: 60%;
+}
+
+article.tropical_vscode_theme .panel-right, article.text_analyzer .panel-right {
+   width: 40%;
+}
+
+.text_analyzer .technologies {
+   margin-bottom: 8rem;
+}
+
+.tropical_vscode_theme img, .text_analyzer img {
+  width: 45vw;
 }
 
 section.projects {
@@ -333,6 +382,7 @@ section.projects {
   position: relative;
   top: 0;
   margin-top: 57vw;
+  border-top: 2px solid rgba(30, 7, 3, 0.29);
 }
 
 div#particles-js {
@@ -350,20 +400,21 @@ div#particles-js {
 img {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  width: 57vw;
+  width: 58vw;
   margin-top: 3%;
+  /* height: auto; */
 }
 
 .img_container {
-  width: 57vw;
+  width: 100%;
   height: auto;
   overflow: hidden;
-  margin-top: 3%;
+  /* margin-top: 3%; */
   margin-left: auto;
   margin-right: auto;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  margin-bottom: 3%;
+  padding-top: 4%;
 }
 
 .img_container.final_fantasy {
@@ -378,7 +429,7 @@ div.img_container img:hover {
 }
 
 .bgg_screenshot1 {
-  width: 100%;
+  width: 44vw;
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 1.6vw;
@@ -429,6 +480,7 @@ img.icon {
 
 button.accordion {
   /* font-size: 1rem; */
+  display: block;
   background-color: #1E0703;
   color: white;
   cursor: pointer;
@@ -448,10 +500,12 @@ button.accordion {
   padding: 0;
   min-width: 51%;
   width: auto;
-  margin-top: 2%;
-  margin-bottom: 3%;
+  margin-top: 8%;
+  margin-bottom: 0%;
   padding-left: 1rem;
   box-shadow: 1px 2px 6px #2d2d2d;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button.text_analyzer {
