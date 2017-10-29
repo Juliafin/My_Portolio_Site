@@ -173,7 +173,7 @@ p i.fa.fa-github {
 
 i:hover,
 p.bottom_story_text a:hover {
-  color: #861313;
+  color: #463939;
   transition: all ease-in-out 300ms;
 }
 
@@ -191,6 +191,16 @@ section.title_container {
 section.main h2 {
     margin: 0;
     padding: 0;
+}
+
+section.projects
+ article {
+    margin-bottom: 2rem;
+}
+
+section.projects
+ article.text_analyzer {
+    margin-bottom: 0;
 }
 
 h1.projects_header, h1.about_me_header, h1.references_header {
@@ -338,7 +348,7 @@ p.story_text.project_summary{
 }
 
 section.main {
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.70);
   z-index: 1;
   position: relative;
   padding-top: 2rem;
@@ -389,7 +399,7 @@ article.tropical_vscode_theme .panel-right, article.text_analyzer .panel-right {
 }
 
 section.projects {
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.70);
   z-index: 1;
   padding-top: 2rem !important;
   min-height: 100%;
@@ -580,7 +590,7 @@ div#panel-5 {
 section.references {
   z-index: 1;
   min-height: 100%;
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.70);
   position: relative;
   padding-top: 2rem;
 }
