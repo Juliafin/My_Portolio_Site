@@ -127,8 +127,9 @@ i.fa.fa-github {
 }
 
 p i.fa.fa-github {
-  font-size: 10vw;
+  font-size: 9vw;
   position: relative;
+  height: 11vw;
 }
 
 .reference_quote i:hover {
@@ -196,6 +197,10 @@ section.main h2 {
 section.projects
  article {
     margin-bottom: 2rem;
+}
+
+article.tropical_vscode_theme {
+    padding-bottom: 4rem;
 }
 
 section.projects
@@ -319,7 +324,6 @@ h2 {
 
 h2+p {
   text-align: center;
-  margin-top: 2%;
 }
 
 h2+p a {
@@ -361,6 +365,9 @@ article {
   background: #D06E5B;
   box-shadow: -1px 1px 6px black;
   padding: 0rem 0 3rem 0;
+}
+
+article.tropical_vscode_theme .img_container, article.text_analyzer .img_container {
 }
 
 .tropical_vscode_theme p.story_text.top_story_text.project_summary {
@@ -430,7 +437,6 @@ img {
   width: 100%;
   height: auto;
   overflow: hidden;
-  /* margin-top: 3%; */
   margin-left: auto;
   margin-right: auto;
   border-top-left-radius: 5px;
@@ -504,7 +510,6 @@ img.icon {
 
 
 button.accordion {
-  /* font-size: 1rem; */
   display: block;
   background-color: #1E0703;
   color: white;
