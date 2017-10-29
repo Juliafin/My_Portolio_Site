@@ -2,6 +2,7 @@
   font-family: Arial;
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 div#particles-js {
@@ -9,10 +10,9 @@ div#particles-js {
 }
 
 div#Home {
-    position: absolute;
-    top: 0;
+  position: absolute;
+  top: 0;
 }
-
 
 html {
   font-size: calc(1em + 1vw);
@@ -187,7 +187,8 @@ p.bottom_story_text a:hover {
   transition: all ease-in-out 300ms;
 }
 
-.icons i:hover,.icons i:focus {
+.icons i:hover,
+.icons i:focus {
   color: #861313;
   transform: scale(1.5, 1.5);
 }
@@ -199,42 +200,41 @@ section.title_container {
 }
 
 section.main h2 {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-section.projects
- article {
-    margin-bottom: 2rem;
+section.projects article {
+  margin-bottom: 2rem;
 }
 
-
-section.projects
- article.text_analyzer {
-    margin-bottom: 0;
-    padding-bottom: 2rem;
+section.projects article.text_analyzer {
+  margin-bottom: 0;
+  padding-bottom: 2rem;
 }
 
-h1.projects_header, h1.about_me_header, h1.references_header {
-    text-align: left;
-    padding-left: 5rem;
-    background: linear-gradient(to right, #1E0703, #D06E5B);
-    color: #fefff1;
-    display: inline-block;
-    width: 100%;
-    position: relative;
+h1.projects_header,
+h1.about_me_header,
+h1.references_header {
+  text-align: left;
+  padding-left: 5rem;
+  background: linear-gradient(to right, #1E0703, #D06E5B);
+  color: #fefff1;
+  display: inline-block;
+  width: 100%;
+  position: relative;
 }
 
 section.main p.story_text.top_story_text {
-    padding-top: 2rem;
-    }
+  padding-top: 2rem;
+}
 
 section.references article {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 
 .reference_quote:nth-of-type(2) {
-    margin-top: 4%;
+  margin-top: 4%;
 }
 
 h1.my_name {
@@ -296,7 +296,6 @@ pre {
   position: relative;
 }
 
-
 h1.quote {
   margin-bottom: 0px;
 }
@@ -353,8 +352,7 @@ p.story_text {
   padding: 0 3rem;
 }
 
-
-p.story_text.project_summary{
+p.story_text.project_summary {
   text-align: center;
 }
 
@@ -369,28 +367,32 @@ article {
   margin-left: 4em;
   margin-right: 4em;
   text-align: center;
-  background: #D06E5B;
+  background: rgba(208, 110, 91, 0.79);
   box-shadow: -1px 1px 6px black;
   padding: 0rem 0 3rem 0;
-
 }
 
 section.projects article {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
 }
 
-
-img.curriculum_screenshot1, img.ff-quiz_screenshot_1, img[alt="Tropical VsCode Theme"], .tropical_vscode_theme img, .text_analyzer img {
-   width: 45vw;
+img.curriculum_screenshot1,
+img.ff-quiz_screenshot_1,
+img[alt="Tropical VsCode Theme"],
+.tropical_vscode_theme img,
+.text_analyzer img {
+  width: 45vw;
 }
 
-article.tropical_vscode_theme .panel-left, article.text_analyzer .panel-left {
-   width: 59%;
+article.tropical_vscode_theme .panel-left,
+article.text_analyzer .panel-left {
+  width: 59%;
 }
 
-article.tropical_vscode_theme .panel-right, article.text_analyzer .panel-right {
-   width: 39%;
+article.tropical_vscode_theme .panel-right,
+article.text_analyzer .panel-right {
+  width: 39%;
 }
 
 section.projects {
@@ -481,12 +483,11 @@ img.icon {
 }
 
 @keyframes glow {
-  0%
-   {
+  0% {
     filter: brightness(100%);
     filter: saturate(100%);
   }
-  50%{
+  50% {
     filter: brightness(50%);
     filter: saturate(50%);
   }
@@ -495,8 +496,6 @@ img.icon {
     filter: saturate(100%);
   }
 }
-
-
 
 button.accordion {
   display: block;
@@ -561,8 +560,9 @@ div#panel-5 {
   min-height: 100%;
 }
 
-div#panel-4, div#panel-5 {
-    padding-top: 5rem !important;
+div#panel-4,
+div#panel-5 {
+  padding-top: 5rem !important;
 }
 
 .contact_info {
@@ -586,23 +586,33 @@ section.references {
   padding-top: 2rem;
 }
 
-.reference_quote {
+.reference_quote blockquote {
   background: #1E0703;
   border-top-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  padding: 2vw;
   color: antiquewhite;
   line-height: 2vw;
   text-indent: 5%;
   font-style: italic;
   min-height: 70%;
-  margin: 0 3rem;
+  padding: 3rem;
+}
+
+.reference_quote {
+  padding: 0 3rem;
+}
+
+.reference_quote span {
+  background-color: #1E0703;
+  color: white;
+  padding: 3rem;
 }
 
 blockquote {
   text-align: left;
   padding: 15px 0;
   font-size: 1rem;
+  margin: 0 auto;
 }
 
 blockquote:before {
@@ -617,7 +627,6 @@ blockquote:after {
 
 div.reference_quote span {
   font-size: .7em;
-  margin-left: 3%;
   margin-bottom: 4%;
   margin-top: 5%;
   display: inline-block;
@@ -649,11 +658,10 @@ footer:before {
 }
 
 div.technologies p {
-    padding-top: 1vw;
+  padding-top: 1vw;
 }
 
 @media screen and (max-width: 2600px) {
-
   img.icon {
     height: 200px;
     width: 200px;
@@ -676,7 +684,6 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1950px) {
-
   img.icon {
     height: 200px;
     width: 200px;
@@ -689,7 +696,6 @@ div.technologies p {
   code span {
     font-size: 1.3vw;
   }
-
   blockquote span {
     margin-left: 5%;
     font-size: 1em;
@@ -697,7 +703,6 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1750px) {
-
   img.icon {
     height: 200px;
     width: 200px;
@@ -710,7 +715,6 @@ div.technologies p {
   code span {
     font-size: 1.2vw;
   }
-
   blockquote span {
     margin-left: 5%;
     font-size: 1em;
@@ -718,7 +722,6 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1600px) {
-
   img.icon {
     height: 200px;
     width: 200px;
@@ -733,9 +736,6 @@ div.technologies p {
   }
   blockquote {
     line-height: 1.5em;
-    width: 78%;
-    margin-left: auto;
-    margin-right: auto;
   }
   blockquote span {
     margin-left: 5%;
@@ -743,7 +743,6 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1450px) {
-
   img.icon {
     height: 170px;
     width: 170px;
@@ -758,9 +757,6 @@ div.technologies p {
   }
   blockquote {
     line-height: 1.5em;
-    width: 78%;
-    margin-left: auto;
-    margin-right: auto;
   }
   blockquote span {
     margin-left: 5%;
@@ -768,7 +764,6 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1300px) {
- 
   img.icon {
     height: 150px;
     width: 150px;
@@ -783,9 +778,6 @@ div.technologies p {
   }
   blockquote {
     line-height: 1.5em;
-    width: 78%;
-    margin-left: auto;
-    margin-right: auto;
   }
   blockquote span {
     margin-left: 5%;
@@ -793,12 +785,9 @@ div.technologies p {
 }
 
 @media screen and (max-width: 1200px) {
-  
   .technologies span {
-    
-margin: 0 1.5vw;
+    margin: 0 1.5vw;
   }
-
   img.icon {
     height: 150px;
     width: 150px;
@@ -825,7 +814,6 @@ margin: 0 1.5vw;
 }
 
 @media screen and (max-width: 1030px) {
-
   .technologies span {
     margin: 0 1vw;
   }
@@ -838,7 +826,6 @@ margin: 0 1.5vw;
     height: 25%;
     width: 15%
   }
-
   img.icon {
     height: 130px;
     width: 130px;
@@ -863,11 +850,9 @@ margin: 0 1.5vw;
 }
 
 @media screen and (max-width: 860px) {
-
   .technologies span {
     margin: 0 .5vw
   }
-
   #nav a,
   #nav img {
     margin-top: 0%;
@@ -902,62 +887,52 @@ margin: 0 1.5vw;
 }
 
 @media screen and (max-width: 740px) {
-  
   section.projects article {
     display: block;
   }
-
   div.panel-left {
     width: 100%;
   }
-
   div.panel-right {
     width: 100%;
   }
-
-  .bggapi button#panel-2_tab, .curriculum_manager
-button#panel-1_tab {
-  margin: 1vw auto;
-} 
-
+  .bggapi button#panel-2_tab,
+  .curriculum_manager button#panel-1_tab {
+    margin: 1vw auto;
+  }
   button.accordion {
     margin: -1rem auto;
   }
-
-  article.tropical_vscode_theme .panel-right, article.text_analyzer .panel-right{
+  article.tropical_vscode_theme .panel-right,
+  article.text_analyzer .panel-right {
     width: 100%;
   }
-
-  article.tropical_vscode_theme .panel-left, article.text_analyzer .panel-left{
+  article.tropical_vscode_theme .panel-left,
+  article.text_analyzer .panel-left {
     width: 100%
   }
-
-  .tropical_vscode_theme p.story_text.top_story_text.project_summary{
+  .tropical_vscode_theme p.story_text.top_story_text.project_summary {
     margin-bottom: 0;
   }
-
-  .text_analyzer .technologies{
+  .text_analyzer .technologies {
     margin-bottom: 0;
   }
-  
   .technologies span {
     margin: 1vw 0.1vw;
   }
-
-  .tropical_vscode_theme img, .text_analyzer img {
+  .tropical_vscode_theme img,
+  .text_analyzer img {
     width: 40vw;
     margin-bottom: 1rem;
   }
-
-  article.tropical_vscode_theme .img_container, article.text_analyzer .img_container{
+  article.tropical_vscode_theme .img_container,
+  article.text_analyzer .img_container {
     margin: 0 auto;
     width: 100%;
   }
-
   .technologies {
     width: 100%;
   }
-
   #nav a,
   #nav img {
     margin-top: 0;
@@ -967,7 +942,6 @@ button#panel-1_tab {
     height: 18%;
     width: 15%
   }
-
   img.icon {
     height: 90px;
     width: 90px;
@@ -1006,7 +980,6 @@ button#panel-1_tab {
     margin-left: 4%;
     margin-right: 3%;
   }
-
   img.icon {
     height: 70px;
     width: 70px;
@@ -1040,12 +1013,10 @@ button#panel-1_tab {
     height: 9%;
     width: 13%
   }
- 
   i {
     margin-left: 4%;
     margin-right: 3%;
   }
-
   img.icon {
     height: 70px;
     width: 70px;
@@ -1073,7 +1044,7 @@ button#panel-1_tab {
   #nav a,
   #nav img {
     margin-top: 0;
-    line-height:32px;
+    line-height: 32px;
     font-size: 2.7vw;
   }
   #nav img {
@@ -1081,7 +1052,6 @@ button#panel-1_tab {
     height: 8%;
     width: 13%
   }
-
   p i {
     font-size: .5em;
   }
@@ -1117,7 +1087,6 @@ button#panel-1_tab {
 }
 
 @media screen and (max-width: 330px) {
-
   #nav a,
   #nav img {
     margin-top: 0;
@@ -1141,11 +1110,11 @@ button#panel-1_tab {
     margin-left: 25%;
     margin-right: 4%;
   }
-  button.accordion:after{
-    height:80%;
-    margin-right:2%;
+  button.accordion:after {
+    height: 80%;
+    margin-right: 2%;
     border: .5px white solid;
-    margin-top:2%
+    margin-top: 2%
   }
   img.icon {
     height: 40px;
@@ -1206,20 +1175,20 @@ button#panel-1_tab {
   .image_container {
     height: 100px;
   }
-  h1#About_Me{
-    padding:10px;
-    margin:0;
+  h1#About_Me {
+    padding: 10px;
+    margin: 0;
   }
   h1 {
     padding-top: 8%;
   }
   section.references h1 {
-    padding:10px;
-    margin:0;
+    padding: 10px;
+    margin: 0;
   }
   nav {
     height: 35px;
-    line-height:35px;
+    line-height: 35px;
   }
   #nav ul {
     font-size: 1.3em;
@@ -1231,10 +1200,10 @@ button#panel-1_tab {
   p.story_text a {
     margin-left: 2%;
     margin-right: 2%;
-  } 
-  button.accordion:after{
-    height:80%;
-    margin-right:2%;
+  }
+  button.accordion:after {
+    height: 80%;
+    margin-right: 2%;
     font-size: 4vw;
   }
   code.hljs {
