@@ -374,6 +374,11 @@ article {
   background: #D06E5B;
   box-shadow: -1px 1px 6px black;
   padding: 0rem 0 3rem 0;
+
+}
+
+section.projects article {
+  display:flex;
 }
 
 
