@@ -35,7 +35,7 @@ nav {
   animation-name: glow;
   animation-direction: normal;
   animation-duration: 7s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   box-shadow: -1px -1px 3px #615f5f;
 }
@@ -307,7 +307,7 @@ h1.my_name {
   animation-name: glow;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 
 h2 {
@@ -343,9 +343,7 @@ p.story_text {
   font-family: Cormorant Garamond;
   text-align: left;
   margin-bottom: 2%;
-  padding: 0;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  padding: 0 15px;
 }
 
 
@@ -361,8 +359,8 @@ section.main {
 }
 
 article {
-  margin-left: 3em;
-  margin-right: 3em;
+  margin-left: 4em;
+  margin-right: 4em;
   text-align: center;
   background: #D06E5B;
   box-shadow: -1px 1px 6px black;
@@ -480,6 +478,8 @@ div.img_container img:hover {
   letter-spacing: 0.6pt;
   display: inline;
   position: static;
+  height: auto;
+  width: auto;
 }
 
 img.icon {
@@ -488,19 +488,18 @@ img.icon {
 }
 
 @keyframes glow {
-  0%,
-  50%,
-  100% {
+  0%
+   {
     filter: brightness(100%);
     filter: saturate(100%);
   }
-  25% {
-    filter: brightness(150%);
-    filter: saturate(150%);
-  }
-  75% {
+  50%{
     filter: brightness(50%);
     filter: saturate(50%);
+  }
+  100% {
+    filter: brightness(100%);
+    filter: saturate(100%);
   }
 }
 
@@ -518,10 +517,10 @@ button.accordion {
   border-radius: .5rem;
   font-family: Proza Libre;
   animation-name: glow;
-  animation-duration: 3s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.59, 0.56, 1, 1);
   height: auto;
   line-height: 6vw;
   padding: 0;
