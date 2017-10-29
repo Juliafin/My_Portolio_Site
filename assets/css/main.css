@@ -268,8 +268,6 @@ pre {
   position: relative;
 }
 
-h1 {
-}
 
 h1.quote {
   margin-bottom: 0px;
@@ -316,12 +314,6 @@ h2+p a {
   top: -6vw;
 }
 
-h1#About_Me {
-}
-
-.section_one {
-}
-
 p.story_text {
   font-size: 1rem;
   font-weight: 600;
@@ -334,8 +326,6 @@ p.story_text {
   padding: 0 15px;
 }
 
-p.story_text.bottom_story_text.goals {
-}
 
 p.story_text.project_summary{
   text-align: center;
@@ -375,8 +365,6 @@ img.curriculum_screenshot1, img.ff-quiz_screenshot_1, img[alt="Tropical VsCode T
    width: 44vw;
    padding-top: 4rem;
 }
-
-img.ff-quiz_screenshot_1 {}
 
 article.tropical_vscode_theme .panel-left, article.text_analyzer .panel-left {
    width: 60%;
