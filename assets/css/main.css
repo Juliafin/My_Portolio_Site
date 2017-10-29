@@ -478,10 +478,8 @@ div.img_container img:hover {
   text-decoration: none;
   color: #99210A;
   letter-spacing: 0.6pt;
-  display: inline-block;
+  display: inline;
   position: static;
-  height: auto;
-  width: auto;
 }
 
 img.icon {
