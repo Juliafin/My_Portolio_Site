@@ -16,6 +16,7 @@ var portfolioState = {
   ]
 };
 
+// Animates the quotes
 function renderQuote() {
 
   setTimeout(function () {
@@ -45,6 +46,7 @@ function renderQuote() {
   }, 11000);
 }
 
+// Listens for clicks on accordion buttons and expands the hidden sections
 function accordionListener() {
 
   $('.accordion').click(function (event) {
@@ -75,8 +77,7 @@ function accordionListener() {
 }
 
 
-
-
+// Listens for clicks on navbar to determine active element
 function navbarActiveListener() {
 
   $('#nav li').click(function (event) {
@@ -86,6 +87,8 @@ function navbarActiveListener() {
   });
 }
 
+
+// Changes opacity of top div based on scroll position
 function changeOpacity() {
 
   if ((window.screen.availHeight <= 732) && (window.screen.availWidth <= 412)) {
@@ -116,8 +119,9 @@ function changeOpacity() {
   }
 }
 
+
+// Makes nav fade when scrolling
 function navOpacity(event) {
-  // console.log('scroll here')
   setTimeout( () => {
     $('nav').fadeOut('slow')
    }, 300
@@ -130,11 +134,12 @@ function scrollNavListener() {
 }
 
 
-
 function opacityListenerDeb() {
   $(window).scroll($.throttle( 150, changeOpacity));
 }
 
+
+// Initialize app
 ($(document).ready(function () {
   $(this).scrollTop(0);
   renderQuote();
