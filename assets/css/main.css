@@ -208,13 +208,11 @@ section.projects
     margin-bottom: 2rem;
 }
 
-article.tropical_vscode_theme {
-    padding-bottom: 4rem;
-}
 
 section.projects
  article.text_analyzer {
     margin-bottom: 0;
+    padding-bottom: 2rem;
 }
 
 h1.projects_header, h1.about_me_header, h1.references_header {
@@ -592,7 +590,7 @@ section.references {
   background: #1E0703;
   border-top-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  padding: 2vw 0;
+  padding: 2vw;
   color: antiquewhite;
   line-height: 2vw;
   text-indent: 5%;
