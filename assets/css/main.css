@@ -343,7 +343,9 @@ p.story_text {
   font-family: Cormorant Garamond;
   text-align: left;
   margin-bottom: 2%;
-  padding: 0 15px;
+  padding: 0;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 
@@ -359,8 +361,8 @@ section.main {
 }
 
 article {
-  margin-left: 4em;
-  margin-right: 4em;
+  margin-left: 3em;
+  margin-right: 3em;
   text-align: center;
   background: #D06E5B;
   box-shadow: -1px 1px 6px black;
