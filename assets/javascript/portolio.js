@@ -50,7 +50,7 @@ function accordionListener() {
   $('.accordion').click(function (event) {
     event.preventDefault();
 
-    $(this).next().slideToggle('600');
+    $(this).closest('.project_panel').next().slideToggle('600');
     $(this).toggleClass('minus');
     
     if ($(this).attr('aria-expanded') === 'true') {
