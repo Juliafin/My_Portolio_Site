@@ -95,9 +95,8 @@ button.accordion:active {
 }
 
 .panel-left {
-  width: 41%;
+  width: 39%;
   display: inline-block;
-  float: left;
 }
 
 .panel-right {
@@ -377,37 +376,17 @@ article {
   padding: 0rem 0 3rem 0;
 }
 
-.tropical_vscode_theme p.story_text.top_story_text.project_summary {
-  margin-bottom: 10rem;
-}
 
-.bggapi button#panel-2_tab, .curriculum_manager
-button#panel-1_tab {
-   margin-top: 3rem;
-}
-
-button#panel-4_tab {
-  margin: 2rem auto;
-  }
-
-img.curriculum_screenshot1, img.ff-quiz_screenshot_1, img[alt="Tropical VsCode Theme"] {
-   width: 44vw;
+img.curriculum_screenshot1, img.ff-quiz_screenshot_1, img[alt="Tropical VsCode Theme"], .tropical_vscode_theme img, .text_analyzer img {
+   width: 45vw;
 }
 
 article.tropical_vscode_theme .panel-left, article.text_analyzer .panel-left {
-   width: 60%;
+   width: 59%;
 }
 
 article.tropical_vscode_theme .panel-right, article.text_analyzer .panel-right {
-   width: 40%;
-}
-
-.text_analyzer .technologies {
-   margin-bottom: 8rem;
-}
-
-.tropical_vscode_theme img, .text_analyzer img {
-  width: 45vw;
+   width: 39%;
 }
 
 section.projects {
