@@ -329,7 +329,7 @@ h2 {
   margin: 4% 0;
   padding-top: 6%;
   color: #1E0703;
-  width: 80%;
+  width: 90%;
 }
 
 h2+p {
@@ -604,24 +604,22 @@ section.references {
 }
 
 .reference_quote {
-  width: 80%;
   background: #1E0703;
   border-top-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 2vw;
   color: antiquewhite;
   line-height: 2vw;
   text-indent: 5%;
   font-style: italic;
   min-height: 70%;
+  margin: 0 3rem;
 }
 
 blockquote {
   text-align: left;
   padding: 15px 0;
-
+  font-size: 1rem;
 }
 
 blockquote:before {
