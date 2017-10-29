@@ -367,9 +367,6 @@ article {
   padding: 0rem 0 3rem 0;
 }
 
-article.tropical_vscode_theme .img_container, article.text_analyzer .img_container {
-}
-
 .tropical_vscode_theme p.story_text.top_story_text.project_summary {
   margin-bottom: 10rem;
 }
@@ -575,6 +572,10 @@ div#panel-5 {
   display: none;
   padding: 3% 6%;
   min-height: 100%;
+}
+
+div#panel-4, div#panel-5 {
+    padding-top: 5rem !important;
 }
 
 .contact_info {
