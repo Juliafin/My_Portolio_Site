@@ -70,6 +70,11 @@ nav {
 #nav li:focus,
 button.accordion:hover {
   filter: brightness(115%);
+  animation-name: glow;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.59, 0.56, 1, 1);
   background: #D2452A;
   transition: all ease-in-out 350ms;
 }
@@ -516,11 +521,6 @@ button.accordion {
   transition: 0.4s;
   border-radius: .5rem;
   font-family: Proza Libre;
-  animation-name: glow;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.59, 0.56, 1, 1);
   height: auto;
   line-height: 6vw;
   padding: 0;
