@@ -108,6 +108,7 @@ img#my_avatar {
   margin-left: 3rem;
   margin-top: 0;
   margin-right: 3rem;
+  margin-bottom: 2rem;
 }
 
 i {
@@ -185,6 +186,11 @@ section.title_container {
   background-image: url("../images/title_blurred.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+section.main h2 {
+    margin: 0;
+    padding: 0;
 }
 
 h1.projects_header, h1.about_me_header, h1.references_header {
