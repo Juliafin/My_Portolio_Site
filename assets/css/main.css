@@ -1194,9 +1194,7 @@ div.technologies p {
     font-size: 1.3em;
   }
   p.story_text {
-    margin-left: 11%;
-    margin-right: 11%;
-    padding: 0;
+    padding: 1rem;
   }
   p.story_text a {
     margin-left: 2%;
