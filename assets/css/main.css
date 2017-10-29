@@ -626,6 +626,7 @@ blockquote:after {
 }
 
 div.reference_quote span {
+  font-size: .7em;
   margin-bottom: 4%;
   margin-top: 5%;
   display: inline-block;
@@ -1181,10 +1182,6 @@ div.technologies p {
   h1 {
     padding-top: 8%;
   }
-  h1.projects_header, h1.about_me_header, h1.references_header{
-    padding: 0;
-    margin: 0;
-  }
   section.references h1 {
     padding: 10px;
     margin: 0;
@@ -1199,26 +1196,41 @@ div.technologies p {
   p.story_text {
     margin-left: 11%;
     margin-right: 11%;
-    padding:0;
+    padding: 0;
   }
   p.story_text a {
     margin-left: 2%;
     margin-right: 2%;
   }
-  button.accordion{
-    margin: 3vw auto;
-    border-radius: 2px;
+  h1.projects_header{
+    padding: 0;
+    margin-bottom:0;
   }
   .bggapi button#panel-2_tab, .curriculum_manager button#panel-1_tab {
     margin-top: 3vw;
-  }
-  button#panel-4_tab, button#panel-5_tab{
-    margin-top: 0;
   }
   button.accordion:after {
     height: 80%;
     margin-right: 2%;
     font-size: 4vw;
+  }
+    button#panel-4_tab, button#panel-5_tab{
+    margin-top: 0;
+  }
+   div.reference_quote blockquote{
+    line-height: 4.6vw;
+    padding: 5.5vw;
+    font-size: 3.5vw
+  }
+    div.reference_quote span i{
+    font-size: 3.5vw;
+  }
+   blockquote:after {
+    font-size: 3.5vw;
+  }
+  button.accordion{
+    margin: 3vw auto;
+    border-radius: 2px;
   }
   code.hljs {
     font-size: .6em;
@@ -1227,23 +1239,13 @@ div.technologies p {
   code span {
     font-size: .8em;
   }
+  blockquote {
+    width: 80%;
+    line-height: 1.5em;
+  }
   div.reference_quote {
     width: 100%;
-    padding: 19px;
-  }
-  div.reference_quote blockquote{
-    line-height: 4.6vw;
-    padding: 5.5vw;
-    font-size: 3.5vw
-  }
-  blockquote:after {
-    font-size: 3.5vw;
-  }
-  div.reference_quote span{
-    width: 100%;
-  }
-  div.reference_quote span i{
-    font-size: 3.5vw;
+    padding: 0;
   }
   .icons {
     position: relative;
