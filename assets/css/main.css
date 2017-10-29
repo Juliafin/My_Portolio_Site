@@ -379,6 +379,7 @@ article {
 
 section.projects article {
   display:flex;
+  flex-wrap: wrap;
 }
 
 
@@ -903,6 +904,10 @@ margin: 0 1.5vw;
 }
 
 @media screen and (max-width: 740px) {
+  
+  section.projects article {
+    display: block;
+  }
 
   div.panel-left {
     width: 100%;
