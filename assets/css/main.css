@@ -76,7 +76,7 @@ button.accordion:hover {
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.59, 0.56, 1, 1);
   background: #D2452A;
-  transition: all ease-in-out 350ms;
+  transition: all ease-in-out 500ms;
 }
 
 button.accordion:active {
