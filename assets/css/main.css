@@ -592,7 +592,7 @@ section.references {
   background: #1E0703;
   border-top-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  padding: 2vw;
+  padding: 2vw 0;
   color: antiquewhite;
   line-height: 2vw;
   text-indent: 5%;
