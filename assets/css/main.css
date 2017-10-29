@@ -106,7 +106,7 @@ img#my_avatar {
   width: auto;
   float: left;
   margin-left: 3rem;
-  margin-top: 0;
+  margin-top: 2rem;
   margin-right: 3rem;
   margin-bottom: 2rem;
 }
@@ -212,6 +212,10 @@ h1.projects_header, h1.about_me_header, h1.references_header {
     width: 100%;
     position: relative;
 }
+
+section.main p.story_text.top_story_text {
+    padding-top: 2rem;
+    }
 
 section.references article {
     padding-top: 5%;
