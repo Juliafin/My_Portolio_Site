@@ -76,7 +76,11 @@ button.accordion:hover {
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.59, 0.56, 1, 1);
   background: #D2452A;
-  transition: all ease-in-out 500ms;
+  transition: all ease-in-out 200ms;
+}
+
+#nav a:active {
+  color: green;
 }
 
 button.accordion:active {
@@ -87,6 +91,7 @@ button.accordion:active {
   display: block;
   height: 100%;
   width: 100%;
+  transition: color ease-in-out 200ms;
 }
 
 .panel-left {
