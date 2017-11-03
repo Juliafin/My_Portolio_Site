@@ -129,6 +129,7 @@ i {
 i.fa {
   font-size: 3vw;
   cursor: pointer;
+  transition: transform 200ms linear;
 }
 
 i.fa.fa-github {
@@ -161,6 +162,7 @@ p i.fa.fa-github {
   width: 6vw;
   position: relative;
   top: -9vh;
+  transition: transform 2200ms ease-in-out;
 }
 
 .technologies {
@@ -287,13 +289,13 @@ pre {
 }
 
 .quote_container {
-  display: inline-block;
-  width: 89%;
   font-family: "Dancing Script";
   font-size: 1.5vw;
-  margin-top: 0%;
+  margin-top: 17%;
   height: 325px;
   position: relative;
+  z-index: 10000;
+  top: 0%;
 }
 
 h1.quote {
@@ -314,6 +316,10 @@ h1.my_name {
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  z-index: 10000;
+  font-size: 3rem;
+  position: relative;
+  top: 0;
 }
 
 h2 {
@@ -423,10 +429,11 @@ img {
   border-top-right-radius: 5px;
   width: 58vw;
   margin-top: 3%;
+  transition: all 400ms linear;
 }
 
 .img_container {
-  width: 100%;
+  width: 44vw;
   height: auto;
   overflow: hidden;
   margin-left: auto;
@@ -444,11 +451,10 @@ div.img_container img:hover {
   filter: brightness(115%);
   filter: saturation(50%);
   transform: scale(1.1);
-  transition: 500ms all cubic-bezier(0.2, -0.08, 0.65, 0.5);
 }
 
 .bgg_screenshot1 {
-  width: 44vw;
+  width: 45vw;
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 1.6vw;
@@ -928,7 +934,7 @@ div.technologies p {
   article.tropical_vscode_theme .img_container,
   article.text_analyzer .img_container {
     margin: 0 auto;
-    width: 100%;
+    /* width: 100%; */
   }
   .technologies {
     width: 100%;
@@ -1155,14 +1161,16 @@ div.technologies p {
 @media only screen and (max-device-height: 732px) and (max-device-width: 412px) {
   h1.my_name {
     margin-top: 17%;
+    font-size: 1.5rem;
   }
   div.quote_container {
     font-size: .75em;
     line-height: 1.9em;
+    top: 17%;
   }
   section.title_container {
     min-height: 91px;
-    max-height: 87%;
+    max-height: 96%;
   }
   section.projects {
     margin-top: 95vw;
@@ -1251,6 +1259,9 @@ div.technologies p {
     text-align: center;
     margin-bottom: 2%;
   }
+  .img_container{
+    width:100%;
+  }
   i.fa {
     font-size: 7vw;
     cursor: pointer;
@@ -1260,5 +1271,47 @@ div.technologies p {
   }
   footer {
     margin-bottom: 50px;
+  }
+  img.curriculum_screenshot1, img.ff-quiz_screenshot_1, img[alt="Tropical VsCode Theme"], .tropical_vscode_theme img, .text_analyzer img, .bgg_screenshot1 {
+    width: 79vw;
+  }
+}
+
+@media only screen and (max-device-height: 667px) and (max-device-width: 375px) {
+
+  div.quote_container{
+    top: 30%;
+  }
+
+  .author, .quote {
+    margin-top: 40px;
+    font-size: 1.25rem;
+  }
+  button.accordion:after {
+    margin: 0 0 0 10px;
+  }
+}
+
+@media only screen and (max-device-height: 736px) and (max-device-width: 414px) {
+
+  div.quote_container{
+    top: 15%;
+  }
+
+  .author, .quote{
+    font-size: 1.25rem;
+    margin-top:40px;
+  }
+
+  button.accordion {
+    margin-top: 20px;
+  }
+
+  .icons i, i.fa.fa-github {
+    font-size: 6vw;
+  }
+
+  .img_container{
+    width:100%;
   }
 }
