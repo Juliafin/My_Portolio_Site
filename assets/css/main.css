@@ -509,7 +509,7 @@ button.accordion, button.live {
   text-align: center;
   border: none;
   outline: none;
-  transition: 0.4s;
+  transition: all 0.4s linear;
   border-radius: .5rem;
   font-family: Proza Libre;
   height: auto;
@@ -518,7 +518,6 @@ button.accordion, button.live {
   min-width: 19vw;
   margin-top: 8%;
   margin-bottom: 0%;
-  padding-left: 1rem;
   box-shadow: 1px 2px 6px #2d2d2d;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -533,15 +532,14 @@ button.accordion:after {
   content: '\2191';
   /* Unicode character for arrow up */
   color: #777;
-  float: right;
-  margin-left: 5px;
+  /* float: right; */
+  margin-left: 1rem;
   font-size: 1rem;
   color: aliceblue;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   position: relative;
   height: 96%;
-  padding-right: 26px;
 }
 
 button.minus:after {
@@ -902,10 +900,10 @@ div.technologies p {
   }
   .bggapi button#panel-2_tab,
   .curriculum_manager button#panel-1_tab {
-    margin: 1vw auto;
+    /* margin: 1vw auto; */
   }
   button.accordion {
-    margin: -1rem auto;
+    margin: 0 auto;
   }
   article.tropical_vscode_theme .panel-right,
   article.text_analyzer .panel-right {
@@ -1211,15 +1209,12 @@ div.technologies p {
     margin-bottom:0;
   }
   .bggapi button#panel-2_tab, .curriculum_manager button#panel-1_tab {
-    margin-top: 3vw;
+    /* margin-top: 3vw; */
   }
   button.accordion:after {
     height: 80%;
     margin-right: 2%;
     font-size: 4vw;
-  }
-    button#panel-4_tab, button#panel-5_tab{
-    margin-top: 0;
   }
    div.reference_quote blockquote{
     line-height: 4.6vw;
@@ -1232,9 +1227,15 @@ div.technologies p {
    blockquote:after {
     font-size: 3.5vw;
   }
-  button.accordion{
-    margin: 3vw auto;
+  button.accordion, button.live{
+    margin: 3vw;
     border-radius: 2px;
+    width: 47vw;
+    height: 13vw;
+    padding: 0;
+    /* display: block; */
+    text-align: center;
+    margin-bottom: 0;
   }
   code.hljs {
     font-size: .6em;
@@ -1301,12 +1302,24 @@ div.technologies p {
     margin-top:40px;
   }
 
-  button.accordion {
-    margin-top: 20px;
+  article {
+    margin: 0;
+  }
+
+  button.accordion, button.live {
+    width: 52vw;
+    height: 13vw;
+    margin-top: 1rem;
+    border-radius: 0;
+    margin-bottom: 0;
   }
 
   .icons i, i.fa.fa-github {
     font-size: 6vw;
+  }
+
+  .icons a{
+    top: -5vw;
   }
 
   .img_container{
