@@ -175,7 +175,7 @@ p i.fa.fa-github {
 }
 
 .technologies span {
-  margin: 0 2vw;
+  margin: 0 1vw;
   border-top: 1px solid #a40964;
   font-family: Ruboto;
   color: #1E0703;
@@ -821,7 +821,7 @@ div.technologies p {
 
 @media screen and (max-width: 1030px) {
   .technologies span {
-    margin: 0 1vw;
+    margin: 0 .5vw;
   }
   #nav a,
   #nav img {
