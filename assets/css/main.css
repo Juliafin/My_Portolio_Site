@@ -501,6 +501,10 @@ img.icon {
   }
 }
 
+section.projects button.accordion {
+  padding: 0 3vw;
+}
+
 button.accordion, button.live {
   display: inline-block;
   background-color: #1E0703;
@@ -1000,6 +1004,10 @@ div.technologies p {
     margin-left: auto;
     margin-right: auto;
   }
+
+  button.accordion, button.live {
+    border-radius: 0;
+  }
   blockquote span {
     margin-left: 5%;
   }
@@ -1057,8 +1065,15 @@ div.technologies p {
   p i {
     font-size: .5em;
   }
-  button.accordion {
+  
+  button.live {
+    width: 35vw;
+  }
+
+  button.accordion, button.live {
     margin-bottom: 8%;
+    margin-top: 8%;
+    border-radius: 0;
   }
   img.icon {
     height: 50px;
