@@ -13,8 +13,8 @@ particlesJS("particles-js", {
     "shape": {
       "type": "circle",
       "stroke": {
-        "width": 10,
-        "color": "#1E0703"
+        "width": 2,
+        "color": "#D2452A"
       },
       "polygon": {
         "nb_sides": 4
@@ -89,7 +89,7 @@ particlesJS("particles-js", {
       },
       "bubble": {
         "distance": 100,
-        "size": 5,
+        "size": 10,
         "duration": 2,
         "opacity": 4,
         "speed": 1
