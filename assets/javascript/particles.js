@@ -109,10 +109,36 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 var count_particles, stats, update;
+
+var anim;
 update = function () {
-
-  requestAnimationFrame(update);
+  
+  anim = requestAnimationFrame(anim);
 };
+var isFocused = false;
+console.log($)
+$(window).on('focus', (event) => {
+  console.log('window is out of focus');
+  isFocused = true;
+  if (isFocused) {
+    $("div#particles-js").show();
+    anim;
+  }
 
-requestAnimationFrame(update);
+
+});
+
+$(window).on('blur', (event) => {
+  console.log('window is in focus')
+  isFocused = false;
+  if (!isFocused) {
+    $("div#particles-js").hide();
+    
+    cancelAnimationFrame(anim);
+  }
+});
+
+  // requestAnimationFrame(update);
+
+
   
