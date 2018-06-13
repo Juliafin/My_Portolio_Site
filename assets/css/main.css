@@ -124,17 +124,17 @@ i {
   margin-right: 3%;
 }
 
-i.fa {
+i.fab, i.far {
   font-size: 3vw;
   cursor: pointer;
   transition: transform 200ms linear;
 }
 
-i.fa.fa-github {
+i.fab.fa-github, i.far.fa-github {
   font-size: 4vw;
 }
 
-p i.fa.fa-github {
+p i.fab.fa-github, p i.far.fa-github {
   font-size: 9vw;
   position: relative;
   height: 11vw;
