@@ -13,7 +13,12 @@ var portfolioState = {
     quote: `“I have no special talent. I am only passionately curious."`,
     author: `~ Albert Einstein`
   }
-  ]
+  ],
+  headers: {
+    projects: false,
+    aboutMe: false,
+    references: false
+  }
 };
 
 // Animates the quotes
@@ -120,6 +125,37 @@ function changeOpacity() {
 }
 
 
+function headerListener() {
+  
+  $(window).scroll($.throttle( 250, () => {
+    let projectsHeaderVisible = $('h1.projects_header').visible(true)
+    let aboutMeHeaderVisible = $('h1.about_me_header').visible(true)
+    let referencesHeaderVisible = $('h1.references_header').visible(true)
+    
+      if (!portfolioState.headers.projects && projectsHeaderVisible) {
+        $('h1.projects_header').addClass('left');
+        portfolioState.headers.projects = true;
+      }
+
+      if (!portfolioState.headers.aboutMe && aboutMeHeaderVisible) {
+        $('h1.about_me_header').addClass('left');
+        portfolioState.headers.aboutMe = true;
+      }
+
+      if (!portfolioState.headers.references && referencesHeaderVisible) {
+        $('h1.references_header').addClass('left');
+        portfolioState.headers.references = true;
+      }
+
+  
+    console.log('Projects visible: ', projectsHeaderVisible);
+    console.log('About me visible: ', aboutMeHeaderVisible);
+    console.log('References visible: ', referencesHeaderVisible);
+
+  }));
+}
+
+
 // Makes nav fade when scrolling
 function navOpacity(event) {
   setTimeout( () => {
@@ -150,4 +186,5 @@ function opacityListenerDeb() {
   $('div#particles-js').animate({
     opacity: 1
   }, 1000);
+  headerListener();
 }));

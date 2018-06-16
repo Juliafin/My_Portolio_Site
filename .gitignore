@@ -3,3 +3,6 @@ assets/juliafinarovsky.com.zip
 .gitignore
 npm-debug.log
 notes - to fix.txt
+.vscode/
+.gitignore
+.vscode
