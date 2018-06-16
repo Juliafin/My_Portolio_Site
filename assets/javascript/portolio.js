@@ -146,12 +146,6 @@ function headerListener() {
         $('h1.references_header').addClass('left');
         portfolioState.headers.references = true;
       }
-
-  
-    console.log('Projects visible: ', projectsHeaderVisible);
-    console.log('About me visible: ', aboutMeHeaderVisible);
-    console.log('References visible: ', referencesHeaderVisible);
-
   }));
 }
 
