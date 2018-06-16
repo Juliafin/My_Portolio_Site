@@ -231,7 +231,7 @@ h1.references_header {
   width: 100%;
   position: relative;
   left: -32em;
-  transition: left 1150ms ease-out;
+  transition: left 550ms ease-out;
 }
 
 
