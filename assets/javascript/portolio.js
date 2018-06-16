@@ -127,7 +127,7 @@ function changeOpacity() {
 
 function headerListener() {
   
-  $(window).scroll($.throttle( 250, () => {
+  $(window).scroll($.throttle( 150, () => {
     let projectsHeaderVisible = $('h1.projects_header').visible(true)
     let aboutMeHeaderVisible = $('h1.about_me_header').visible(true)
     let referencesHeaderVisible = $('h1.references_header').visible(true)
