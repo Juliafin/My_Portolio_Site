@@ -160,7 +160,7 @@ function navOpacity(event) {
 
 
 function scrollNavListener() {
-  $(window).scroll($.throttle(150, navOpacity));
+  $(window).scroll($.throttle(50, navOpacity));
 }
 
 
@@ -176,7 +176,7 @@ function opacityListenerDeb() {
   accordionListener();
   navbarActiveListener();
   opacityListenerDeb();
-  scrollNavListener();
+  // scrollNavListener();
   $('div#particles-js').animate({
     opacity: 1
   }, 1000);

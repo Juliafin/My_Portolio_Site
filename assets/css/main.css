@@ -46,6 +46,13 @@ nav {
   animation-iteration-count: infinite;
   box-shadow: -1px -1px 3px #615f5f;
 }
+div#nav {
+  animation-name: fade;
+  animation-direction: normal;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
 
 #nav li.selected {
   background: #F1A597;
@@ -530,6 +537,16 @@ img.icon {
   100% {
     filter: brightness(100%);
     filter: saturate(100%);
+  }
+}
+
+@keyframes fade {
+  0% {
+    filter: opacity(0)
+  }
+
+  100% {
+    filter: opacity(1)
   }
 }
 
