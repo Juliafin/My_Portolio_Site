@@ -237,7 +237,6 @@ h1.references_header {
 
 h1.left {
   left:0%;
-  will-change: transform;
 }
 
 section.main p.story_text.top_story_text {
