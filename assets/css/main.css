@@ -237,13 +237,13 @@ h1.references_header {
   display: inline-block;
   width: 100%;
   position: relative;
-  left: -32em;
+  left: -90%;
   transition: left 550ms ease-out;
 }
 
 
 h1.left {
-  left:0em;
+  left:0%;
 }
 
 section.main p.story_text.top_story_text {
