@@ -238,12 +238,14 @@ h1.references_header {
   width: 100%;
   position: relative;
   left: -90%;
-  transition: left 550ms ease-out;
+  opacity: 0;
+  transition: left 550ms ease-out, opacity 550ms ease-in ;
 }
 
 
 h1.left {
   left:0%;
+  opacity: 1;
 }
 
 section.main p.story_text.top_story_text {
