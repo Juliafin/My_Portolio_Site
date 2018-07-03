@@ -25,6 +25,10 @@ body {
   font-size: 1rem;
 }
 
+button, h1, div.technologies {
+  user-select: none;
+}
+
 p:hover {
   animation-name: tran;
   animation-direction: normal;
