@@ -25,7 +25,7 @@ body {
   font-size: 1rem;
 }
 
-button, h1, h2, div.technologies {
+button, ul, h1, h2, div.technologies {
   user-select: none;
   cursor: default;
 }
