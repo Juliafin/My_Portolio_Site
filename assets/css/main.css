@@ -27,6 +27,7 @@ body {
 
 button, h1, div.technologies {
   user-select: none;
+  cursor: default;
 }
 
 p:hover {
